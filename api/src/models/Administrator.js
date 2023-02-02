@@ -4,7 +4,7 @@ module.exports = (sequelize) => {
   sequelize.define('administrator', {
     id: {
       primaryKey: true,
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       autoIncrement: true,
       allowNull: false,
     },
