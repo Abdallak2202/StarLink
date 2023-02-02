@@ -1,1 +1,0 @@
-This is a test, to ensure that the command "git push" is correctly executed
