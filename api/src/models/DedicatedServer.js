@@ -1,14 +1,14 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  sequelize.define('products', {
+  sequelize.define('dedicatedServer', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
       allowNull: false,
     },
-    name: {
+    brand: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -20,13 +20,21 @@ module.exports = (sequelize) => {
       type: DataTypes.FLOAT,
       allowNull: false,
     },
-    image: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    operatingSystem: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
-    stock: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    }
+    processor: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    memoryRAM: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    storage: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
   })
 };
