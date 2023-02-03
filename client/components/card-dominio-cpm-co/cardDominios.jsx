@@ -1,5 +1,6 @@
 import s from "src/styles/cardDominio.module.css"
 import Link from "next/link"
+import { cardDominioDetail } from "components/cardDominioDetail"
 
 export default function Card (){
   return (
@@ -11,7 +12,7 @@ export default function Card (){
           <h1> .Com</h1>
           <h2> por solo</h2>
           <h3> $1790</h3>
-          <Link className= {s.flipcardback} href="cardDominioDetail">Buscar</Link>
+          <Link  href="cardDominioDetail">Buscar</Link>
         
       </ul>
       </div>
