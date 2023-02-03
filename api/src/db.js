@@ -38,11 +38,25 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Administrator, Catalog, Customer, Orders, Products } = sequelize.models;
+const { Administrator, Customer, Order, CloudServer, DedicatedServer, Domain, Housing } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 
+Order.belongsTo(Customer);
+Customer.hasMany(Order);
+
+Order.belongsToMany(CloudServer, {through: "OrderCloudServer"});
+CloudServer.belongsToMany(Order, {through: "OrderCloudServer"});
+
+Order.belongsToMany(DedicatedServer, {through: "OrderDedicatedServer"});
+DedicatedServer.belongsToMany(Order, {through: "OrderDedicatedServer"});
+
+Order.belongsToMany(Domain, {through: "OrderDomain"});
+Domain.belongsToMany(Order, {through: "OrderDomain"});
+
+Order.belongsToMany(Housing, {through: "OrderHousing"});
+Housing.belongsToMany(Order, {through: "OrderHousing"});
 
 
 module.exports = {
