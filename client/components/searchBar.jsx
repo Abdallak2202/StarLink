@@ -1,26 +1,43 @@
 import s from "src/styles/searchBar.module.css";
 import Image from "next/image";
+import React, { useState } from 'react'
 
-export default function searchBar  ()  {
+const SearchBar = () => {
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(`Searching for: ${searchTerm}`)
+  }
+
+
+
+
   return (
+    <form onSubmit={handleSubmit}>
     <div className= {s.containerSearch}>
         <div className={s.inputSearch}>
             <div className={s.inputResults}>
-        <input className={s.placeholder} placeholder="Ingrese su busqueda" type={'text'} />
-       <div className={s.results}>
+        <input className={s.placeholder} 
+        value={searchTerm}
+        onChange={(event) => setSearchTerm(event.target.value)}
+        placeholder="Ingrese su busqueda" type={'text'} />
+       {/* <div className={s.results}>
         0 results found
-       </div>
+       </div> */}
         </div>
-        <div className={s.icon}>
+        <button type="submit" className={s.icon}>
         <Image 
         src={'/lupa.png'}
         width={40}
         height={40}
         />
+        </button>
        
          </div>
         </div>
-  </div>
+
+      </form>
   )
 }
-
+export default SearchBar;

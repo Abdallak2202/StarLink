@@ -1,6 +1,5 @@
 import s from "src/styles/cardDominio.module.css"
 import Link from "next/link"
-import { cardDominioDetail } from "components/cardDominioDetail"
 
 export default function Card (){
   return (
