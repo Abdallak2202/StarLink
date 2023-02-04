@@ -1,6 +1,14 @@
-export const dominioComCo = () => {
+import Card from "components/card/cardDominios";
+
+
+export const dominioComCo = ({ card }) => {
   return (
-    <div>dominio-com-co</div>
+    <div>
+      <Card card={card}/>
+    
+
+    </div>
+    
   )
 }
 
