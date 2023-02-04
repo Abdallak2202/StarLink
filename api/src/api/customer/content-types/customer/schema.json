@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "administrators",
+  "collectionName": "customers",
   "info": {
-    "singularName": "administrator",
-    "pluralName": "administrators",
-    "displayName": "Administrator",
+    "singularName": "customer",
+    "pluralName": "customers",
+    "displayName": "Customer",
     "description": ""
   },
   "options": {
@@ -12,6 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "usename": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
     "firstName": {
       "type": "string",
       "required": true
@@ -22,15 +27,21 @@
     },
     "email": {
       "type": "email",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "password": {
       "type": "password",
       "required": true
     },
-    "role": {
-      "type": "string",
+    "adress": {
+      "type": "richtext",
       "required": true
+    },
+    "phoneNumber": {
+      "required": true,
+      "unique": false,
+      "type": "integer"
     },
     "avatar": {
       "type": "media",

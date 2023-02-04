@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "domains",
+  "info": {
+    "singularName": "domain",
+    "pluralName": "domains",
+    "displayName": "Domain"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tld": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "price": {
+      "type": "float",
+      "required": true
+    },
+    "registration": {
+      "type": "datetime",
+      "required": true
+    },
+    "expiration": {
+      "type": "datetime",
+      "required": true
+    }
+  }
+}
