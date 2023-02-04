@@ -1,18 +1,21 @@
 .container{
+  padding: 80px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 16px;
-  grid-row-gap: 80px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  
 }
 
 
 .product {
 text-align: center;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+box-shadow: 0 4px 8px 0 rgba(80, 27, 98, 0.2);
 transition: 0.3s;
 border-radius: 5px;
 padding: 30px;
+
 
 }
 .product:hover {

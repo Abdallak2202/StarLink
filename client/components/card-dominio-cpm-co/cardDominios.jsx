@@ -11,7 +11,7 @@ export default function Card (){
           <h1> .Com</h1>
           <h2> por solo</h2>
           <h3> $1790</h3>
-          <Link className= {s.flipcardback} href="cardDominioDetail">Buscar</Link>
+          <Link  href="cardDominioDetail">Buscar</Link>
         
       </ul>
       </div>
