@@ -25,6 +25,7 @@ const SearchBar = () => {
        {/* <div className={s.results}>
         0 results found
        </div> */}
+       
         </div>
         <button type="submit" className={s.icon}>
         <Image 
