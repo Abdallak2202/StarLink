@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 0px;
   min-height: 100vh;
 }
 
@@ -275,4 +275,8 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+.spline{
+  position: fixed;
 }
