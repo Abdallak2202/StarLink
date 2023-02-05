@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "../styles/Login.module.css";
 import {magic} from "../../lib/magic-client"
+import { getNamedMiddlewareRegex } from "next/dist/shared/lib/router/utils/route-regex";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -31,7 +32,7 @@ const Login = () => {
     e.preventDefault();
     
     if (ValidateEmail(email)) {
-      if (email === "silvinaaguello@gmail.com") {
+
       // route to dashboard
       //  log in a user by their email
       try {
