@@ -6,6 +6,7 @@ import "../styles/globals.css";
 import Loading from 'components/loading/Loading';
 
 
+
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
