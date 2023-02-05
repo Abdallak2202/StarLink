@@ -1,9 +1,9 @@
 .container{
-  padding: 4rem;
+  padding: 1.5rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 2rem;
+  grid-column-gap: 1.5rem;
   grid-row-gap: 2rem;
   
 }
@@ -11,10 +11,11 @@
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flipCard {
   background-color: transparent;
-  width: 24rem;
+  width: 26.5rem;
   height: 17rem;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  display: flex;
 }
 
 /* This container is needed to position the front and back side */
@@ -73,26 +74,70 @@
 
 }
 .h1Dominio{
-  text-shadow: 2px 3px 0px rgb(94, 204, 241);
-  background-color: transparent;
-  box-shadow: #3b6471;
-  font-size: 1.8rem;
- width: 22rem;
- padding-right: 1.5rem;
- padding-top: 0.1rem;
+  background: linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 6rem;
+  text-shadow:2px 3px 0px rgba(147, 198, 234, 0.46);
+  margin-top: -3rem;
+  
+  
+}
+.h1Dominioo{
+  background: linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.9rem;
 
+  text-shadow:2px 3px 0px rgba(147, 198, 234, 0.46);
+  margin-top: -3rem;
+  
+  
+}
+.h1Dominiooo{
+  background: linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 5.3rem;
+
+  text-shadow:2px 3px 0px rgba(147, 198, 234, 0.46);
+  margin-top: -3rem;
+  
+  
+}
+.h1Dominioooo{
+  background: linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 5rem;
+
+  text-shadow:2px 3px 0px rgba(147, 198, 234, 0.46);
+  margin-top: -3rem;
+  
+  
 }
 .h2{
   text-shadow: 2px 3px 0px rgba(25,159,192,0.46);
- font-size: 40px;
+ font-size: 6rem;
 width: 6rem;
 height: 4rem;
 
+}
 
+.h2Dominio{
+  font-size: 3rem;
+  padding: 0.1rem;
+  text-shadow: 2px 3px 0px rgb(147, 161, 218);
+  color: rgba(59, 45, 106)
 }
 .h3{
-
-font-size: 9rem;
+color: #fbf6f6;
+text-shadow: 2px 3px 0px rgb(9, 10, 18);
+font-size: 5rem;
+padding: 0.4rem;
+background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+border-radius: 1rem;
 }
 
 
@@ -112,3 +157,4 @@ color: #FFFFFF;
 
 
 }
+

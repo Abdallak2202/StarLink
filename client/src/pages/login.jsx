@@ -31,7 +31,7 @@ const Login = () => {
     e.preventDefault();
     
     if (ValidateEmail(email)) {
-      if (email === "joseluy123@gmail.com") {
+      if (email === "silvinaaguello@gmail.com") {
       // route to dashboard
       //  log in a user by their email
       try {

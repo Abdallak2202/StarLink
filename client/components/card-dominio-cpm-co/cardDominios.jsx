@@ -10,9 +10,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-      <h1 className="text-sm font-medium text-gray-900">.Com</h1>
-      <h2> Por solo</h2>
-     <h3> $1790</h3>       
+      <h1 className= {s.h1Dominio}>.Com</h1>
+      <h2 className={s.h2Dominio}> Por solo</h2>
+     <h3 className={s.h3}> $1790</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
@@ -31,9 +31,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-        <h1>.Com + .Online&.Store</h1> 
-          <h2> Por solo</h2>
-          <h3> $1.790</h3>       
+        <h1 className= {s.h1Dominioo}>.Com + .Online&.Store</h1> 
+          <h2 className= {s.h2Dominio}> Por solo</h2>
+          <h3 className= {s.h3}> $1.790</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
@@ -49,9 +49,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-          <h1> .Com.Ar</h1>
-          <h2> Por solo</h2>
-          <h3> $860</h3>       
+          <h1 className={s.h1Dominiooo}> .Com.Ar</h1>
+          <h2 className= {s.h2Dominio}> Por solo</h2>
+          <h3 className={s.h3}> $860</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
@@ -66,9 +66,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-          <h1> .Site</h1>
-          <h2> Por solo</h2>
-          <h3> $1.490</h3>       
+          <h1 className={s.h1Dominiooo}> .Site</h1>
+          <h2 className={s.h2Dominio}> Por solo</h2>
+          <h3 className={s.h3}> $1.490</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
@@ -85,9 +85,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-          <h1> .Online</h1>
-          <h2> Por solo</h2>
-          <h3> $1.890</h3>       
+          <h1 className={s.h1Dominiooo}> .Online</h1>
+          <h2 className={s.h2Dominio}> Por solo</h2>
+          <h3 className={s.h3}> $1.890</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
@@ -104,9 +104,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-          <h1 class="bg-gradient-to-r from-blue-500 to-transparent"> .Website</h1>
-          <h2> Por solo</h2>
-          <h3> $1.490</h3>       
+          <h1 className={s.h1Dominioooo}> .Website</h1>
+          <h2 className={s.h2Dominio}> Por solo</h2>
+          <h3 className={s.h3}> $1.490</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
@@ -123,9 +123,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-          <h1> .Store</h1>
-          <h2> Por solo</h2>
-          <h3> $2.790</h3>       
+          <h1 className={s.h1Dominiooo}> .Store</h1>
+          <h2 className={s.h2Dominio}> Por solo</h2>
+          <h3 className={s.h3}> $2.790</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
@@ -142,9 +142,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-          <h1> .Uno</h1>
-          <h2> Por solo</h2>
-          <h3> $1090</h3>       
+          <h1 className={s.h1Dominio}> .Uno</h1>
+          <h2 className={s.h2Dominio}> Por solo</h2>
+          <h3 className={s.h3}> $1090</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
@@ -162,9 +162,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-          <h1> .Org</h1>
-          <h2> Por solo</h2>
-          <h3> $3.890</h3>       
+          <h1 className={s.h1Dominioooo}> .Org</h1>
+          <h2 className={s.h2Dominio}> Por solo</h2>
+          <h3 className={s.h3}> $3.890</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
@@ -181,9 +181,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-          <h1> .Tech</h1>
-          <h2> Por solo</h2>
-          <h3> $2.790</h3>       
+          <h1 className={s.h1Dominio}> .Tech</h1>
+          <h2 className={s.h2Dominio}> Por solo</h2>
+          <h3 className={s.h3}> $2.790</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
@@ -202,9 +202,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-          <h1> .Fun</h1>
-          <h2> Por solo</h2>
-          <h3> $1.090</h3>       
+          <h1 className={s.h1Dominio}> .Fun</h1>
+          <h2 className={s.h2Dominio}> Por solo</h2>
+          <h3 className={s.h3}> $1.090</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
@@ -221,9 +221,9 @@ export default function Card (){
       <div className= {s.flipCardFront}>
 
       <ul>
-          <h1> .Casa</h1>
-          <h2> Por solo</h2>
-          <h3> $2.790</h3>       
+          <h1 className={s.h1Dominio}> .Casa</h1>
+          <h2 className={s.h2Dominio}> Por solo</h2>
+          <h3 className={s.h3}> $2.790</h3>       
       </ul>
       </div>
       <div className={s.flipCardBack}>
