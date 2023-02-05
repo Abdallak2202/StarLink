@@ -1,10 +1,14 @@
 .containerSearch {
-    background-color: rgb(94, 204, 241);
-    padding: 0.4rem;
+    background-image:url("/cloud.png");
+    /* background-color: rgb(94, 204, 241); */
+    padding: 6rem;
     display: grid;
     justify-content: center;
     align-items: center;
+   box-shadow: 3px 3px 3px 3px rgba(21, 10, 103, 0.3) ;
+   
 }
+
 .inputSearch {
     display:inline-flex
 }

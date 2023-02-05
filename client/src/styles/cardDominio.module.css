@@ -1,24 +1,81 @@
 .container{
-  padding: 80px;
+  padding: 3rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
   
 }
 
-
-.product {
-text-align: center;
-box-shadow: 0 4px 8px 0 rgba(80, 27, 98, 0.2);
-transition: 0.3s;
-border-radius: 5px;
-padding: 30px;
-
-
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flipCard {
+  background-color: transparent;
+  width: 20rem;
+  height: 15rem;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
-.product:hover {
+
+/* This container is needed to position the front and back side */
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flipCard:hover .flipCardInner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flipCardFront, .flipCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flipCardFront {
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(80, 27, 98, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 3rem;
+}
+
+.flipCardFront:hover {
   box-shadow: 0 8px 16px 0 #59a0d0;
 }
 
+/* Style the back side */
+.flipCardBack {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+.h2{
+  text-shadow: 2px 3px 0px rgba(25,159,192,0.46);
+ font-size: 40px;
+width: 6rem;
+height: 4rem;
+
+
+}
+.h3{
+
+font-size: 9rem;
+}
+
+.img {
+  width: 14rem;
+  height: 7rem;
+  position: relative;
+  top: -3rem;
+}
