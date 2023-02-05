@@ -1,18 +1,18 @@
 .container{
-  padding: 3rem;
+  padding: 4rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 3rem;
-  grid-row-gap: 3rem;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
   
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flipCard {
   background-color: transparent;
-  width: 20rem;
-  height: 15rem;
+  width: 24rem;
+  height: 17rem;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
@@ -56,9 +56,31 @@
 
 /* Style the back side */
 .flipCardBack {
-  background-color: dodgerblue;
+  /* background-image: radial-gradient(circle, rgba(24, 180, 247, 1) 0%, rgba(15, 37, 123, 1) 100%); */
+  background-image: url("/cloud pedacito.png");
+  background-repeat: no-repeat;
+  display: block;
+  padding: 2rem;
   color: white;
   transform: rotateY(180deg);
+}
+.h1{
+  text-shadow: 2px 3px 0px rgba(202, 202, 68, 0.46);
+  font-size: 1.8rem;
+ width: 22rem;
+ padding-right: 1.5rem;
+ padding-top: 0.1rem;
+
+}
+.h1Dominio{
+  text-shadow: 2px 3px 0px rgb(94, 204, 241);
+  background-color: transparent;
+  box-shadow: #3b6471;
+  font-size: 1.8rem;
+ width: 22rem;
+ padding-right: 1.5rem;
+ padding-top: 0.1rem;
+
 }
 .h2{
   text-shadow: 2px 3px 0px rgba(25,159,192,0.46);
@@ -73,9 +95,20 @@ height: 4rem;
 font-size: 9rem;
 }
 
-.img {
-  width: 14rem;
-  height: 7rem;
-  position: relative;
-  top: -3rem;
+
+.p{
+  font-size: 1.5rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+padding: 0.7rem;
+text-align: center;
+color: #FFFFFF;
+text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 10px, #73f2eb 0px 0px 10px, #259d9f 0px 0px 20px, #687cec 0px 0px 30px, #3b6471 0px 0px 40px, #80dcde 0px 0px 70px;
+/* text-shadow: 4px 3px 0px #7A7A7A; */
+-webkit-text-fill-color: rgb(5, 23, 20);
+/* -webkit-text-stroke: 0.07rem rgb(16, 11, 11); */
+color: #FFFFFF;
+color: #FFFFFF;
+
+
+
 }
