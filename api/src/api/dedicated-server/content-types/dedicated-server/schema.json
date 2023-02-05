@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dedicated_servers",
+  "info": {
+    "singularName": "dedicated-server",
+    "pluralName": "dedicated-servers",
+    "displayName": "DedicatedServer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "brand": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "OP": {
+      "type": "string",
+      "required": true
+    },
+    "processor": {
+      "type": "string",
+      "required": true
+    },
+    "RAM": {
+      "type": "integer",
+      "required": true
+    },
+    "SSD": {
+      "type": "integer",
+      "required": true
+    },
+    "ID": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::cart.cart",
+      "mappedBy": "dedicated_server_id"
+    }
+  }
+}

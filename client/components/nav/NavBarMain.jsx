@@ -1,10 +1,11 @@
 import styles from "./NavBarMain.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
+import {magic} from "../../lib/magic-client";
 
-const NavBarMain = ({ username }) => {
+const NavBarMain = () => {
   const router = useRouter();
 
   const [showDropdown, setShowDropdown] = useState({
@@ -13,10 +14,26 @@ const NavBarMain = ({ username }) => {
     userState: false,
   });
 
+  const [username, setUsername] = useState("");
   // const handleOnClickHome = (e) => {
   //   e.preventDefault();
   //   router.push("/");
   // };
+
+  useEffect(() => {
+    async function getUsername() {
+      try {
+        const { email } = await magic.user.getMetadata();
+        if (email) {
+          setUsername(email);
+        }
+      } catch (error) {
+        console.log("Error retrieving email:", error);
+      }
+    }
+    getUsername();
+  }, []);
+
 
   const handleShowDropdown = ({ target }) => {
     console.log(target)
@@ -37,6 +54,20 @@ const NavBarMain = ({ username }) => {
           : (showDropdown.userState = false),
     });
   };
+
+  const handleSignout = async (e) => {
+    e.preventDefault();
+
+    try {
+      await magic.user.logout();
+      console.log(await magic.user.isLoggedIn());
+      router.push("/login");
+    } catch (error) {
+      console.error("Error logging out", error);
+      router.push("/login");
+    }
+  };
+
   return (
     <div className={styles.container}>
       <nav className={styles.wrapper}>
@@ -63,16 +94,16 @@ const NavBarMain = ({ username }) => {
           {showDropdown.dominioState && (
             <div className={styles.navDropdown}>
               <div>
-                <Link href="/dominio/registro-de-dominios" className={styles.linkName}>
+                <Link href="/dominio/dominio-com-co" className={styles.linkName}>
                 Encuentra tu Nombre en Internet
                 </Link>
-                <Link href="/dominio/dominio-com-co" className={styles.linkName}>
+                {/* <Link href="/dominio/registro-de-dominios" className={styles.linkName}>
                   Dominios .CO Y COM..CO
-                </Link>
+                </Link> */}
                 <Link href="/dominio/email-profesional" className={styles.linkName}>
                   Correo profesional
                 </Link>
-                <Link href="/dominio/registro-privado" className={styles.linkName}>
+                {/* <Link href="/dominio/registro-privado" className={styles.linkName}>
                  Registro privado de Dominio
                 </Link>
                 <Link href="/dominio/transferencia-dominios" className={styles.linkName}>
@@ -80,8 +111,8 @@ const NavBarMain = ({ username }) => {
                 </Link>
                 <Link href="/dominio/whois" className={styles.linkName}>
                Whois
-                </Link>
-             
+                </Link> */}
+            
               </div>
             </div>
           )}
@@ -108,18 +139,18 @@ const NavBarMain = ({ username }) => {
                 <Link href="/hosting/web-hosting" className={styles.linkName}>
                 Web Hosting
                 </Link>
-                <Link href="/hosting/windows-hosting" className={styles.linkName}>
+                {/* <Link href="/hosting/windows-hosting" className={styles.linkName}>
                   Windows Hosting
-                </Link>
+                </Link> */}
                 <Link href="/hosting/hosting-cloud-servers-vps" className={styles.linkName}>
                  Cloud Hosting
                 </Link>
-                <Link href="/hosting/wordpress-hosting" className={styles.linkName}>
+                {/* <Link href="/hosting/wordpress-hosting" className={styles.linkName}>
                  Wordpress Hosting
-                </Link>
-                <Link href="/hosting/hosting-para-revendedores" className={styles.linkName}>
+                </Link> */}
+                {/* <Link href="/hosting/hosting-para-revendedores" className={styles.linkName}>
               Hosting para revendedores
-                </Link>
+                </Link> */}
                 <Link href="/hosting/servidores-dedicados" className={styles.linkName}>
              Servidores dedicados
                 </Link>
@@ -148,9 +179,9 @@ const NavBarMain = ({ username }) => {
             {showDropdown.userState && (
               <div className={styles.navDropdown}>
                 <div>
-                  <Link href="/login" className={styles.linkName}>
+                 <a className={styles.linkName} onClick={handleSignout}>
                     Sign out
-                  </Link>
+                  </a>
                   <div className={styles.lineWrapper}></div>
                 </div>
               </div>
