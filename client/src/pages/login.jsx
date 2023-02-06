@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "../styles/Login.module.css";
 import {magic} from "../../lib/magic-client"
-import { getNamedMiddlewareRegex } from "next/dist/shared/lib/router/utils/route-regex";
 
 const Login = () => {
   const [email, setEmail] = useState("");
