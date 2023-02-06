@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const [services, setServices] = useState([]);
+  /* const [services, setServices] = useState([]);
   const { Services } = useServices(services);
 
 //llamado a la api
@@ -16,7 +16,7 @@ export default function Home() {
     setServices(resultado.data);
   }
 obtenerServices();
- }, []);
+ }, []); */
 
 
 
