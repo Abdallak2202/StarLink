@@ -34,6 +34,7 @@ const Login = () => {
     if (ValidateEmail(email)) {
 
       // route to dashboard
+      //  log in a user by their email
       try {
         setIsLoading(true)
         const didToken = await magic.auth.loginWithMagicLink({
