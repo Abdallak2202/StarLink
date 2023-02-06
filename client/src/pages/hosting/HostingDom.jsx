@@ -27,7 +27,7 @@ import HomeDominio from "../../styles/HomeDominio.module.css";
         <label for="helper-radio" class="font-medium text-gray-900 dark:text-gray-300">Ya tengo un dominio, quiero transferirlo a StarLink </label>
         <p id="helper-radio-text" class="text-xs font-normal text-gray-500 dark:text-gray-300">¿Tienes un dominio en otra empresa? Tráelo a DonWeb y obtén 1 año de renovación gratis.</p>
     </div>
-    <div>
+    {/* <div>
 <form class="flex items-center">   
     <label for="simple-search" class="sr-only">Search</label>
     <div class="relative w-full">
@@ -42,7 +42,7 @@ import HomeDominio from "../../styles/HomeDominio.module.css";
         <span class="sr-only">Search</span>
     </button>
 </form>
-</div>
+</div> */}
     
 </div>
 <br/>
@@ -78,7 +78,7 @@ import HomeDominio from "../../styles/HomeDominio.module.css";
 </form>
 <br/> <br/>
 
-<Link  href=''>
+<Link  href=' https://upload.wikimedia.org/wikipedia/commons/1/1e/SITIO-EN-CONSTRUCCION.jpg'>
               <button type='submit'class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Continuar</button>
               </Link>
 

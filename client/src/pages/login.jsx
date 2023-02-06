@@ -53,11 +53,11 @@ const Login = () => {
         setIsLoading(false);
         setUserMsg("Something went wrong loggin in");
       }
-    } else {
-      setIsLoading(false);
-      // show user message
-      setUserMsg("Enter a valid email address");
-    }
+    // } else {
+    //   setIsLoading(false),
+    //   // show user message
+    //   setUserMsg("Enter a valid email address");
+    // }
   };
 
   const handleOnChangeEmail = (e) => {
