@@ -36,7 +36,7 @@ const Login = () => {
 
       if (emailsAllowed.some(emailTest)) {
       // if (email === "joseluy123@gmail.com") {
-      // route to dashboard
+      // route to dashboa
       try {
         setIsLoading(true)
         const didToken = await magic.auth.loginWithMagicLink({
