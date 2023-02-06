@@ -29,7 +29,7 @@ obtenerServices();
       </Head>
       <main className={styles.main}>
 
-      <Spline className={styles.Spline} scene="https://prod.spline.design/pE91QTxCL5UWQMbK/scene.splinecode" />
+      {/* <Spline className={styles.Spline} scene="https://prod.spline.design/pE91QTxCL5UWQMbK/scene.splinecode" /> */}
 
       </main>
     </>
