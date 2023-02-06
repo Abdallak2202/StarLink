@@ -28,11 +28,11 @@
       "required": true
     },
     "racks": {
-      "type": "integer",
+      "type": "text",
       "required": true
     },
     "consumption": {
-      "type": "integer",
+      "type": "float",
       "required": true
     },
     "ID": {
