@@ -1,12 +1,21 @@
 .container{
-
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2rem;
   
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flipCard {
   background-color: transparent;
-
+  width: 26.5rem;
+  height: 17rem;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  display: flex;
 }
 
 /* This container is needed to position the front and back side */
@@ -19,10 +28,133 @@
   transform-style: preserve-3d;
 }
 
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flipCard:hover .flipCardInner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flipCardFront, .flipCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flipCardFront {
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(80, 27, 98, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 3rem;
+}
+
 .flipCardFront:hover {
   box-shadow: 0 8px 16px 0 #59a0d0;
 }
 
 /* Style the back side */
 .flipCardBack {
+  /* background-image: radial-gradient(circle, rgba(24, 180, 247, 1) 0%, rgba(15, 37, 123, 1) 100%); */
+  background-image: url("/cloud pedacito.png");
+  background-repeat: no-repeat;
+  display: block;
+  padding: 2rem;
+  color: white;
+  transform: rotateY(180deg);
+}
+.h1{
+  text-shadow: 2px 3px 0px rgba(202, 202, 68, 0.46);
+  font-size: 1.8rem;
+ width: 22rem;
+ padding-right: 1.5rem;
+ padding-top: 0.1rem;
+
+}
+.h1Dominio{
+  background: linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 6rem;
+  text-shadow:2px 3px 0px rgba(147, 198, 234, 0.46);
+  margin-top: -3rem;
+  
+  
+}
+.h1Dominioo{
+  background: linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.9rem;
+
+  text-shadow:2px 3px 0px rgba(147, 198, 234, 0.46);
+  margin-top: -3rem;
+  
+  
+}
+.h1Dominiooo{
+  background: linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 5.3rem;
+
+  text-shadow:2px 3px 0px rgba(147, 198, 234, 0.46);
+  margin-top: -3rem;
+  
+  
+}
+.h1Dominioooo{
+  background: linear-gradient(90deg, #12C2E9 0%, #c471ed 50%, #f64f59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 5rem;
+
+  text-shadow:2px 3px 0px rgba(147, 198, 234, 0.46);
+  margin-top: -3rem;
+  
+  
+}
+.h2{
+  text-shadow: 2px 3px 0px rgba(25,159,192,0.46);
+ font-size: 6rem;
+width: 6rem;
+height: 4rem;
+
+}
+
+.h2Dominio{
+  font-size: 3rem;
+  padding: 0.1rem;
+  text-shadow: 2px 3px 0px rgb(147, 161, 218);
+  color: rgba(59, 45, 106)
+}
+.h3{
+color: #fbf6f6;
+text-shadow: 2px 3px 0px rgb(9, 10, 18);
+font-size: 5rem;
+padding: 0.4rem;
+background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+border-radius: 1rem;
+}
+
+
+.p{
+  font-size: 1.5rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+padding: 0.7rem;
+text-align: center;
+color: #FFFFFF;
+text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 10px, #73f2eb 0px 0px 10px, #259d9f 0px 0px 20px, #687cec 0px 0px 30px, #3b6471 0px 0px 40px, #80dcde 0px 0px 70px;
+/* text-shadow: 4px 3px 0px #7A7A7A; */
+-webkit-text-fill-color: rgb(5, 23, 20);
+/* -webkit-text-stroke: 0.07rem rgb(16, 11, 11); */
+color: #FFFFFF;
+color: #FFFFFF;
+
+
+
+}
 
