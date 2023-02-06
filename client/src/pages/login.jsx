@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "../styles/Login.module.css";
 import {magic} from "../../lib/magic-client"
-import { getNamedMiddlewareRegex } from "next/dist/shared/lib/router/utils/route-regex";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -32,8 +31,12 @@ const Login = () => {
     e.preventDefault();
     
     if (ValidateEmail(email)) {
+      const emailsAllowed =["joseluy123@gmail.com","abdallak2202@gmail.com","martinezf1985@gmail.com","perezea1010@gmail.com", "jesuperez05@gmail.com","silvinaaguello@gmail.com","luishg.ingeniero@gmail.com"]
+      const emailTest = element => element === email;
 
-      // route to dashboard
+      if (emailsAllowed.some(emailTest)) {
+      // if (email === "joseluy123@gmail.com") {
+      // route to dashboard email antiguo merge
       try {
         setIsLoading(true)
         const didToken = await magic.auth.loginWithMagicLink({
