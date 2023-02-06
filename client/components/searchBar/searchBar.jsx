@@ -9,15 +9,13 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    Router.push(`/helpers/dataSearchBar=${searchTerm}`);
-  
+    Router.push({
+      pathname: 'pages/dominio/formSearchBar.jsx',
+      query: { query: searchTerm }
 
-  
-    console.log(`Search results for "${searchTerm}":`);
-
+    });
   };
-  
-
+ 
 
   return (
     <form onSubmit={handleSubmit}>
@@ -47,6 +45,6 @@ const SearchBar = () => {
          
           </div>
           </form>
-  )
-}
+  );
+};
 export default SearchBar;

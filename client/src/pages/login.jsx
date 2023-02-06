@@ -34,6 +34,7 @@ const Login = () => {
     if (ValidateEmail(email)) {
 
       // route to dashboard
+      //  log in a user by their email
       try {
         setIsLoading(true)
         const didToken = await magic.auth.loginWithMagicLink({
@@ -53,12 +54,12 @@ const Login = () => {
         setIsLoading(false);
         setUserMsg("Something went wrong loggin in");
       }
-  //   } else {
-  //     setIsLoading(false);
-  //     // show user message
-  //     setUserMsg("Enter a valid email address");
-  //   }
-   };
+    } else {
+      setIsLoading(false);
+      // show user message
+      setUserMsg("Enter a valid email address");
+    }
+  };
 
   const handleOnChangeEmail = (e) => {
     setUserMsg("");
