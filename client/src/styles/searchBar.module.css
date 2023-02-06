@@ -1,0 +1,49 @@
+.containerSearch {
+    background-image:url("/cloud.png");
+    /* background-color: rgb(94, 204, 241); */
+    padding: 5rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+   box-shadow: 3px 3px 3px 3px rgba(21, 10, 103, 0.3) ;
+   
+}
+
+.inputSearch {
+    display:inline-flex
+}
+.inputResults {
+    position: relative;
+    
+}
+.results {
+background-color: black;
+color: aliceblue;
+padding: 0.4rem;
+font-weight: 800;
+font-size: smaller;
+width: 100%;
+position:absolute;
+top:100vh;
+
+
+}
+.placeholder {
+    width: 60vh;
+    height: 100%;
+    color:rgb(15, 18, 61);
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    padding-left: 0.4rem;
+
+}
+.icon{
+    width: 42 px;
+    height: 42px;
+    background-color: rgb(15, 18, 61);
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+ 
+
+
+}

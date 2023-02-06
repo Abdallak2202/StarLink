@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "housings",
+  "info": {
+    "singularName": "housing",
+    "pluralName": "housings",
+    "displayName": "Housing"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "floorSpace": {
+      "type": "float",
+      "required": true
+    },
+    "racks": {
+      "type": "integer",
+      "required": true
+    },
+    "consumption": {
+      "type": "integer",
+      "required": true
+    },
+    "ID": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::cart.cart",
+      "mappedBy": "housing_id"
+    }
+  }
+}

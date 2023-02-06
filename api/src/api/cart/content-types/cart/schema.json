@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carts",
+  "info": {
+    "singularName": "cart",
+    "pluralName": "carts",
+    "displayName": "Cart",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "customer_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::customer.customer",
+      "inversedBy": "ID"
+    },
+    "cloud_server_id": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::cloud-server.cloud-server",
+      "inversedBy": "ID"
+    },
+    "dedicated_server_id": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::dedicated-server.dedicated-server",
+      "inversedBy": "ID"
+    },
+    "housing_id": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::housing.housing",
+      "inversedBy": "ID"
+    },
+    "domain_id": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::domain.domain",
+      "inversedBy": "ID"
+    },
+    "totalPrice": {
+      "type": "decimal",
+      "required": true
+    },
+    "ID": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order",
+      "mappedBy": "cart_id"
+    }
+  }
+}

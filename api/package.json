@@ -1,31 +1,30 @@
 {
   "name": "api",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
   "scripts": {
-    "start": "node index.js",
-    "test": "mocha -w ./tests/**/*.spec.js"
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "devDependencies": {},
   "dependencies": {
-    "axios": "^1.2.6",
-    "body-parser": "^1.20.1",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "morgan": "^1.10.0",
-    "pg": "^8.9.0",
-    "sequelize": "^6.28.0"
+    "@strapi/strapi": "4.6.0",
+    "@strapi/plugin-users-permissions": "4.6.0",
+    "@strapi/plugin-i18n": "4.6.0",
+    "better-sqlite3": "7.4.6"
   },
-  "devDependencies": {
-    "chai": "^4.3.7",
-    "mocha": "^10.2.0",
-    "nodemon": "^2.0.20",
-    "supertest": "^6.3.3",
-    "supertest-session": "^4.1.0"
-  }
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "6c15c04c-21e7-4a44-aec9-7a4eccb1a1ba"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
 }
