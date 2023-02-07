@@ -3,25 +3,23 @@ import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
+import Spline from '@splinetool/react-spline'
 
 export default function Home() {
-  const [services, setServices] = useState([]);
-  const { Services } = useServices(services);
+//   const [services, setServices] = useState([]);
+//   const { Services } = useServices(services);
 
-//llamado a la api
- useEffect(() => {
-  const obtenerServices = async () => {
-    const resultado = await axios.get('http://localhost:1337/api/cloudserver1s');
+// llamado a la api
+//  useEffect(() => {
+//   const obtenerServices = async () => {
+//     const resultado = await axios.get('http://localhost:1337/api/cloudserver1s');
 
-    setServices(resultado.data);
-  }
-obtenerServices();
- }, []);
+//     setServices(resultado.data);
+//   }
+// obtenerServices();
+//  }, []);
 
-
-
-
-  return (
+ return (
     <>
       <Head>
         <title>StarLink</title>
