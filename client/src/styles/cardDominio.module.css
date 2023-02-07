@@ -12,7 +12,7 @@
 .flipCard {
   background-color: transparent;
   width: 26.5rem;
-  height: 17rem;
+  height: 24rem;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
   display: flex;
@@ -61,7 +61,7 @@
   background-image: url("/cloud pedacito.png");
   background-repeat: no-repeat;
   display: block;
-  padding: 2rem;
+  padding: 1rem;
   color: white;
   transform: rotateY(180deg);
 }
