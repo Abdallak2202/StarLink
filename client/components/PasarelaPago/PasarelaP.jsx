@@ -79,7 +79,7 @@ const CheckoutForm = () => {
   );
 };
 
-export default function PasarelaPagos() {
+export default function CardPagos() {
   return (
     <Elements stripe={stripePromise}>
       <div className="container p-4">
