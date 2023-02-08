@@ -19,7 +19,7 @@ export const CardHosting = () => {
 <div class="">
 <div class="text-center font-semibold">
     <h1 class="text-5xl">
-        <span class="text-blue-700 tracking-wide">El Web Hosting  que ti sitio merece </span>
+        <span class="text-blue-700 tracking-wide">El Web Hosting  que tu sitio merece </span>
         <br/>
         <span>desde$399/mes</span>
         <br/><br/>
