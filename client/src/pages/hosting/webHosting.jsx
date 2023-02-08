@@ -1,5 +1,5 @@
 import React from 'react'
- import CardHosting from '../../../components/card-hosting/CardHosting'
+import CardHosting from '../../../components/card-hosting/CardHosting'
 
 
 export const webHosting = () => {
