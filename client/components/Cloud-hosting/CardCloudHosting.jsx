@@ -1,3 +1,4 @@
+import Link from 'next/link';
 
 export default function CardCloud () {
   return (
@@ -5,26 +6,31 @@ export default function CardCloud () {
         <div>
             <br/> <br/> <br/>
             <br/> <br/> <br/>
+            <br/> <br/> <br/>
 <link rel="preconnect" href="https://fonts.gstatic.com"/> 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<body class="font-sans bg-gray-100">
-<div class="min-h-screen flex justify-center items-center">
-<div class="">
-<div class="text-center font-semibold">
-    <h1 class="text-5xl">
-        <span class="text-blue-700 tracking-wide">El servicio Cloud que necesitas </span>
-        <br/>
-        <span>desde$700/mes</span>
-        <br/><br/>
-        <span class="text-blue-700 tracking-wide">Pesos Argentinos ver planes</span>
+<body className="font-sans bg-gray-100">
+<div className="min-h-screen flex justify-center ">
+<div className="">
+<div className="text-center font-semibold">
+    <h2 className="text-5xl">
+      <span className="text-success">Cloud Servers en America Latina</span>
+    </h2>
+    <br/>
+    <h1 className="text-8xl">
+        <span className="text-blue-700 tracking-wide">Alojamiento rápido, escalable y confiable </span>
     </h1>
-    <br/><br/>
-    
-    <p class="pt-6 text-xl text-gray-400 font-normal w-full px-8 md:w-full">
-    ¡Simple, rápido y confiable!
-En Pesos Argentinos <br/> sin impuesto país ni sorpresas
-    </p>
+    <br/>
+    <h1 className="text-8xl">
+        <span className="text-blue-700 tracking-wide">para tus aplicaciones</span>
+    </h1>
+    <br/>
+    <br/>
+    <Link  href='hosting-cloud-servers-vps'>
+  <button type="button" class="text-white text-6xl bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center text-center">Ver Planes</button>
+</Link>
+        
 </div>
 </div>
 </div>
