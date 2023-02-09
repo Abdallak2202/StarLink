@@ -1,0 +1,87 @@
+/************************/
+/* FOOTER*/
+/************************/
+
+.footer {
+    padding: 6rem 2rem;
+    border-top: 1px solid #eee;
+    max-width: 100vw;
+    overflow-x: hidden;
+    background: url("/static/backgrounds/mesh-gradient.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    height: 100%;
+    
+  }
+  
+  .gridFooter {
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+    grid-column-gap: 2rem
+  }
+  .logoCol {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footerLogo {
+   display: block;
+   margin-bottom: 3.2rem;
+   max-width: 48%;
+  
+  }
+  
+  .socialLinks {
+    list-style: none;
+    display: flex;
+    gap: 2.4rem;
+  }
+  
+  .socialIcon {
+  height: 2.4rem;
+  width: 2.4rem;
+  }
+  
+  .copyright {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #fff;
+    margin-top: auto;
+  }
+  
+  .footerHeading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 4rem;
+  }
+  
+  .contacts {
+   font-style: normal; 
+   font-size: 1.6rem;
+   line-height: 1.6;
+  }
+  
+  .address {
+    margin-bottom: 2.4rem;
+  }
+  
+  .footerNav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  
+  .footerLink:link,
+  .footerLink:visited {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: inherit;
+  transition: all 0.3s;
+  }
+  
+  .footerLink:hover,
+  .footerLink:active {
+    color: #703e76;
+  }
