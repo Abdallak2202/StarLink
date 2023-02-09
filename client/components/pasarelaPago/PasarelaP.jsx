@@ -19,7 +19,6 @@ const stripePromise = loadStripe(
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
-
   const [loading, setLoading] = useState(false);
   
   const handleSubmit = async (e) => {
@@ -34,11 +33,13 @@ const CheckoutForm = () => {
     if (!error) {
       //console.log(paymentMethod);
       const { id } = paymentMethod;
+
       try {
         const { data } /*<-- aca podemos traer el objeto respónse, tener en cuenta esto por si necesitamos mas datos*/ = await axios.post('http://localhost:3001/checkout', {
           id,
           amount: 5*100 //se multipilca para llevarlo a centimos, no se por que? no lo entendi
         })
+        
         console.log(data); //necesitamos ver este data que es enviada al backend, para esto debemos crear alla esa ruta
   
         elements.getElement(CardElement).clear();

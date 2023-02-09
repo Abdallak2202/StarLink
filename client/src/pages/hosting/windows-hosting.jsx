@@ -6,7 +6,7 @@
 
 export default windowsHosting; */
 
-import CardPagos from "../../../components/PasarelaPago/PasarelaP";
+import CardPagos from "../../../components/pasarelaPago/PasarelaP";
 import  SearchBar  from "components/searchBar/searchBar";
 
 
