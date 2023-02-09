@@ -1,33 +1,33 @@
 const express = require("express");
 const Stripe = require("stripe");
-const stripe = new Stripe(process.env.LLAVE_PRIVADA_STRIPE); /*Esta clave deberia estar en un .env*/
-
 const cors = require("cors");
 
 const app = express();
 
+const stripe = new Stripe(process.env.LLAVE_PRIVADA_STRIPE); /*Esta clave deberia estar en un .env*/
 
-app.use(cors({ origin: "*" }));
-app.use(express.json());
+app.use(cors({ origin: "http://localhost:3000" }));// esto lo usamos para que pueda resivir informacion desde distintos puertos, en este caso el 3000
+app.use(express.json()); //esto para que el backend pueda entender todos los objetos json que llegan van llegando
 
 app.post("/checkout", async (req, res) => {
   //console.log(req.body);
-  const { id, amount } = req.body;
-
   try {
+    const { id, amount } = req.body;
+
     const payment =  await stripe.paymentIntents.create({
       amount,
-      currency: "USD",
+      currency: "USD",//ver si el precio sera en dolares o moneda argentina
       description: "informacion debe venir de la base de datos",
       payment_method: id, //viene del front
       confirm: true,
     });
 
     console.log(payment);
-    return res.status(200).json({message: "Succesfull payment"});
+
+    res.status(200).json({message: "Succesfull payment"});
   } catch (error) {
     console.log(error);
-    return res.json({ message: error.raw.message });
+    res.json({ message: error.raw.message });
   }
 });
 
