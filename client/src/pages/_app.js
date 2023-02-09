@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import {magic} from "../../lib/magic-client";
 import "../styles/globals.css";
 import Loading from 'components/loading/Loading';
+import Footer from 'components/footer/Footer';
 
 
 
@@ -44,6 +45,7 @@ export default function App({ Component, pageProps }) {
   {router.pathname !== "/login" && 
   <NavBarMain />}
   <Component {...pageProps} />;
+  {router.pathname !== "/login" && <Footer />}
   </div>
 }
     </>
