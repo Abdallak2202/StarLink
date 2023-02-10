@@ -28,6 +28,7 @@ export const CardHosting = () => {
     </h1>
     <br/><br/>
     
+    
     <p class="pt-6 text-3xl text-violet-500   font-extrabold  w-full px-18 md:w-full">
     ¡Simple, rápido y confiable!
 En Pesos Argentinos <br/> sin impuesto país ni sorpresas

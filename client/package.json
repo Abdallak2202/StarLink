@@ -12,6 +12,7 @@
     "@next/font": "13.1.6",
     "@splinetool/react-spline": "^2.2.5",
     "@splinetool/runtime": "^0.9.210",
+    "classnames": "^2.3.2",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "magic-sdk": "^13.1.0",
