@@ -1,12 +1,11 @@
-import NavBarMain from 'components/nav/NavBarMain'
+import NavBarMain from "components/nav/NavBarMain";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import {magic} from "../../lib/magic-client";
+import { magic } from "../../lib/magic-client";
 import "../styles/globals.css";
-import Loading from 'components/loading/Loading';
-import Footer from 'components/footer/Footer';
-
-
+import Loading from "components/loading/Loading";
+import Footer from "components/footer/Footer";
+import { getRouteMatcher } from "next/dist/shared/lib/router/utils/route-matcher";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
@@ -15,18 +14,30 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     const handleLoggedIn = async () => {
       const isLoggedIn = await magic.user.isLoggedIn();
-     
-      if (isLoggedIn) {
-        // route to /
-        router.push("/");
-      } else {
-        // route to /login
+      // switch (isLoggedIn) {
+      //   case true :
+      //     router.push("/")
+      //   default:
+      //     router.push("/login")
+      // }
+      if (router.pathname !== "/mis-compras") router.push(router.pathname);
+      if (router.pathname === "/mis-compras" && !isLoggedIn) {
         router.push("/login");
+      } else {
+        router.push(router.pathname);
       }
-    
+
+      //   if (isLoggedIn) {
+      //     // route to /
+      //     router.push("/");
+      //   } else {
+      //     // route to /login
+      //     router.push("/login");
+      //   }
+      // };
     };
     handleLoggedIn();
-  }, []);
+  }, [router.pathname]);
 
   useEffect(() => {
     const handleComplete = () => {
@@ -42,14 +53,15 @@ export default function App({ Component, pageProps }) {
   }, [router]);
   return (
     <>
-      {isLoading ? <Loading />
-  :<div>
-  {router.pathname !== "/login" && 
-  <NavBarMain />}
-  <Component {...pageProps} />;
-  {router.pathname !== "/login" && <Footer />}
-  </div>
-}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div>
+          {router.pathname !== "/login" && <NavBarMain />}
+          <Component {...pageProps} />;
+          {router.pathname !== "/login" && <Footer />}
+        </div>
+      )}
     </>
-)}
-
+  );
+}
