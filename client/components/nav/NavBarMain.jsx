@@ -15,7 +15,7 @@ const NavBarMain = () => {
     cloudState: false,
   });
 
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("Ingresar");
   // const handleOnClickHome = (e) => {
   //   e.preventDefault();
   //   router.push("/");
@@ -24,7 +24,9 @@ const NavBarMain = () => {
   useEffect(() => {
     async function getUsername() {
       try {
-        const { email } = await magic.user.getMetadata();
+        const { email, issuer } = await magic.user.getMetadata();
+        const didToken = await magic.user.getIdToken();
+        console.log({ didToken });
         if (email) {
           setUsername(email);
         }
@@ -73,12 +75,18 @@ const NavBarMain = () => {
     }
   };
 
+  const handleSignIn = (e) => {
+    e.preventDefault();
+     router.push("/login");
+  
+  };
+
   return (
     <div className={styles.container}>
       <nav className={styles.wrapper}>
-        <div className={styles.logoLink}>
+        <Link className={styles.logoLink} href="/">
           StarkLink
-        </div>
+        </Link>
 
         <div>
           <button
@@ -141,7 +149,7 @@ const NavBarMain = () => {
           {showDropdown.hostingState && (
             <div className={styles.navDropdown}>
                <div>
-                <Link href="/hosting/web-hosting" className={styles.linkName}>
+                <Link href="/hosting/webHosting" className={styles.linkName}>
                 Web Hosting
                 </Link>
                 {/* <Link href="/hosting/windows-hosting" className={styles.linkName}>
@@ -164,6 +172,7 @@ const NavBarMain = () => {
             </div>
           )}
         </div>
+<<<<<<< HEAD
 
         <div>
           <button
@@ -213,6 +222,10 @@ const NavBarMain = () => {
 
 
 
+=======
+        <Link href='/mis-compras' className={styles.logoCar}><ion-icon name="cart-outline" ></ion-icon></Link>
+        
+>>>>>>> 10533637e96f06f9ad36675227a2a3c47dfea2a6
         <div className={styles.navContainer}>
           <div>
             <button
@@ -233,9 +246,12 @@ const NavBarMain = () => {
             {showDropdown.userState && (
               <div className={styles.navDropdown}>
                 <div>
-                 <a className={styles.linkName} onClick={handleSignout}>
+                {username !== "Ingresar" && <a className={styles.linkName} onClick={handleSignout}>
                     Sign out
-                  </a>
+                  </a>}
+                  {username === "Ingresar" && <a className={styles.linkName} onClick={handleSignIn}>
+                    Sign In
+                  </a>}
                   <div className={styles.lineWrapper}></div>
                 </div>
               </div>
