@@ -6,7 +6,7 @@ import Link from 'next/link'
 export const CardHosting = () => {
   return (
     <div>
-        <div className='bg-cyan-400'  >
+        <div className='bg-purple-300'  >
             <br/> <br/> <br/>
             <br/> <br/> <br/>
 
@@ -14,7 +14,7 @@ export const CardHosting = () => {
 <link rel="preconnect" href="https://fonts.gstatic.com"/> 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<body class="font-sans bg-cyan-400  ">
+<body class="font-sans bg-purple-300  ">
 <div class="min-h-screen flex justify-center items-center">
 <div class="">
 <div class="text-center font-semibold">
@@ -34,8 +34,10 @@ export const CardHosting = () => {
 En Pesos Argentinos <br/> sin impuesto país ni sorpresas
     </p>
 </div>
-{/* <-----------card 1-----------------> */}
+{/* <-----------containner de cards-----------------> */}
 <div class="pt-24 flex flex-row">
+
+    {/* <-----------card 1-----------------> */}
     
     <div class="w-96 p-8 bg-white text-center rounded-3xl pr-16 shadow-xl">
         <h1 class="text-green font-semibold text-violet-500  text-2xl">Basic</h1>
