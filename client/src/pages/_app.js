@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     const handleLoggedIn = async () => {
       const isLoggedIn = await magic.user.isLoggedIn();
+     
       if (isLoggedIn) {
         // route to /
         router.push("/");
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }) {
         // route to /login
         router.push("/login");
       }
+    
     };
     handleLoggedIn();
   }, []);

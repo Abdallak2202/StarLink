@@ -64,7 +64,7 @@
 .navContainer {
   display: flex;
   align-items: flex-start;
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 
 .usernameBtn {
@@ -162,5 +162,10 @@
   max-height: 500px;
 }
 
+.logoCar{
+  font-size: 3rem;
+  display: flex;
+  margin-left: auto;
+}
 
 

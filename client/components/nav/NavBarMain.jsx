@@ -23,7 +23,9 @@ const NavBarMain = () => {
   useEffect(() => {
     async function getUsername() {
       try {
-        const { email } = await magic.user.getMetadata();
+        const { email, issuer } = await magic.user.getMetadata();
+        const didToken = await magic.user.getIdToken();
+        console.log({ didToken });
         if (email) {
           setUsername(email);
         }
@@ -159,6 +161,8 @@ const NavBarMain = () => {
             </div>
           )}
         </div>
+        <Link href='/mis-compras' className={styles.logoCar}><ion-icon name="cart-outline" ></ion-icon></Link>
+        
         <div className={styles.navContainer}>
           <div>
             <button
