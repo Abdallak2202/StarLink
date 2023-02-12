@@ -31,18 +31,14 @@ const Login = () => {
     e.preventDefault();
     
     if (ValidateEmail(email)) {
-<<<<<<< HEAD
-      if (email === "jesuperez05@gmail.com") {
-      // route to dashboard
-      //  log in a user by their email
-=======
+
       const emailsAllowed =["joseluy123@gmail.com","abdallak2202@gmail.com","martinezf1985@gmail.com","perezea1010@gmail.com", "jesuperez05@gmail.com","silvinaaguello@gmail.com","luishg.ingeniero@gmail.com"]
       const emailTest = element => element === email;
 
       if (emailsAllowed.some(emailTest)) {
       // if (email === "joseluy123@gmail.com") {
       // route to dashboard email antiguo merge
->>>>>>> 10533637e96f06f9ad36675227a2a3c47dfea2a6
+
       try {
         setIsLoading(true)
         const didToken = await magic.auth.loginWithMagicLink({

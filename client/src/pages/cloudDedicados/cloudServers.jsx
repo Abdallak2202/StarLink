@@ -3,7 +3,7 @@ import Contenido from "components/cloudServers/contenido";
 
 export const cloudServers = () => {
   return (
-    <div>
+    <div className="pt-10">
       <Contenido/>
 
     </div>

@@ -172,7 +172,7 @@ const NavBarMain = () => {
             </div>
           )}
         </div>
-<<<<<<< HEAD
+
 
         <div>
           <button
@@ -222,10 +222,10 @@ const NavBarMain = () => {
 
 
 
-=======
+
         <Link href='/mis-compras' className={styles.logoCar}><ion-icon name="cart-outline" ></ion-icon></Link>
         
->>>>>>> 10533637e96f06f9ad36675227a2a3c47dfea2a6
+
         <div className={styles.navContainer}>
           <div>
             <button
