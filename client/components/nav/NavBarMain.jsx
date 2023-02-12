@@ -12,6 +12,7 @@ const NavBarMain = () => {
     dominioState: false,
     hostingState: false,
     userState: false,
+    cloudState: false,
   });
 
   const [username, setUsername] = useState("");
@@ -48,6 +49,10 @@ const NavBarMain = () => {
         name === "hostingState"
           ? !showDropdown.hostingState
           : (showDropdown.hostingState = false),
+      cloudState:
+          name === "cloudState"
+            ? !showDropdown.cloudState
+            : (showDropdown.cloudState = false),
       userState:
         name === "userState"
           ? !showDropdown.userState
@@ -159,6 +164,55 @@ const NavBarMain = () => {
             </div>
           )}
         </div>
+
+        <div>
+          <button
+            className={styles.usernameBtn}
+            name="cloudState"
+            onClick={handleShowDropdown}
+          >
+            cloud & Dedicados
+            <Image
+              src="static/icons/expand_more.svg"
+              alt="Expand more"
+              width={24}
+              height={24}
+              name="cloudState"
+            />
+          </button>
+
+          {showDropdown.cloudState && (
+            <div className={styles.navDropdown}>
+              <div>
+                <Link href="/cloudDedicados/cloudServers" className={styles.linkName}>
+                cloud Servers
+                </Link>
+                {/* <Link href="/dominio/registro-de-dominios" className={styles.linkName}>
+                  Dominios .CO Y COM..CO
+                </Link> */}
+                <Link href="/cloudDedicados/servidoresDedicados" className={styles.linkName}>
+                servidores Dedicados
+                </Link>
+                {/* <Link href="/dominio/registro-privado" className={styles.linkName}>
+                 Registro privado de Dominio
+                </Link>
+                <Link href="/dominio/transferencia-dominios" className={styles.linkName}>
+                Transfiere tu dominio a DonWeb
+                </Link>
+                <Link href="/dominio/whois" className={styles.linkName}>
+               Whois
+                </Link> */}
+            
+              </div>
+            </div>
+          )}
+        </div>
+
+
+
+
+
+
         <div className={styles.navContainer}>
           <div>
             <button
