@@ -14,7 +14,7 @@ const NavBarMain = () => {
     userState: false,
   });
 
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("Ingresar");
   // const handleOnClickHome = (e) => {
   //   e.preventDefault();
   //   router.push("/");
@@ -68,6 +68,12 @@ const NavBarMain = () => {
       console.error("Error logging out", error);
       router.push("/login");
     }
+  };
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+     router.push("/login");
+  
   };
 
   return (
@@ -183,9 +189,12 @@ const NavBarMain = () => {
             {showDropdown.userState && (
               <div className={styles.navDropdown}>
                 <div>
-                 <a className={styles.linkName} onClick={handleSignout}>
+                {username !== "Ingresar" && <a className={styles.linkName} onClick={handleSignout}>
                     Sign out
-                  </a>
+                  </a>}
+                  {username === "Ingresar" && <a className={styles.linkName} onClick={handleSignIn}>
+                    Sign In
+                  </a>}
                   <div className={styles.lineWrapper}></div>
                 </div>
               </div>
