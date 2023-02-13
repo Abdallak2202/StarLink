@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 * {
   margin: 0;
   padding: 0;
@@ -46,6 +51,3 @@ body {
   --blue: rgba(75, 85, 99, 1);
   --blue20: rgb(55, 65, 81);
 }
-@tailwind  base;
-@tailwind components;
-@tailwind utilities;

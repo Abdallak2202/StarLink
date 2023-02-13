@@ -12,9 +12,10 @@ const NavBarMain = () => {
     dominioState: false,
     hostingState: false,
     userState: false,
+    cloudState: false,
   });
 
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("Ingresar");
   // const handleOnClickHome = (e) => {
   //   e.preventDefault();
   //   router.push("/");
@@ -23,7 +24,9 @@ const NavBarMain = () => {
   useEffect(() => {
     async function getUsername() {
       try {
-        const { email } = await magic.user.getMetadata();
+        const { email, issuer } = await magic.user.getMetadata();
+        const didToken = await magic.user.getIdToken();
+        console.log({ didToken });
         if (email) {
           setUsername(email);
         }
@@ -48,6 +51,10 @@ const NavBarMain = () => {
         name === "hostingState"
           ? !showDropdown.hostingState
           : (showDropdown.hostingState = false),
+      cloudState:
+          name === "cloudState"
+            ? !showDropdown.cloudState
+            : (showDropdown.cloudState = false),
       userState:
         name === "userState"
           ? !showDropdown.userState
@@ -68,25 +75,25 @@ const NavBarMain = () => {
     }
   };
 
+  const handleSignIn = (e) => {
+    e.preventDefault();
+     router.push("/login");
+  
+  };
+
   return (
-    <div className="bg-gradient-to-r from-stone-900 to-blue-500 ... ">
-      <nav className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-2.5">
-        <div className="">
-          <Link href="index">
-            <button>
-          <img src="starLinkFondoNegro.jfif" alt="img not found"
-           className="h-15 mr-20 sm:h-20" />
-           </button>
-          </Link>
-        </div>
+    <div className={styles.container}>
+      <nav className={styles.wrapper}>
+        <Link className={styles.logoLink} href="/">
+          StarkLink
+        </Link>
 
         <div>
           <button
-            className=" text-indigo-50 hover:text-orange-400 mr-20 sm:h-20 "
+            className={styles.usernameBtn}
             name="dominioState"
             onClick={handleShowDropdown}
           >
-             <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
             Dominio
             <Image
               src="static/icons/expand_more.svg"
@@ -95,20 +102,18 @@ const NavBarMain = () => {
               height={24}
               name="dominioState"
             />
-            </span>
           </button>
 
           {showDropdown.dominioState && (
-            <div className="bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-500 ... max-w-screen-xl px-6 py-5 mx-auto md:px-10 " >
-              <div className="flex items-center ">
-                <ul className="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
-                <Link href="/dominio/dominio-com-co" className= "text-indigo-50 hover:text-orange-300 hover:uppercase text-xl" >
+            <div className={styles.navDropdown}>
+              <div>
+                <Link href="/dominio/dominio-com-co" className={styles.linkName}>
                 Encuentra tu Nombre en Internet
                 </Link>
                 {/* <Link href="/dominio/registro-de-dominios" className={styles.linkName}>
                   Dominios .CO Y COM..CO
                 </Link> */}
-                <Link href="/dominio/email-profesional" className="text-indigo-50 hover:text-orange-300 hover:uppercase text-xl">
+                <Link href="/dominio/email-profesional" className={styles.linkName}>
                   Correo profesional
                 </Link>
                 {/* <Link href="/dominio/registro-privado" className={styles.linkName}>
@@ -120,7 +125,6 @@ const NavBarMain = () => {
                 <Link href="/dominio/whois" className={styles.linkName}>
                Whois
                 </Link> */}
-                </ul>
             
               </div>
             </div>
@@ -128,11 +132,10 @@ const NavBarMain = () => {
         </div>
         <div>
           <button
-            className=" text-indigo-50 hover:text-orange-400 mr-20 sm:h-20 "
+            className={styles.usernameBtn}
             name="hostingState"
             onClick={handleShowDropdown}
           >
-             <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
             Hosting
             <Image
               src="static/icons/expand_more.svg"
@@ -141,20 +144,18 @@ const NavBarMain = () => {
               height={24}
               name="hostingState"
             />
-            </span>
           </button>
 
           {showDropdown.hostingState && (
-             <div className="bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-500 ... max-w-screen-xl px-6 py-5 mx-auto md:px-10 ">
-             <div className="flex items-center ">
-               <ul className="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
-                <Link href="/hosting/webHosting" className="text-indigo-50 hover:text-orange-300 hover:uppercase text-xl">
+            <div className={styles.navDropdown}>
+               <div>
+                <Link href="/hosting/webHosting" className={styles.linkName}>
                 Web Hosting
                 </Link>
                 {/* <Link href="/hosting/windows-hosting" className={styles.linkName}>
                   Windows Hosting
                 </Link> */}
-                <Link href="/hosting/hosting-cloud-servers-vps" className="text-indigo-50 hover:text-orange-300 hover:uppercase text-xl">
+                <Link href="/hosting/hosting-cloud-servers-vps" className={styles.linkName}>
                  Cloud Hosting
                 </Link>
                 {/* <Link href="/hosting/wordpress-hosting" className={styles.linkName}>
@@ -163,18 +164,72 @@ const NavBarMain = () => {
                 {/* <Link href="/hosting/hosting-para-revendedores" className={styles.linkName}>
               Hosting para revendedores
                 </Link> */}
-                <Link href="/hosting/servidores-dedicados" className="text-indigo-50 hover:text-orange-300 hover:uppercase text-xl">
+                <Link href="/hosting/servidores-dedicados" className={styles.linkName}>
              Servidores dedicados
                 </Link>
-             </ul>
+             
               </div>
             </div>
           )}
         </div>
-        <div className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+
+
+        <div>
+          <button
+            className={styles.usernameBtn}
+            name="cloudState"
+            onClick={handleShowDropdown}
+          >
+            cloud & Dedicados
+            <Image
+              src="static/icons/expand_more.svg"
+              alt="Expand more"
+              width={24}
+              height={24}
+              name="cloudState"
+            />
+          </button>
+
+          {showDropdown.cloudState && (
+            <div className={styles.navDropdown}>
+              <div>
+                <Link href="/cloudDedicados/cloudServers" className={styles.linkName}>
+                cloud Servers
+                </Link>
+                {/* <Link href="/dominio/registro-de-dominios" className={styles.linkName}>
+                  Dominios .CO Y COM..CO
+                </Link> */}
+                <Link href="/cloudDedicados/servidoresDedicados" className={styles.linkName}>
+                servidores Dedicados
+                </Link>
+                {/* <Link href="/dominio/registro-privado" className={styles.linkName}>
+                 Registro privado de Dominio
+                </Link>
+                <Link href="/dominio/transferencia-dominios" className={styles.linkName}>
+                Transfiere tu dominio a DonWeb
+                </Link>
+                <Link href="/dominio/whois" className={styles.linkName}>
+               Whois
+                </Link> */}
+            
+              </div>
+            </div>
+          )}
+        </div>
+
+
+
+
+
+
+
+        <Link href='/mis-compras' className={styles.logoCar}><ion-icon name="cart-outline" ></ion-icon></Link>
+        
+
+        <div className={styles.navContainer}>
           <div>
             <button
-              className=" text-indigo-50 hover:text-orange-400 mr-20 sm:h-20 "
+              className={styles.usernameBtn}
               name="userState"
               onClick={handleShowDropdown}
             >
@@ -189,12 +244,15 @@ const NavBarMain = () => {
             </button>
 
             {showDropdown.userState && (
-              <div className="bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-500 ... max-w-screen-xl px-6 py-5 mx-auto md:px-10 ">
-                <div className="flex items-center ">
-                 <a className="text-indigo-50 hover:text-orange-300 hover:uppercase text-xl" onClick={handleSignout}>
+              <div className={styles.navDropdown}>
+                <div>
+                {username !== "Ingresar" && <a className={styles.linkName} onClick={handleSignout}>
                     Sign out
-                  </a>
-                  <div className="self-center text-xl font-semibold whitespace-nowrap dark:text-white"></div>
+                  </a>}
+                  {username === "Ingresar" && <a className={styles.linkName} onClick={handleSignIn}>
+                    Sign In
+                  </a>}
+                  <div className={styles.lineWrapper}></div>
                 </div>
               </div>
             )}

@@ -31,12 +31,14 @@ const Login = () => {
     e.preventDefault();
     
     if (ValidateEmail(email)) {
+
       const emailsAllowed =["joseluy123@gmail.com","abdallak2202@gmail.com","martinezf1985@gmail.com","perezea1010@gmail.com", "jesuperez05@gmail.com","silvinaaguello@gmail.com","luishg.ingeniero@gmail.com"]
       const emailTest = element => element === email;
 
       if (emailsAllowed.some(emailTest)) {
       // if (email === "joseluy123@gmail.com") {
       // route to dashboard email antiguo merge
+
       try {
         setIsLoading(true)
         const didToken = await magic.auth.loginWithMagicLink({
@@ -44,7 +46,21 @@ const Login = () => {
         });
         console.log({ didToken });
         if(didToken){
-          router.push("/");
+          const response = await fetch("/api/login", {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${didToken}`,
+              "Content-Type": "application/json",
+            },
+          });
+
+          const loggedInResponse = await response.json();
+          if (loggedInResponse.done) {
+            router.push("/");
+          } else {
+            setIsLoading(false);
+            setUserMsg("Something went wrong logging in");
+          };
         } 
       } catch (error) {
         // Handle errors if required!

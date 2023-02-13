@@ -1,6 +1,9 @@
-const hostingCloudServersVps = () => {
+import CardCloud from "components/Cloud-hosting/CardCloudHosting"; 
+
+
+export const hostingCloudServersVps = () => {
   return (
-    <div>hosting-cloud-servers-vps</div>
+    <CardCloud/>
   )
 }
 
