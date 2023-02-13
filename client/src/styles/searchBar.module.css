@@ -1,7 +1,7 @@
 .containerSearch {
     background-image:url("/cloud.png");
     /* background-color: rgb(94, 204, 241); */
-    padding: 5rem;
+    padding: 4rem;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,6 @@
 .results {
 background-color: black;
 color: aliceblue;
-padding: 0.4rem;
 font-weight: 800;
 font-size: smaller;
 width: 100%;
@@ -38,11 +37,12 @@ top:100vh;
 
 }
 .icon{
-    width: 42 px;
-    height: 42px;
+
+    width: 4rem;
+    height: 4rem;
     background-color: rgb(15, 18, 61);
-    border-bottom-right-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    padding-inline: 1.5rem;
+   
  
 
 

@@ -1,21 +1,23 @@
 .container{
-  padding: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 1.5rem;
-  grid-row-gap: 2rem;
+  float: left;
+  width: 33.33%;
+  padding:3rem;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
   
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flipCard {
   background-color: transparent;
-  width: 26.5rem;
-  height: 24rem;
+  border-radius: 1rem;
+  width: 33rem;
+  height: 23rem;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  display: flex;
+
+  border-radius: 1rem;
 }
 
 /* This container is needed to position the front and back side */
@@ -58,12 +60,15 @@
 /* Style the back side */
 .flipCardBack {
   /* background-image: radial-gradient(circle, rgba(24, 180, 247, 1) 0%, rgba(15, 37, 123, 1) 100%); */
-  background-image: url("/cloud pedacito.png");
-  background-repeat: no-repeat;
-  display: block;
+  background-color: rgba(7, 155, 247, 1);
+  opacity: 0.8;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, rgba(7, 155, 247, 1) 10px ), repeating-linear-gradient( #444cf755, #444cf7 );
+  background-repeat:unset;
+  display:table-header-group;
   padding: 1rem;
   color: white;
   transform: rotateY(180deg);
+  border-radius: 1rem;
 }
 .h1{
   text-shadow: 2px 3px 0px rgba(202, 202, 68, 0.46);
