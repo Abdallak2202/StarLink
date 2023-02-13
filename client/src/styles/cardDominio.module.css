@@ -1,26 +1,21 @@
 .container{
-  float: left;
-  width: 33.33%;
-  padding:3rem;
-  text-align: center;
-  font-size: 25px;
-  cursor: pointer;
-
-
- 
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2rem;
+  
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flipCard {
   background-color: transparent;
-  border-radius: 1rem;
-  width: 33rem;
-  height: 23rem;
+  width: 26.5rem;
+  height: 24rem;
   border: 1px solid #f1f1f1;
-  perspective: 100rem; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
   display: flex;
-  
-  
 }
 
 /* This container is needed to position the front and back side */
@@ -31,7 +26,6 @@
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
-  
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -54,8 +48,7 @@
   box-shadow: 0 4px 8px 0 rgba(80, 27, 98, 0.2);
   transition: 0.3s;
   border-radius: 5px;
-  padding: 2rem;
-  border-radius: 1rem;
+  padding: 3rem;
 }
 
 .flipCardFront:hover {
@@ -65,24 +58,19 @@
 /* Style the back side */
 .flipCardBack {
   /* background-image: radial-gradient(circle, rgba(24, 180, 247, 1) 0%, rgba(15, 37, 123, 1) 100%); */
- 
-  background-color: rgba(7, 155, 247, 1);
-  opacity: 0.8;
-  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, rgba(7, 155, 247, 1) 10px ), repeating-linear-gradient( #444cf755, #444cf7 );
-  background-repeat:unset;
-  display:table-header-group;
+  background-image: url("/cloud pedacito.png");
+  background-repeat: no-repeat;
+  display: block;
   padding: 1rem;
   color: white;
   transform: rotateY(180deg);
-  border-radius: 1rem;
 }
 .h1{
   text-shadow: 2px 3px 0px rgba(202, 202, 68, 0.46);
-  font-size: 3rem;
- width: 28rem;
+  font-size: 1.8rem;
+ width: 22rem;
  padding-right: 1.5rem;
  padding-top: 0.1rem;
- display: flex;
 
 }
 .h1Dominio{
@@ -169,18 +157,4 @@ color: #FFFFFF;
 
 
 }
-.product {
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  border-radius: 5px;
-  padding: 20px;
-}
-.product:hover {
-  box-shadow: 0 8px 16px 0 #00ffdd;
-}
-.img {
-  border-radius: 5px 5px 0 0;
-}
-
 
