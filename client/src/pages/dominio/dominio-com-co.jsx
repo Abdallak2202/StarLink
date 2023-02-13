@@ -3,18 +3,33 @@ import  SearchBar  from "components/searchBar/searchBar";
 
 
 
+export async function getStaticProps() {
+  const req = await fetch("https://star-link-back-end-production.up.railway.app/domains");
+  const cards = await req.json();
 
-export const dominioComCo = ({ card }) => {
+  return { props: { cards } };
+
+
+}
+
+
+
+export const dominioComCo = ({ cards, props  }) => {
   return (
     <div>
       <SearchBar />
-      <Card card={card}/>
-    
-    
+      {cards.map((card) => (
+        <Card key={card.id} TLD={card.TLD} price = {card.price} description={card.description} />
 
+        
+      ))}
+
+   
     </div>
     
   )
 }
 
 export default dominioComCo;
+
+
