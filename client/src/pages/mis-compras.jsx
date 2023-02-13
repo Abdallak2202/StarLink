@@ -6,4 +6,8 @@ export const MisCompras = () => {
   )
 }
 
-export default MisCompras;
+export default mis-compras;
+
+
+
+

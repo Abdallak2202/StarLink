@@ -1,5 +1,6 @@
 import React from 'react'
 import data from 'public/utils/data'
+import Link from 'next/link'
 
 export default function Contenido() {
     return (
@@ -77,9 +78,11 @@ export default function Contenido() {
               </ul>
               </div>
                         <div className="flex flex-row-reverse ">
+                         <Link href='/cart' >
                       <button onclick="menuHandler1()" className="bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 rounded-full py-3 px-10 mr-1" id="monthly">
                       + add
                           </button>
+                            </Link>  
                       </div>
                   </div>
                   </div>
