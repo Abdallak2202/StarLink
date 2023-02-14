@@ -85,7 +85,7 @@ const NavBarMain = () => {
     <div className={styles.container}>
       <nav className={styles.wrapper}>
         <Link className={styles.logoLink} href="/">
-          StarkLink
+          StarLink
         </Link>
 
         <div>
