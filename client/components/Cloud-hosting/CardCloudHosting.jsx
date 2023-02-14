@@ -13,10 +13,12 @@ export default function CardCloud () {
 <div class="min-h-screen flex justify-center ">
 <div class="">
 <div class="text-center font-semibold">
+
     <h2 class="text-4xl">
       <span class="text-success">Cloud Servers en America Latina</span>
     </h2>
     <br/>
+    <br/> <br/> <br/>
     <h1 class="text-7xl">
         <span class="text-blue-700 tracking-wide">Alojamiento rápido, escalable y confiable </span>
     </h1>
@@ -26,10 +28,12 @@ export default function CardCloud () {
     </h1>
     <br/>
     <br/>
-    <Link  href='/hosting/planesCloudServer'>
+    <br/>
+    <Link  href='/cloudDedicados/cloudServers'>
     <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white text-4xl py-2 px-4 border border-blue-500 hover:border-transparent rounded">Ver Planes</button>
 </Link>
 
+<br/> <br/> <br/>
 <br/> <br/> <br/>
 
 <div class={s.container}>
