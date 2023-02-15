@@ -6,7 +6,7 @@ import Link from 'next/link'
 export const CardHosting = () => {
   return (
     <div>
-        <div>
+        <div className='bg-purple-300'  >
             <br/> <br/> <br/>
             <br/> <br/> <br/>
 
@@ -14,32 +14,36 @@ export const CardHosting = () => {
 <link rel="preconnect" href="https://fonts.gstatic.com"/> 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<body class="font-sans bg-gray-100">
+<body class="font-sans bg-purple-300  ">
 <div class="min-h-screen flex justify-center items-center">
 <div class="">
 <div class="text-center font-semibold">
     <h1 class="text-5xl">
-        <span class="text-blue-700 tracking-wide">El Web Hosting  que tu sitio merece </span>
+        <span class="text-violet-500 tracking-wide font-extrabold">El Web Hosting  que ti sitio merece </span>
         <br/>
-        <span>desde$399/mes</span>
+        <br></br>
+        <span className='text-violet-500 font-extrabold'>desde$399/mes</span>
         <br/><br/>
-        <span class="text-blue-700 tracking-wide">Pesos Argentinos ver planes</span>
+        <span class="text-violet-500  tracking-wide font-extrabold">Pesos Argentinos ver planes</span>
     </h1>
     <br/><br/>
     
-    <p class="pt-6 text-xl text-gray-400 font-normal w-full px-8 md:w-full">
+    
+    <p class="pt-6 text-3xl text-violet-500   font-extrabold  w-full px-18 md:w-full">
     ¡Simple, rápido y confiable!
 En Pesos Argentinos <br/> sin impuesto país ni sorpresas
     </p>
 </div>
-{/* <-----------card 1-----------------> */}
+{/* <-----------containner de cards-----------------> */}
 <div class="pt-24 flex flex-row">
+
+    {/* <-----------card 1-----------------> */}
     
     <div class="w-96 p-8 bg-white text-center rounded-3xl pr-16 shadow-xl">
-        <h1 class="text-black font-semibold text-2xl">Basic</h1>
+        <h1 class="text-green font-semibold text-violet-500  text-2xl">Basic</h1>
         <p class="pt-2 tracking-wide">
             <span class="text-gray-400 align-top">$ </span>
-            <span class="text-3xl font-semibold">10</span>
+            <span class="text-3xl text-violet-500 font-semibold">499</span>
             <span class="text-gray-400 font-medium">/ user</span>
         </p>
         <hr class="mt-4 border-1"/>
@@ -109,7 +113,7 @@ En Pesos Argentinos <br/> sin impuesto país ni sorpresas
     </div>
 
      {/* <-----------card 2-----------------> */}
-    <div class="w-80 p-8 bg-gray-900 text-center rounded-3xl text-white border-4 shadow-xl border-white transform scale-125">
+    <div class="w-80 p-8 bg-violet-900 text-center rounded-3xl text-white border-4 shadow-xl border-white transform scale-125">
         <h1 class="text-white font-semibold text-2xl">Emprendedor</h1>
         <p class="pt-2 tracking-wide">
             <span class="text-gray-400 align-top">$ </span>
@@ -187,11 +191,11 @@ En Pesos Argentinos <br/> sin impuesto país ni sorpresas
     </div>
      {/* <-----------card 3-----------------> */}
     <div class="w-96 p-8 bg-white text-center rounded-3xl pl-16 shadow-xl">
-        <h1 class="text-black font-semibold text-2xl">Enterprise</h1>
+        <h1 class=" font-semibold text-2xl text-violet-500 ">Enterprise</h1>
         <p class="pt-2 tracking-wide">
             <span class="text-gray-400 align-top">$ </span>
-            <span class="text-3xl font-semibold">35</span>
-            <span class="text-gray-400 font-medium">/ user</span>
+            <span class="text-3xl font-semibold text-violet-500 ">999</span>
+            <span class="text-violet-500  font-medium">/ user</span>
         </p>
         <hr class="mt-4 border-1"/>
         <div class="pt-8">
