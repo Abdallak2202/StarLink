@@ -5,13 +5,14 @@ const servidoresDedicados = () => {
 <div>
 
 
+<div  className='bg-purple-300'>
 
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
-
+{/* <-----------button 1-----------------> */}
 <div>
 
 <button type="button" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2">
@@ -20,8 +21,9 @@ const servidoresDedicados = () => {
 </button>
 </div>
 
-<div>
 
+{/* <-----------button 2-----------------> */}
+<div>
 
 <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
   <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
@@ -33,17 +35,22 @@ const servidoresDedicados = () => {
 </div>
 
 
-      <div>
+{/* <-----------texto 1-----------------> */}
 
+<div>
 
-      {/* <h2 className="text-5xl">
-      <span className="text-success">Cloud Servers en America Latina</span>
-    </h2> */}
-    <br/>
+<br/>
     <h1 className="text-8xl">
         <span className="text-blue-700 tracking-wide">Administralo o dejalo en manos de nuestros expertos </span>
     </h1>
     <br/>
+</div>
+
+  <div>
+
+
+{/* <-----------texto 2-----------------> */}
+    
     <h1 className="text-5xl">
         <span className="text-blue-700 tracking-wide">Nuestra solución administrada incluye un equipo de expertos que se encargará de cualquier cuestión técnica o pedidos de configuración que necesites realizar. Elige la opción que se adapte a tu negocio.</span>
     </h1>
@@ -54,6 +61,7 @@ const servidoresDedicados = () => {
 <br/>
 <br/>
 
+{/* <-----------tabla-----------------> */}
 
       <div>
       <a href="#" class="  ml-12 mr-12 block     p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
@@ -189,7 +197,7 @@ const servidoresDedicados = () => {
 
 
 
-
+</div>
       
     </div>
   )
