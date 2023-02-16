@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         <div>
           <p className={styles.footerHeading}>Contact us</p>
-          <address class={styles.contacts}>
+          <address className={styles.contacts}>
             <p className={styles.address}>
               623 Harrison St., 2nd Floor, San Francisco, CA 94107
             </p>

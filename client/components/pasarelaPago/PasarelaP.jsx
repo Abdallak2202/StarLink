@@ -80,18 +80,18 @@ const CheckoutForm = () => {
   );
 };
 
-const CardPagos = () => {
-  return (
-    <Elements stripe={stripePromise}>
-      <div className="container p-4">
-        <div className="row h-100">
-          <div className="col-md-6 offset-md-4 h-100">
-            <CheckoutForm />
-          </div>
-        </div>
-      </div>
-    </Elements>
-  );
-}
+// const CardPagos = () => {
+//   return (
+//     <Elements stripe={stripePromise}>
+//       <div className="container p-4">
+//         <div className="row h-100">
+//           <div className="col-md-6 offset-md-4 h-100">
+//             <CheckoutForm />
+//           </div>
+//         </div>
+//       </div>
+//     </Elements>
+//   );
+// }
 
 export default CardPagos;

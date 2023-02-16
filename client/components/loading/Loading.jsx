@@ -1,17 +1,17 @@
 import styles from "./Loading.module.css";
 
 const Loading = () => {
-  return <div class={styles.center}>
-  <div class={styles.wave}></div>
-  <div class={styles.wave}></div>
-  <div class={styles.wave}></div>
-  <div class={styles.wave}></div>
-  <div class={styles.wave}></div>
-  <div class={styles.wave}></div>
-  <div class={styles.wave}></div>
-  <div class={styles.wave}></div>
-  <div class={styles.wave}></div>
-  <div class={styles.wave}></div>
+  return <div className={styles.center}>
+  <div className={styles.wave}></div>
+  <div className={styles.wave}></div>
+  <div className={styles.wave}></div>
+  <div className={styles.wave}></div>
+  <div className={styles.wave}></div>
+  <div className={styles.wave}></div>
+  <div className={styles.wave}></div>
+  <div className={styles.wave}></div>
+  <div className={styles.wave}></div>
+  <div className={styles.wave}></div>
 </div>
 };
 
