@@ -37,23 +37,29 @@ const servidoresDedicados = () => {
 
 {/* <-----------texto 1-----------------> */}
 
-<div>
+<div className='mg-'>
 
-<br/>
-    <h1 className="text-8xl">
-        <span className="text-blue-700 tracking-wide">Administralo o dejalo en manos de nuestros expertos </span>
-    </h1>
-    <br/>
+  
+<h1 class="mb-4 text-8xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-8xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Administralo</span> o dejalo en manos de nuestros expertos.</h1>
+
+
+
+
 </div>
+
 
   <div>
 
 
 {/* <-----------texto 2-----------------> */}
+
+
+
+<h1 class="mb-4 text-8xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-8xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Nuestra solución administrada incluye un equipo de expertos que se encargará de cualquier cuestión técnica o pedidos de configuración que necesites realizar.</span> Elige la opción que se adapte a tu negocio.</h1>
     
-    <h1 className="text-5xl">
+    {/* <h1 className="text-5xl">
         <span className="text-blue-700 tracking-wide">Nuestra solución administrada incluye un equipo de expertos que se encargará de cualquier cuestión técnica o pedidos de configuración que necesites realizar. Elige la opción que se adapte a tu negocio.</span>
-    </h1>
+    </h1> */}
       </div>
 <br/>
 <br/>
