@@ -149,7 +149,7 @@ const NavBarMain = () => {
           {showDropdown.hostingState && (
             <div className={styles.navDropdown}>
                <div>
-                <Link href="/hosting/webHosting" className={styles.linkName}>
+                <Link href="/hosting/w-hosting/webHosting" className={styles.linkName}>
                 Web Hosting
                 </Link>
                 {/* <Link href="/hosting/windows-hosting" className={styles.linkName}>
