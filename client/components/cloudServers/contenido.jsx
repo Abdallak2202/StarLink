@@ -6,7 +6,7 @@ import cloudServers from '@/pages/cloudDedicados/cloudServers'
 
 const Contenido = ({servicio, agregarCarrito}) =>{
     
-    // const {description, imageSrc, imageAlt, name, category, processing, RAM, STORAGE, transfer, price, id} = servicio[0]
+//const {description, imageSrc, imageAlt, name, category, processing, RAM, STORAGE, transfer, price, id} = servicio[0]
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -26,7 +26,7 @@ const Contenido = ({servicio, agregarCarrito}) =>{
     // transfer
     // };
     
-    // agregarCarrito(servicioSeleccionado);
+    agregarCarrito(servicioSeleccionado);
 
 const [cloud, setCloud] = useState([])
 
