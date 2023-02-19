@@ -1,66 +1,63 @@
 import NavBarMain from "components/nav/NavBarMain";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { magic } from "../../lib/magic-client";
 import "../styles/globals.css";
 import Loading from "components/loading/Loading";
 import Footer from "components/footer/Footer";
-import { useFetchUser, UserProvider, useUser } from "lib/authContext";
-
+import { getRouteMatcher } from "next/dist/shared/lib/router/utils/route-matcher";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
-const {user,loading} = useFetchUser();
-
 
   useEffect(() => {
     const handleLoggedIn = async () => {
-      // const isLoggedIn = await magic.user.isLoggedIn();
+      const isLoggedIn = await magic.user.isLoggedIn();
       // switch (isLoggedIn) {
       //   case true :
       //     router.push("/")
       //   default:
       //     router.push("/login")
       // }
-      console.log(user)
-      if (router.pathname === "/login" && user) router.push('/');
-      if (router.pathname === "/mis-compras" && !user) {
+      if (router.pathname !== "/mis-compras") router.push(router.pathname);
+      if (router.pathname === "/mis-compras" && !isLoggedIn) {
         router.push("/login");
       } else {
         router.push(router.pathname);
       }
 
-        // if (user) {
-        //   // route to /
-        //   router.push("/");
-        // } else {
-        //   // route to /login
-        //   router.push("/login");
-        // }
-      
+      //   if (isLoggedIn) {
+      //     // route to /
+      //     router.push("/");
+      //   } else {
+      //     // route to /login
+      //     router.push("/login");
+      //   }
+      // };
     };
     handleLoggedIn();
-  }, [router.pathname,]);
+  }, [router.pathname]);
 
-  // useEffect(() => {
-  //   const handleComplete = () => {
-  //     setIsLoading(false);
-  //   };
-  //   router.events.on("routeChangeComplete", handleComplete);
-  //   router.events.on("routeChangeError", handleComplete);
+  useEffect(() => {
+    const handleComplete = () => {
+      setIsLoading(false);
+    };
+    router.events.on("routeChangeComplete", handleComplete);
+    router.events.on("routeChangeError", handleComplete);
 
-  //   return () => {
-  //     router.events.off("routeChangeComplete", handleComplete);
-  //     router.events.off("routeChangeError", handleComplete);
-  //   };
-  // }, [router]);
+    return () => {
+      router.events.off("routeChangeComplete", handleComplete);
+      router.events.off("routeChangeError", handleComplete);
+    };
+  }, [router]);
   return (
     <>
-      {loading ? (
+      {isLoading ? (
         <Loading />
       ) : (
         <div>
-          {router.pathname !== "/login" && <NavBarMain  value = {user}/>}
+          {router.pathname !== "/login" && <NavBarMain />}
           <Component {...pageProps} />;
           {router.pathname !== "/login" && <Footer />}
         </div>
