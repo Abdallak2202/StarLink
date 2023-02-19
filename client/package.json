@@ -14,7 +14,6 @@
     "@emotion/styled": "^11.10.5",
     "@headlessui/react": "^1.7.10",
     "@heroicons/react": "^2.0.15",
-    "@magic-sdk/admin": "^1.8.0",
     "@next/font": "13.1.6",
     "@splinetool/react-spline": "^2.2.5",
     "@splinetool/runtime": "^0.9.211",
@@ -30,7 +29,6 @@
     "framer-motion": "^9.0.2",
     "js-cookie": "^3.0.1",
     "jsonwebtoken": "^9.0.0",
-    "magic-sdk": "^13.1.0",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0"
