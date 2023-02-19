@@ -3,10 +3,27 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import {magic} from "../../lib/magic-client";
+import { getUserFromLocalCookie, unsetToken } from "lib/auth";
 
-const NavBarMain = () => {
+
+const NavBarMain = ({value}) => {
   const router = useRouter();
+  const [user, setuser] = useState('')
+
+  useEffect(() => {
+    const getData = async () => {
+      const values = await getUserFromLocalCookie()
+    setuser(values)
+    }
+  
+    // call the function
+    getData()
+    
+    
+  //  setuser(values)
+    
+  }, [])
+  
 
   const [showDropdown, setShowDropdown] = useState({
     dominioState: false,
@@ -15,27 +32,27 @@ const NavBarMain = () => {
     cloudState: false,
   });
 
-  const [username, setUsername] = useState("Ingresar");
+  // const [username, setUsername] = useState("Ingresar");
   // const handleOnClickHome = (e) => {
   //   e.preventDefault();
   //   router.push("/");
   // };
 
-  useEffect(() => {
-    async function getUsername() {
-      try {
-        const { email, issuer } = await magic.user.getMetadata();
-        const didToken = await magic.user.getIdToken();
-        console.log({ didToken });
-        if (email) {
-          setUsername(email);
-        }
-      } catch (error) {
-        console.log("Error retrieving email:", error);
-      }
-    }
-    getUsername();
-  }, []);
+  // useEffect(() => {
+  //   async function getUsername() {
+  //     try {
+  //       const { email, issuer } = await magic.user.getMetadata();
+  //       const didToken = await magic.user.getIdToken();
+  //       console.log({ didToken });
+  //       if (email) {
+  //         setUsername(email);
+  //       }
+  //     } catch (error) {
+  //       console.log("Error retrieving email:", error);
+  //     }
+  //   }
+  //   getUsername();
+  // }, []);
 
 
   const handleShowDropdown = ({ target }) => {
@@ -64,15 +81,16 @@ const NavBarMain = () => {
 
   const handleSignout = async (e) => {
     e.preventDefault();
-
-    try {
-      await magic.user.logout();
-      console.log(await magic.user.isLoggedIn());
-      router.push("/login");
-    } catch (error) {
-      console.error("Error logging out", error);
-      router.push("/login");
-    }
+      unsetToken();
+    
+    // try {
+    //   await magic.user.logout();
+    //   console.log(await magic.user.isLoggedIn());
+    //   router.push("/login");
+    // } catch (error) {
+    //   console.error("Error logging out", error);
+    //   router.push("/login");
+    // }
   };
 
   const handleSignIn = (e) => {
@@ -233,7 +251,7 @@ const NavBarMain = () => {
               name="userState"
               onClick={handleShowDropdown}
             >
-              {username}
+             {user?user:"SignIn"}
               <Image
               src="static/icons/expand_more.svg"
               alt="Expand more"
@@ -246,10 +264,10 @@ const NavBarMain = () => {
             {showDropdown.userState && (
               <div className={styles.navDropdown}>
                 <div>
-                {username !== "Ingresar" && <a className={styles.linkName} onClick={handleSignout}>
+                {user&& <a className={styles.linkName} onClick={handleSignout}>
                     Sign out
                   </a>}
-                  {username === "Ingresar" && <a className={styles.linkName} onClick={handleSignIn}>
+                  {!user&& <a className={styles.linkName} onClick={handleSignIn}>
                     Sign In
                   </a>}
                   <div className={styles.lineWrapper}></div>
