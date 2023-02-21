@@ -58,7 +58,7 @@ export default function App({ Component, pageProps }) {
       ) : (
         <div>
           {router.pathname !== "/login" && <NavBarMain />}
-          <Component {...pageProps} />;
+          <Component {...pageProps} />
           {router.pathname !== "/login" && <Footer />}
         </div>
       )}
