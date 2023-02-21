@@ -1,3 +1,5 @@
+
+
 import Card from "components/card-dominio-cpm-co/cardDominios";
 import  SearchBar  from "components/searchBar/searchBar";
 import React from "react";
