@@ -60,8 +60,9 @@ const {user,loading} = useFetchUser();
         <Loading />
       ) : (
         <div>
-          {router.pathname !== "/login" && <NavBarMain  value = {user}/>}
-          <Component {...pageProps} />;
+
+          {router.pathname !== "/login" && <NavBarMain />}
+          <Component {...pageProps} />
           {router.pathname !== "/login" && <Footer />}
         </div>
       )}
