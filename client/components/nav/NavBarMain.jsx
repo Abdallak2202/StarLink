@@ -4,16 +4,24 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { getUserFromLocalCookie, unsetToken } from "lib/auth";
+import { useSession,signOut } from "next-auth/react";
 
 
 const NavBarMain = ({value}) => {
   const router = useRouter();
   const [user, setuser] = useState('')
-
+  const [values, setvalues] = useState('')
+  const { data: session } = useSession()
+console.log(session);
   useEffect(() => {
     const getData = async () => {
       const values = await getUserFromLocalCookie()
-    setuser(values)
+      setvalues(values)
+      if (values){
+setuser(values)
+      } else {
+        setuser(session?.user.name)
+      }
     }
   
     // call the function
@@ -81,7 +89,14 @@ const NavBarMain = ({value}) => {
 
   const handleSignout = async (e) => {
     e.preventDefault();
+    if (values){
       unsetToken();
+      router.reload()
+    } else {
+      signOut();
+      router.reload()
+    }
+  
     
     // try {
     //   await magic.user.logout();
