@@ -5,9 +5,15 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styles from "../styles/Login.module.css";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useFetchUser } from "lib/authContext";
 
-const Login = () => {
+
+const Login = (
+ ) => {
   // const [email, setEmail] = useState("");
+  const { data: session } = useSession()
+// console.log({session});
   const [userMsg, setUserMsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [newUser, setnewUser] = useState('')
@@ -17,11 +23,19 @@ const Login = () => {
   });
  
   const { identifier, password } = data;
+  const {user} = useFetchUser();
+  useEffect(() => {
+   if(session || user){
+    router.push("/")
+   }
+
+  }, [session])
+  
   
   // const {user,loading} = useFetchUser()
   useEffect(() => {
     const user = getUserFromLocalCookie()
-    if(user) {
+    if(user || session) {
       router.push('/')
     }
   }, [])
@@ -170,9 +184,13 @@ const Login = () => {
                     />
                   </svg>
                 </button>
-
+<Link href="/api/auth/signin">
                 <button
                   type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    signIn();
+                  }}
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
                   class="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
@@ -191,6 +209,8 @@ const Login = () => {
                     />
                   </svg>
                 </button>
+
+</Link>
 
                 <button
                   type="button"

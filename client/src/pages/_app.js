@@ -5,9 +5,10 @@ import "../styles/globals.css";
 import Loading from "components/loading/Loading";
 import Footer from "components/footer/Footer";
 import { useFetchUser } from "lib/authContext";
+import { SessionProvider, useSession } from "next-auth/react"
 
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component,  pageProps: { session, ...pageProps }}) {
   const router = useRouter();
   // const [isLoading, setIsLoading] = useState(true);
 const {user,loading} = useFetchUser();
@@ -22,13 +23,12 @@ const {user,loading} = useFetchUser();
       //   default:
       //     router.push("/login")
       // }
-      console.log(user)
-      if (router.pathname === "/login" && user) router.push('/');
-      if (router.pathname === "/mis-compras" && !user) {
-        router.push("/login");
-      } else {
-        router.push(router.pathname);
-      }
+      // if (router.pathname === "/login" && user ) router.push('/');
+      // if (router.pathname === "/mis-compras" && !user) {
+      //   router.push("/login");
+      // } else {
+      //   router.push(router.pathname);
+      // }
 
         // if (user) {
         //   // route to /
@@ -55,7 +55,7 @@ const {user,loading} = useFetchUser();
   //   };
   // }, [router]);
   return (
-    <>
+    <SessionProvider session={session}>
       {loading ? (
         <Loading />
       ) : (
@@ -66,6 +66,6 @@ const {user,loading} = useFetchUser();
           {router.pathname !== "/login" && <Footer />}
         </div>
       )}
-    </>
+    </SessionProvider>
   );
 }
