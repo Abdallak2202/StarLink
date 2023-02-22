@@ -8,7 +8,7 @@ const Footer = () => {
       <div className={cls("container", "grid", styles.gridFooter)}>
         <div className={styles.logoCol}>
           <Link href="/" className={styles.footerLogo}>
-            <img class="logo" src="starLinkFondoNegro.jfif" alt="starkLink logo" />
+            <img className="logo" src="starLinkFondoNegro.jfif" alt="starkLink logo" />
           </Link>
           <ul className={styles.socialLinks}>
             <li>
@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         <div>
           <p className={styles.footerHeading}>Contact us</p>
-          <address class={styles.contacts}>
+          <address className={styles.contacts}>
             <p className={styles.address}>
               623 Harrison St., 2nd Floor, San Francisco, CA 94107
             </p>

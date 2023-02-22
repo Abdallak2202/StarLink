@@ -1,11 +1,11 @@
 import NavBarMain from "components/nav/NavBarMain";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { magic } from "../../lib/magic-client.js";
 import "../styles/globals.css";
 import Loading from "components/loading/Loading";
 import Footer from "components/footer/Footer";
-import { getRouteMatcher } from "next/dist/shared/lib/router/utils/route-matcher";
+import { useFetchUser } from "lib/authContext";
 
 
 export default function App({ Component, pageProps }) {
@@ -16,7 +16,9 @@ export default function App({ Component, pageProps }) {
   };
 
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
+const {user,loading} = useFetchUser();
+
 
   useEffect(() => {
     const handleLoggedIn = async () => {
@@ -34,6 +36,14 @@ export default function App({ Component, pageProps }) {
         router.push(router.pathname);
       }
 
+      //   if (isLoggedIn) {
+      //     // route to /
+      //     router.push("/");
+      //   } else {
+      //     // route to /login
+      //     router.push("/login");
+      //   }
+      // };
       //   if (isLoggedIn) {
       //     // route to /
       //     router.push("/");
@@ -64,11 +74,9 @@ export default function App({ Component, pageProps }) {
         <Loading />
       ) : (
         <div>
+
           {router.pathname !== "/login" && <NavBarMain />}
-
-          <Component {...pageProps} carrito={carrito} agregarCarrito={agregarCarrito}/>;
-
-
+          <Component {...pageProps} />
           {router.pathname !== "/login" && <Footer />}
         </div>
       )}

@@ -1,0 +1,1380 @@
+# Query: class
+# ContextLines: 1
+
+633 resultados - Archivos de 18
+
+client\package.json:
+  24      "bootswatch": "^5.2.3",
+  25:     "classnames": "^2.3.2",
+  26      "cookie": "^0.5.0",
+
+client\components\card-dominio-cpm-co\cardDominios.jsx:
+   20  
+   21:         <div className={s.container}>
+   22:         <div className= {s.flipCard} >
+   23:               <div className={s.flipCardInner}>
+   24:              <div className= {s.flipCardFront}>
+   25  
+   26:              <h1 className="mb-4 text-9xl font-medium font-sans md:font-serif bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-cyan-700 to-blue-600  ">{TLD}</h1>
+   27:           <h2 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400"> Por solo</h2>
+   28:           <div className="flex items-baseline text-gray-900 dark:text-white">
+   29:           <span class="text-5xl font-semibold ">$</span>
+   30:           <span class="text-9xl font-extrabold tracking-tight ">{price}</span>
+   31:           <span class="ml-1 text-2xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+   32  
+
+   35  
+   36:           <div className={s.flipCardBack}>
+   37:           <h1 className="mb-4 text-6xl font-extrabold text-sky-200  drop-shadow-lg">Utilidades del dominio {TLD}</h1>
+   38:           <p className=" mb-6 text-4xl font-bold text-white drop-shadow-lg shadow-ambar-300">{description}</p>
+   39          </div>
+
+   54  //   return (
+   55: //  <div className={s.container}>
+   56: //     <div className= {s.flipCard} >
+   57: //       <div className={s.flipCardInner}>
+   58: //       <div className= {s.flipCardFront}>
+   59  
+   60  //       <ul>
+   61: //       <h1 className= {s.h1Dominio}>.Com</h1>
+   62: //       <h2 className={s.h2Dominio}> Por solo</h2>
+   63: //      <h3 className={s.h3}> $1790</h3>       
+   64  //       </ul>
+   65  //       </div>
+   66: //       <div className={s.flipCardBack}>
+   67: //         <h1 className={s.h1}>Utilidades del dominio .Com</h1>
+   68: //         <p className={s.p}>Es uno de los más utilizados a nivel mundial
+   69  //         Se le considera un dominio de nivel superior
+
+   76  
+   77: // <div className= {s.flipCard} >
+   78: //       <div className={s.flipCardInner}>
+   79: //       <div className= {s.flipCardFront}>
+   80  
+   81  //       <ul>
+   82: //         <h1 className= {s.h1Dominioo}>.Com + .Online&.Store</h1> 
+   83: //           <h2 className= {s.h2Dominio}> Por solo</h2>
+   84: //           <h3 className= {s.h3}> $1.790</h3>       
+   85  //       </ul>
+   86  //       </div>
+   87: //       <div className={s.flipCardBack}>
+   88: //         <h1 className={s.h1}>¿Por qué 3 dominios?</h1>
+   89: //         <p className={s.p}>Con la aparición de dominios tan creativos, las marcas comenzaron a registrarlos 
+   90  //         también para proteger su marca y evitar que terceros puedan hacer uso de ellos.</p>
+
+   94  // </div>
+   95: // <div className= {s.flipCard} >
+   96: //       <div className={s.flipCardInner}>
+   97: //       <div className= {s.flipCardFront}>
+   98  
+   99  //       <ul>
+  100: //           <h1 className={s.h1Dominiooo}> .Com.Ar</h1>
+  101: //           <h2 className= {s.h2Dominio}> Por solo</h2>
+  102: //           <h3 className={s.h3}> $860</h3>       
+  103  //       </ul>
+  104  //       </div>
+  105: //       <div className={s.flipCardBack}>
+  106: //         <h1 className={s.h1}>Registrate desde cualquier lugar</h1>
+  107: //         <p className={s.p}>Los clientes podrán identificar claramente la localización de tu negocio</p>
+  108  //       </div>
+
+  111  // </div>
+  112: // <div className= {s.flipCard} >
+  113: //       <div className={s.flipCardInner}>
+  114: //       <div className= {s.flipCardFront}>
+  115  
+  116  //       <ul>
+  117: //           <h1 className={s.h1Dominiooo}> .Site</h1>
+  118: //           <h2 className={s.h2Dominio}> Por solo</h2>
+  119: //           <h3 className={s.h3}> $1.490</h3>       
+  120  //       </ul>
+  121  //       </div>
+  122: //       <div className={s.flipCardBack}>
+  123: //         <h1 className={s.h1}>Promueve tu .site con claridad</h1>
+  124: //         <p className={s.p}>Funciona como una aplicación para marketing y promoción y ayuda a su
+  125  //                 marca a diferenciarse en un mar saturado de sitios web en línea.</p>
+
+  130  
+  131: // <div className= {s.flipCard} >
+  132: //       <div className={s.flipCardInner}>
+  133: //       <div className= {s.flipCardFront}>
+  134  
+  135  //       <ul>
+  136: //           <h1 className={s.h1Dominiooo}> .Online</h1>
+  137: //           <h2 className={s.h2Dominio}> Por solo</h2>
+  138: //           <h3 className={s.h3}> $1.890</h3>       
+  139  //       </ul>
+  140  //       </div>
+  141: //       <div className={s.flipCardBack}>
+  142: //         <h1 className={s.h1}>El dominio más exitoso de la nueva Internet</h1>
+  143: //         <p className={s.p}>La palabra online es fácilmente entendida en todo el mundo 
+  144  //             y se adapta de forma perfecta a todo tipo de emprendimientos y negocios.</p>
+
+  149  
+  150: // <div className= {s.flipCard} >
+  151: //       <div className={s.flipCardInner}>
+  152: //       <div className= {s.flipCardFront}>
+  153  
+  154  //       <ul>
+  155: //           <h1 className={s.h1Dominioooo}> .Website</h1>
+  156: //           <h2 className={s.h2Dominio}> Por solo</h2>
+  157: //           <h3 className={s.h3}> $1.490</h3>       
+  158  //       </ul>
+  159  //       </div>
+  160: //       <div className={s.flipCardBack}>
+  161: //         <h1 className={s.h1}>Un .website con todas las letras</h1>
+  162: //         <p className={s.p}>Utiliza este nuevo TLD (extensión de dominio de primer nivel)
+  163  //             y atrapa la atención de potenciales clientes a nivel personal y profesional.</p>
+
+  168  
+  169: // <div className= {s.flipCard} >
+  170: //       <div className={s.flipCardInner}>
+  171: //       <div className= {s.flipCardFront}>
+  172  
+  173  //       <ul>
+  174: //           <h1 className={s.h1Dominiooo}> .Store</h1>
+  175: //           <h2 className={s.h2Dominio}> Por solo</h2>
+  176: //           <h3 className={s.h3}> $2.790</h3>       
+  177  //       </ul>
+  178  //       </div>
+  179: //       <div className={s.flipCardBack}>
+  180: //         <h1 className={s.h1}>El preferido a la hora de vender</h1>
+  181: //         <p className={s.p}>es otro de los nuevos dominios de mayor éxito en la actualidad.
+  182  //             para crear un ecommerce o proteger la marca del que ya tienes.</p>
+
+  187  
+  188: // <div className= {s.flipCard} >
+  189: //       <div className={s.flipCardInner}>
+  190: //       <div className= {s.flipCardFront}>
+  191  
+  192  //       <ul>
+  193: //           <h1 className={s.h1Dominio}> .Uno</h1>
+  194: //           <h2 className={s.h2Dominio}> Por solo</h2>
+  195: //           <h3 className={s.h3}> $1090</h3>       
+  196  //       </ul>
+  197  //       </div>
+  198: //       <div className={s.flipCardBack}>
+  199: //         <h1 className={s.h1}>El dominio número .uno para tu web.</h1>
+  200: //         <p className={s.p}> Te brindará una dirección de Internet corta, fuerte y muy fácil de recordar. 
+  201  //             Ideal para destacar nuevos proyectos en la web.
+
+  207  
+  208: // <div className= {s.flipCard} >
+  209: //       <div className={s.flipCardInner}>
+  210: //       <div className= {s.flipCardFront}>
+  211  
+  212  //       <ul>
+  213: //           <h1 className={s.h1Dominioooo}> .Org</h1>
+  214: //           <h2 className={s.h2Dominio}> Por solo</h2>
+  215: //           <h3 className={s.h3}> $3.890</h3>       
+  216  //       </ul>
+  217  //       </div>
+  218: //       <div className={s.flipCardBack}>
+  219: //         <h1 className={s.h1}>Promueve tu causa y genera conciencia</h1>
+  220: //         <p className={s.p}>Vincula tu organización de forma inmediata con la confianza e integridad
+  221  //              de las organizaciones dedicadas al servicio del interés público.
+
+  226  // </div>
+  227: // <div className= {s.flipCard} >
+  228: //       <div className={s.flipCardInner}>
+  229: //       <div className= {s.flipCardFront}>
+  230  
+  231  //       <ul>
+  232: //           <h1 className={s.h1Dominio}> .Tech</h1>
+  233: //           <h2 className={s.h2Dominio}> Por solo</h2>
+  234: //           <h3 className={s.h3}> $2.790</h3>       
+  235  //       </ul>
+  236  //       </div>
+  237: //       <div className={s.flipCardBack}>
+  238: //         <h1 className={s.h1}>Conviértete en un líder .Tech</h1>
+  239: //         <p className={s.p}>Es breve, profesional y fácilmente recordable. 
+  240  //             ¡Es perfecto para atraer
+
+  247  
+  248: // <div className= {s.flipCard} >
+  249: //       <div className={s.flipCardInner}>
+  250: //       <div className= {s.flipCardFront}>
+  251  
+  252  //       <ul>
+  253: //           <h1 className={s.h1Dominio}> .Fun</h1>
+  254: //           <h2 className={s.h2Dominio}> Por solo</h2>
+  255: //           <h3 className={s.h3}> $1.090</h3>       
+  256  //       </ul>
+  257  //       </div>
+  258: //       <div className={s.flipCardBack}>
+  259: //         <h1 className={s.h1}>¿a qué esperas para registrar tu dominio .FUN?</h1>
+  260: //         <p className={s.p}>Esta extensión es perfecta para la creación de sitios web sobre series, películas, videojuegos, etc.</p>
+  261  //       </div>
+
+  266  
+  267: // <div className= {s.flipCard} >
+  268: //       <div className={s.flipCardInner}>
+  269: //       <div className= {s.flipCardFront}>
+  270  
+  271  //       <ul>
+  272: //           <h1 className={s.h1Dominio}> .Casa</h1>
+  273: //           <h2 className={s.h2Dominio}> Por solo</h2>
+  274: //           <h3 className={s.h3}> $2.790</h3>       
+  275  //       </ul>
+  276  //       </div>
+  277: //       <div className={s.flipCardBack}>
+  278: //         <h1 className={s.h1}>Quedate en .CASA</h1>
+  279: //         <p className={s.p}>Es una extensión ideal para poner nuestra casa a la venta o crear una página web para una agencia inmobiliaria.
+  280  //              Registra tu dominio .CASA hoy mismo!</p>
+
+client\components\card-hosting\CardHosting.jsx:
+    8      <div>
+    9:         <div className='bg-purple-300'  >
+   10              <br/> <br/> <br/>
+
+   16  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+   17: <body className="font-sans bg-purple-300  ">
+   18: <div className="min-h-screen flex justify-center items-center">
+   19: <div className="">
+   20: <div className="text-center font-semibold">
+   21:     <h1 className="text-5xl">
+   22:         <span className="text-violet-500 tracking-wide font-extrabold">El Web Hosting  que ti sitio merece </span>
+   23          <br/>
+   24          <br></br>
+   25:         <span className='text-violet-500 font-extrabold'>desde$399/mes</span>
+   26          <br/><br/>
+   27:         <span className="text-violet-500  tracking-wide font-extrabold">Pesos Argentinos ver planes</span>
+   28      </h1>
+
+   31      
+   32:     <p className="pt-6 text-3xl text-violet-500   font-extrabold  w-full px-18 md:w-full">
+   33      ¡Simple, rápido y confiable!
+
+   37  {/* <-----------containner de cards-----------------> */}
+   38: <div className="pt-24 flex flex-row">
+   39  
+
+   41      
+   42:     <div className="w-96 p-8 bg-white text-center rounded-3xl pr-16 shadow-xl">
+   43:         <h1 className="text-green font-semibold text-violet-500  text-2xl">Basic</h1>
+   44:         <p className="pt-2 tracking-wide">
+   45:             <span className="text-gray-400 align-top">$ </span>
+   46:             <span className="text-3xl text-violet-500 font-semibold">499</span>
+   47:             <span className="text-gray-400 font-medium">/ user</span>
+   48          </p>
+   49:         <hr className="mt-4 border-1"/>
+   50:         <div className="pt-8">
+   51:         <ul role="list" className="space-y-5 my-7">
+   52: <li className="flex space-x-3">
+   53      {/* <!-- Icon --> */}
+   54:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+   55:     <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Dominio(ahorra: $2.790)</span>
+   56  </li>
+   57: <li className="flex space-x-3">
+   58      {/* <!-- Icon --> */}
+   59:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+   60:     <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">50GB Cloud storage</span>
+   61  </li>
+   62: <li className="flex space-x-3 line-through">
+   63      {/* <!-- Icon --> */}
+   64:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-gray-400 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+   65:     <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> Cuentas de correo</span>
+   66  </li>
+   67: <li className="flex space-x-3 line-through decoration-gray-500">
+   68      {/* <!-- Icon --> */}
+   69:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-gray-400 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+   70:     <span className="text-base font-normal leading-tight text-gray-500">Certificado SSL</span>
+   71  </li>
+   72: <li className="flex space-x-3  decoration-gray-500">
+   73      {/* <!-- Icon --> */}
+   74:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+   75:     <span className="text-base font-normal leading-tight text-gray-500">Soporte Profesional 24/7</span>
+   76  </li>
+   77: <li className="flex space-x-3  decoration-gray-500">
+   78      {/* <!-- Icon --> */}
+   79:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+   80:     <span className="text-base font-normal leading-tight text-gray-500">Ancho de banda sin medicion </span>
+   81  </li>
+   82: <li className="flex space-x-3  decoration-gray-500">
+   83      {/* <!-- Icon --> */}
+   84:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600  dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+   85:     <span class="text-base font-normal leading-tight text-gray-500">Copia de seguridad semanal</span>
+   86  </li>
+   87: <li className="flex space-x-3  decoration-gray-500">
+   88      {/* <!-- Icon --> */}
+   89:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600  dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+   90:     <span className="text-base font-normal leading-tight text-gray-500">1 base de datos</span>
+   91  </li>
+   92: <li className="flex space-x-3  decoration-gray-500">
+   93      {/* <!-- Icon --> */}
+   94:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5  text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+   95:     <span className="text-base font-normal leading-tight text-gray-500">Optimizado para WordPress </span>
+   96  </li>
+   97: <li className="flex space-x-3  decoration-gray-500">
+   98      {/* <!-- Icon --> */}
+   99:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5  text-blue-600  dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  100:     <span class="text-base font-normal leading-tight text-gray-500">Migrador a 1 click</span>
+  101  </li>
+  102: <li className="flex space-x-3 line-through decoration-gray-500">
+  103      {/* <!-- Icon --> */}
+  104:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-gray-400 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  105:     <span class="text-base font-normal leading-tight text-gray-500">Construccion de sitio web</span>
+  106  </li>
+
+  108  <Link  href='HostingDom'>
+  109: <button type="button" className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Continuar <span class="pl-2 material-icons align-middle text-sm">east</span>
+  110                      </button>
+
+  115       {/* <-----------card 2-----------------> */}
+  116:     <div className="w-80 p-8 bg-violet-900 text-center rounded-3xl text-white border-4 shadow-xl border-white transform scale-125">
+  117:         <h1 className="text-white font-semibold text-2xl">Emprendedor</h1>
+  118:         <p className="pt-2 tracking-wide">
+  119:             <span className="text-gray-400 align-top">$ </span>
+  120:             <span className="text-3xl font-semibold">599</span>
+  121:             <span className="text-gray-400 font-medium">/ user</span>
+  122          </p>
+  123:         <hr className="mt-4 border-1 border-gray-600"/>
+  124:         <div className="pt-8">
+  125:         <ul role="list" className="space-y-5 my-7">
+  126: <li className="flex space-x-3">
+  127      {/* <!-- Icon --> */}
+  128:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  129:     <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Dominio(ahorra: $2.790)</span>
+  130  </li>
+  131: <li className="flex space-x-3">
+  132      {/* <!-- Icon --> */}
+  133:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  134:     <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">50GB Cloud storage</span>
+  135  </li>
+  136: <li className="flex space-x-3 ">
+  137      {/* <!-- Icon --> */}
+  138:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5  text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  139:     <span className="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> Cuentas de correo</span>
+  140  </li>
+  141: <li className="flex space-x-3  decoration-gray-500">
+  142      {/* <!-- Icon --> */}
+  143:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5  text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  144:     <span className="text-base font-normal leading-tight text-gray-500">Certificado SSL</span>
+  145  </li>
+  146: <li className="flex space-x-3  decoration-gray-500">
+  147      {/* <!-- Icon --> */}
+  148:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  149:     <span class="text-base font-normal leading-tight text-gray-500">Soporte Profesional 24/7</span>
+  150  </li>
+  151: <li className="flex space-x-3  decoration-gray-500">
+  152      {/* <!-- Icon --> */}
+  153:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  154:     <span className="text-base font-normal leading-tight text-gray-500">Ancho de banda sin medicion </span>
+  155  </li>
+  156: <li className="flex space-x-3  decoration-gray-500">
+  157      {/* <!-- Icon --> */}
+  158:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600  dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  159:     <span className="text-base font-normal leading-tight text-gray-500">Copia de seguridad semanal</span>
+  160  </li>
+  161: <li className="flex space-x-3  decoration-gray-500">
+  162      {/* <!-- Icon --> */}
+  163:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-blue-600  dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  164:     <span className="text-base font-normal leading-tight text-gray-500">1 base de datos</span>
+  165  </li>
+  166: <li className="flex space-x-3  decoration-gray-500">
+  167      {/* <!-- Icon --> */}
+  168:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5  text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  169:     <span className="text-base font-normal leading-tight text-gray-500">Optimizado para WordPress </span>
+  170  </li>
+  171: <li className="flex space-x-3  decoration-gray-500">
+  172      {/* <!-- Icon --> */}
+  173:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5  text-blue-600  dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  174:     <span className="text-base font-normal leading-tight text-gray-500">Migrador a 1 click</span>
+  175  </li>
+  176: <li className="flex space-x-3 line-through decoration-gray-500">
+  177      {/* <!-- Icon --> */}
+  178:     <svg aria-hidden="true" className="flex-shrink-0 w-5 h-5 text-gray-400 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  179:     <span className="text-base font-normal leading-tight text-gray-500">Construccion de sitio web</span>
+  180  </li>
+
+  183  <Link  href='HostingDom'>
+  184: <button type="button" className="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Continuar <span class="pl-2 material-icons align-middle text-sm">east</span>
+  185                      </button>
+
+  187          </div>
+  188:         <div className="absolute top-4 right-4">
+  189:             <p className="bg-blue-700 font-semibold px-4 py-1 rounded-full uppercase text-xs">Popular</p>
+  190          </div>
+
+  192       {/* <-----------card 3-----------------> */}
+  193:     <div class="w-96 p-8 bg-white text-center rounded-3xl pl-16 shadow-xl">
+  194:         <h1 class=" font-semibold text-2xl text-violet-500 ">Enterprise</h1>
+  195:         <p class="pt-2 tracking-wide">
+  196:             <span class="text-gray-400 align-top">$ </span>
+  197:             <span class="text-3xl font-semibold text-violet-500 ">999</span>
+  198:             <span class="text-violet-500  font-medium">/ user</span>
+  199          </p>
+  200:         <hr class="mt-4 border-1"/>
+  201:         <div class="pt-8">
+  202:         <ul role="list" class="space-y-5 my-7">
+  203: <li class="flex space-x-3">
+  204      {/* <!-- Icon --> */}
+  205:     <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  206:     <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">Dominio(ahorra: $2.790)</span>
+  207  </li>
+  208: <li class="flex space-x-3">
+  209      {/* <!-- Icon --> */}
+  210:     <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  211:     <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400">50GB Cloud storage</span>
+  212  </li>
+  213: <li class="flex space-x-3 ">
+  214      {/* <!-- Icon --> */}
+  215:     <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5  text-blue-600 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  216:     <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400"> Cuentas de correo</span>
+  217  </li>
+  218: <li class="flex space-x-3  decoration-gray-500">
+  219      {/* <!-- Icon --> */}
+  220:     <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5  text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  221:     <span class="text-base font-normal leading-tight text-gray-500">Certificado SSL</span>
+  222  </li>
+  223: <li class="flex space-x-3  decoration-gray-500">
+  224      {/* <!-- Icon --> */}
+  225:     <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  226:     <span class="text-base font-normal leading-tight text-gray-500">Soporte Profesional 24/7</span>
+  227  </li>
+  228: <li class="flex space-x-3  decoration-gray-500">
+  229      {/* <!-- Icon --> */}
+  230:     <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  231:     <span class="text-base font-normal leading-tight text-gray-500">Ancho de banda sin medicion </span>
+  232  </li>
+  233: <li class="flex space-x-3  decoration-gray-500">
+  234      {/* <!-- Icon --> */}
+  235:     <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-blue-600  dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  236:     <span class="text-base font-normal leading-tight text-gray-500">Copia de seguridad semanal</span>
+  237  </li>
+  238: <li class="flex space-x-3  decoration-gray-500">
+  239      {/* <!-- Icon --> */}
+  240:     <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-blue-600  dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  241:     <span class="text-base font-normal leading-tight text-gray-500">1 base de datos</span>
+  242  </li>
+  243: <li class="flex space-x-3  decoration-gray-500">
+  244      {/* <!-- Icon --> */}
+  245:     <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5  text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  246:     <span class="text-base font-normal leading-tight text-gray-500">Optimizado para WordPress </span>
+  247  </li>
+  248: <li class="flex space-x-3  decoration-gray-500">
+  249      {/* <!-- Icon --> */}
+  250:     <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5  text-blue-600  dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  251:     <span class="text-base font-normal leading-tight text-gray-500">Migrador a 1 click</span>
+  252  </li>
+  253: <li class="flex space-x-3  decoration-gray-500">
+  254      {/* <!-- Icon --> */}
+  255:     <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5  text-blue-600 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+  256:     <span class="text-base font-normal leading-tight text-gray-500">Construccion de sitio web</span>
+  257  </li>
+
+  259  <Link  href='HostingDom'>
+  260: <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">Continuar <span class="pl-2 material-icons align-middle text-sm">
+  261                          east </span>
+
+client\components\Cloud-hosting\CardCloudHosting.jsx:
+   11  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+   12: <body class="font-sans bg-gray-100">
+   13: <div class="min-h-screen flex justify-center ">
+   14: <div class="">
+   15: <div class="text-center font-semibold">
+   16  
+   17:     <h2 class="text-4xl">
+   18:       <span class="text-success">Cloud Servers en America Latina</span>
+   19      </h2>
+
+   21      <br/> <br/> <br/>
+   22:     <h1 class="text-7xl">
+   23:         <span class="text-blue-700 tracking-wide">Alojamiento rápido, escalable y confiable </span>
+   24      </h1>
+   25      <br/>
+   26:     <h1 class="text-7xl">
+   27:         <span class="text-blue-700 tracking-wide">para tus aplicaciones</span>
+   28      </h1>
+
+   32      <Link  href='/cloudDedicados/cloudServers'>
+   33:     <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white text-4xl py-2 px-4 border border-blue-500 hover:border-transparent rounded">Ver Planes</button>
+   34  </Link>
+
+   38  
+   39: <div class={s.container}>
+   40:     <div class= {s.flipCard} >
+   41:       <div class={s.flipCardInner}>
+   42:       <div class= {s.flipCardFront}>
+   43  
+   44        <ul>
+   45:       <h1 class= {s.h1Dominio}>Rápido </h1>
+   46        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_cudLXD-hOOsvI2qq7mL3ww_MqCAB19vvZA&usqp=CAU' width="100"/>      
+   47:       <h2 class={s.h2Dominio}> Performance que te sorprenderá</h2>
+   48        </ul>
+   49        </div>
+   50:       <div class={s.flipCardBack}>
+   51:           <li class={s.liDominio}>Plataforma OpenStack</li>
+   52:           <li class={s.liDominio}>Almacenamiento 100% SSD</li>
+   53:           <li class={s.liDominio}>CPUs Intel de 3.2 a 5.3 GHZ</li>
+   54:           <li class={s.liDominio}>Redes Gigabit y fibra óptica</li>
+   55        
+
+   61  
+   62: <div class= {s.flipCard} >
+   63:       <div class={s.flipCardInner}>
+   64:       <div class= {s.flipCardFront}>
+   65        <ul>
+   66:         <h1 class= {s.h1Dominioo}>Escalable</h1> 
+   67          <img src='https://img2.freepng.es/20180526/jtj/kisspng-scalability-computer-icons-computer-software-virtu-5b093e28a11c51.8861325415273323926599.jpg' width="100"/> 
+   68:           <h2 class= {s.h2Dominio}>Crecimiento sin limitaciones</h2>
+   69        </ul>
+   70        </div>
+   71:       <div class={s.flipCardBack}>
+   72:         <p class={s.p}>Escala incrementando o reduciendo los recursos de tus servidores en la nube (RAM, vCPUs, storage*) con algunos clicks y en pocos minutos.</p>
+   73        </div>
+
+   78  
+   79: <div class= {s.flipCard} >
+   80:       <div class={s.flipCardInner}>
+   81:       <div class= {s.flipCardFront}>
+   82        <ul>
+   83:           <h1 class={s.h1Dominiooo}>Simple</h1>
+   84            <img src='https://e7.pngegg.com/pngimages/864/12/png-clipart-logo-circle-organization-point-brand-circle-blue-angle.png' width="60"/> 
+   85            <br/>
+   86:           <h2 class= {s.h2Dominio}> Minutos en lugar de horas</h2>
+   87        </ul>
+   88        </div>
+   89:       <div class={s.flipCardBack}>
+   90          <br/>
+   91:         <p class={s.p}>Ahorra tiempo gestionando todos los aspectos de tus Cloud Servers desde un panel super simple e intuitivo..</p>
+   92        </div>
+
+   97  
+   98: <div class= {s.flipCard} >
+   99:       <div class={s.flipCardInner}>
+  100:       <div class= {s.flipCardFront}>
+  101        <ul>
+  102:           <h1 class={s.h1Dominiooo}>Confiable</h1>
+  103            <img src='https://w7.pngwing.com/pngs/153/247/png-transparent-computer-icons-reliability-text-heart-desktop-wallpaper.png' width="100"/> 
+  104:           <h2 class={s.h2Dominio}>La tranquilidad que necesitas</h2>      
+  105        </ul>
+  106        </div>
+  107:       <div class={s.flipCardBack}>
+  108:         <p class={s.p}>Toda nuestra arquitectura de Cloud Servers fue diseñada con la Alta Disponibilidad (HA) como premisa. Por eso tus servicios son replicados en 3 nodos diferentes y en tiempo real.</p>
+  109        </div>
+
+client\components\cloudServers\contenido.jsx:
+   44                < >
+   45:       <div className="xl:mx-auto xl:container py-20 2xl:px-0 px-6 ">
+   46:           <div className="lg:flex items-center justify-between">
+   47:               <div className=" lg:w-1/2 w-full">
+   48:                   <p className="text-base leading-4 text-gray-600">Choose your plan</p>
+   49:                   <h1 role="heading" className="md:text-5xl text-3xl font-bold leading-10 mt-3 text-gray-800">
+   50                    Planes y precios <p>de Servidor Cloud</p>
+   51                    </h1>
+   52:                   <p role="contentinfo" className="text-base leading-5 mt-5 text-gray-600">
+   53                    Elige la mejor combinación para tu proyecto <p>hasta 16 vCPU's, 64 GB RAM y 480 GB almacenamiento SSD</p>
+   54                    </p>
+   55:                   <div className="w-56">
+   56:                       <div className="bg-gray-100 shadow rounded-full flex items-center mt-10">
+   57:                           <button onClick="menuHandler1()" className="bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 rounded-full py-4 px-6 mr-1" id="monthly">
+   58                            Anual
+   59                            </button>
+   60:                           <button onClick="menuHandler1()" className="bg-indigo-700 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-white rounded-full py-4 px-6" id="annually">
+   61                                Mensual
+
+   65                </div>
+   66:               <div className="xl:w-1/2s lg:w-7/12 w-full lg:mt-0 mt-12 md:px-8" role="list">
+   67:                   <img src="https://i.ibb.co/0n6DSS3/bgimg.png" className="absolute w-full -ml-12 mt-24" alt="background circle images" />
+   68    
+   69                    {cloud.map((el) => (
+   70:                   <div key={el.id} className="pb-4">
+   71:                   <div role="listitem" className="bg-white cursor-pointer hover:scale-105 ease-in-out duration-300 drop-shadow-md hover:drop-shadow-xl  rounded-lg p-5 relative z-30 ">
+   72:                       <div className="md:flex items-center justify-between">
+   73                        
+   74:                           <h2 className="text-2xl font-semibold leading-6 text-gray-800">{el.name}</h2>
+   75                            
+   76:                           <p className="text-2xl font-semibold md:mt-0 mt-4 leading-6 text-gray-800">${el.price}<span className="font-normal text-base">/mes</span>
+   77                            </p>
+
+   80    
+   81:               <div className="px-6 pt-6 pb-8 bg-white dark:bg-gray-800 sm:p-10 sm:pt-6">      
+   82                <ul >
+   83:                       <li className="flex items-start mt-4">
+   84:                       <div className="flex-shrink-0">
+   85:                       <svg className="w-6 h-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+   86                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+
+   88                    </div>
+   89:                   <p className="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+   90                    Memoria: {el.RAM}
+
+   93    
+   94:                   <li className="flex items-start mt-4">
+   95:                       <div className="flex-shrink-0">
+   96:                       <svg className="w-6 h-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+   97                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+
+   99                    </div>
+  100:                   <p class="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+  101                    Storage: {el.SSD}
+
+  104    
+  105:                   <li className="flex items-start mt-4">
+  106:                       <div className="flex-shrink-0">
+  107:                       <svg className="w-6 h-6 text-green-500" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+  108                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+
+  110                    </div>
+  111:                   <p className="ml-3 text-base leading-6 text-gray-700 dark:text-gray-200">
+  112                    Transferencia: {el.transfer}
+
+  116                </div>
+  117:                 <form className="flex flex-row-reverse " onSubmit={handleSubmit}>
+  118                      <input type="submit" value="+ add"/>
+  119                  </form>
+  120:                         {/* <div className="flex flex-row-reverse ">
+  121                           <Link href='/cart' >
+  122:                       <button onclick="menuHandler1()" className="bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 rounded-full py-3 px-10 mr-1" id="monthly">
+  123                        + add
+
+client\components\footer\Footer.jsx:
+    1: import cls from "classnames";
+    2  import Link from "next/link";
+
+    6    return (
+    7:     <footer className={styles.footer}>
+    8:       <div className={cls("container", "grid", styles.gridFooter)}>
+    9:         <div className={styles.logoCol}>
+   10:           <Link href="/" className={styles.footerLogo}>
+   11:             <img className="logo" src="starLinkFondoNegro.jfif" alt="starkLink logo" />
+   12            </Link>
+   13:           <ul className={styles.socialLinks}>
+   14              <li>
+   15:               <Link className={styles.footerLink} href="#">
+   16                  <ion-icon
+   17:                   className={styles.socialIcon}
+   18                    name="logo-instagram"
+
+   22              <li>
+   23:               <Link className={styles.footerLink} href="#">
+   24                  <ion-icon
+   25:                   className={styles.socialIcon}
+   26                    name="logo-facebook"
+
+   30              <li>
+   31:               <Link className={styles.footerLink} href="#">
+   32                  <ion-icon
+   33:                   className={styles.socialIcon}
+   34                    name="logo-twitter"
+
+   38            </ul>
+   39:           <p className={styles.copyright}>
+   40              copyright &copy; 2027 by starkLink, Inc. All rights reserved.
+
+   43          <div>
+   44:           <p className={styles.footerHeading}>Contact us</p>
+   45:           <address className={styles.contacts}>
+   46:             <p className={styles.address}>
+   47                623 Harrison St., 2nd Floor, San Francisco, CA 94107
+
+   49              <p>
+   50:               <Link className={styles.footerLink} href="tel:415-201-6370">
+   51                  415-201-6370{" "}
+
+   54                <Link
+   55:                 className={styles.footerLink}
+   56                  href="mailto:hello@omnifood.com"
+
+   63          {/* <nav>
+   64:           <p className={styles.footerHeading}>Account</p>
+   65:           <ul className={styles.footerNav}>
+   66              <li>
+   67:               <Link className={styles.footerLink} href="#">
+   68                  Create account
+
+   71              <li>
+   72:               <Link className={styles.footerLink} href="#">
+   73                  Sign in
+
+   76              <li>
+   77:               <Link className={styles.footerLink} href="#">
+   78                  iOS app
+
+   81              <li>
+   82:               <Link className={styles.footerLink} href="#">
+   83                  Android app
+
+   88          <nav>
+   89:           <p className={styles.footerHeading}>Company</p>
+   90:           <ul className={styles.footerNav}>
+   91              <li>
+   92:               <Link className={styles.footerLink} href="/quienes-somos">
+   93                  Conoce mas de Nosotros
+
+   96              <li>
+   97:               <Link className={styles.footerLink} href="#">
+   98                  Política de privacidad
+
+  101              <li>
+  102:               <Link className={styles.footerLink} href="#">
+  103                  Términos y condiciones
+
+  108          <nav>
+  109:           <p className={styles.footerHeading}>Ayuda</p>
+  110:           <ul className={styles.footerNav}>
+  111              <li>
+  112:               <Link className={styles.footerLink} href="#">
+  113                Soporte
+
+  116              {/* <li>
+  117:               <Link className={styles.footerLink} href="#">
+  118                  Help center
+
+  121              <li>
+  122:               <Link className={styles.footerLink} href="#">
+  123                  Privacy & terms
+
+client\components\loading\Loading.jsx:
+   3  const Loading = () => {
+   4:   return <div class={styles.center}>
+   5:   <div class={styles.wave}></div>
+   6:   <div class={styles.wave}></div>
+   7:   <div class={styles.wave}></div>
+   8:   <div class={styles.wave}></div>
+   9:   <div class={styles.wave}></div>
+  10:   <div class={styles.wave}></div>
+  11:   <div class={styles.wave}></div>
+  12:   <div class={styles.wave}></div>
+  13:   <div class={styles.wave}></div>
+  14:   <div class={styles.wave}></div>
+  15  </div>
+
+client\components\nav\NavBarMain.jsx:
+   84    return (
+   85:     <div className={styles.container}>
+   86:       <nav className={styles.wrapper}>
+   87:         <Link className={styles.logoLink} href="/">
+   88            StarLink
+
+   92            <button
+   93:             className={styles.usernameBtn}
+   94              name="dominioState"
+
+  107            {showDropdown.dominioState && (
+  108:             <div className={styles.navDropdown}>
+  109                <div>
+  110:                 <Link href="/dominio/dominio-com-co" className={styles.linkName}>
+  111                  Encuentra tu Nombre en Internet
+  112                  </Link>
+  113:                 {/* <Link href="/dominio/registro-de-dominios" className={styles.linkName}>
+  114                    Dominios .CO Y COM..CO
+  115                  </Link> */}
+  116:                 <Link href="/dominio/email-profesional" className={styles.linkName}>
+  117                    Correo profesional
+  118                  </Link>
+  119:                 {/* <Link href="/dominio/registro-privado" className={styles.linkName}>
+  120                   Registro privado de Dominio
+  121                  </Link>
+  122:                 <Link href="/dominio/transferencia-dominios" className={styles.linkName}>
+  123                  Transfiere tu dominio a DonWeb
+  124                  </Link>
+  125:                 <Link href="/dominio/whois" className={styles.linkName}>
+  126                 Whois
+
+  134            <button
+  135:             className={styles.usernameBtn}
+  136              name="hostingState"
+
+  149            {showDropdown.hostingState && (
+  150:             <div className={styles.navDropdown}>
+  151                 <div>
+  152:                 <Link href="/hosting/w-hosting/webHosting" className={styles.linkName}>
+  153                  Web Hosting
+  154                  </Link>
+  155:                 {/* <Link href="/hosting/windows-hosting" className={styles.linkName}>
+  156                    Windows Hosting
+  157                  </Link> */}
+  158:                 <Link href="/hosting/hosting-cloud-servers-vps" className={styles.linkName}>
+  159                   Cloud Hosting
+  160                  </Link>
+  161:                 {/* <Link href="/hosting/wordpress-hosting" className={styles.linkName}>
+  162                   Wordpress Hosting
+  163                  </Link> */}
+  164:                 {/* <Link href="/hosting/hosting-para-revendedores" className={styles.linkName}>
+  165                Hosting para revendedores
+  166                  </Link> */}
+  167:                 <Link href="/hosting/servidores-dedicados" className={styles.linkName}>
+  168               Servidores dedicados
+
+  178            <button
+  179:             className={styles.usernameBtn}
+  180              name="cloudState"
+
+  193            {showDropdown.cloudState && (
+  194:             <div className={styles.navDropdown}>
+  195                <div>
+  196:                 <Link href="/cloudDedicados/cloudServers" className={styles.linkName}>
+  197                  cloud Servers
+  198                  </Link>
+  199:                 {/* <Link href="/dominio/registro-de-dominios" className={styles.linkName}>
+  200                    Dominios .CO Y COM..CO
+  201                  </Link> */}
+  202:                 <Link href="/cloudDedicados/servidoresDedicados" className={styles.linkName}>
+  203                  servidores Dedicados
+  204                  </Link>
+  205:                 {/* <Link href="/dominio/registro-privado" className={styles.linkName}>
+  206                   Registro privado de Dominio
+  207                  </Link>
+  208:                 <Link href="/dominio/transferencia-dominios" className={styles.linkName}>
+  209                  Transfiere tu dominio a DonWeb
+  210                  </Link>
+  211:                 <Link href="/dominio/whois" className={styles.linkName}>
+  212                 Whois
+
+  225  
+  226:         <Link href='/mis-compras' className={styles.logoCar}><ion-icon name="cart-outline" ></ion-icon></Link>
+  227          
+  228  
+  229:         <div className={styles.navContainer}>
+  230            <div>
+  231              <button
+  232:               className={styles.usernameBtn}
+  233                name="userState"
+
+  246              {showDropdown.userState && (
+  247:               <div className={styles.navDropdown}>
+  248                  <div>
+  249:                 {username !== "Ingresar" && <a className={styles.linkName} onClick={handleSignout}>
+  250                      Sign out
+  251                    </a>}
+  252:                   {username === "Ingresar" && <a className={styles.linkName} onClick={handleSignIn}>
+  253                      Sign In
+  254                    </a>}
+  255:                   <div className={styles.lineWrapper}></div>
+  256                  </div>
+
+client\components\searchBar\searchBar.jsx:
+  23      <form >
+  24:     <div className={s.containerSearch}>
+  25:     <div className={s.inputSearch}>
+  26:     <div className={s.inputResults}>
+  27  
+  28:       <input className={s.placeholder} 
+  29          value={searchTerm}
+
+  35         <button  type="submit"
+  36:      className={s.icon}>
+  37  
+
+  85  //   return (
+  86: //     <div className="flex items-center justify-center mt-20">
+  87  //        <form onSubmit={handleSubmit}>
+
+  91  //         onChange={handleInputChange}
+  92: //         className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-64 appearance-none leading-normal"
+  93  //       />
+
+  95  //       <button  type="submit"
+  96: //       className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search
+  97  
+
+client\src\pages\cart.jsx:
+   14      <Transition.Root show={open} as={Fragment}>
+   15:       <Dialog as="div" className="relative z-10" onClose={setOpen}>
+   16          <Transition.Child
+
+   25                           
+   26:           <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+   27          </Transition.Child>
+
+   30  
+   31:         <div className="fixed inset-0 overflow-hidden">
+   32:           <div className="absolute inset-0 overflow-hidden">
+   33:             <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+   34                <Transition.Child
+
+   42                >
+   43:                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
+   44:                   <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+   45:                     <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
+   46:                       <div className="flex items-start justify-between">
+   47:                         <Dialog.Title className="text-lg font-medium text-gray-900">Shopping cart </Dialog.Title>
+   48:                         <div className="ml-3 flex h-7 items-center">
+   49                            <button
+   50                              type="button"
+   51:                             className="-m-2 p-2 text-gray-400 hover:text-gray-500"
+   52                              onClick={() => setOpen(false)}
+   53                            >
+   54:                             <span className="sr-only">Close panel</span>
+   55:                             <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+   56                            </button>
+
+   59  
+   60:                       <div className="mt-8">
+   61:                         <div className="flow-root">
+   62:                           <ul role="list" className="-my-6 divide-y divide-gray-200">
+   63                              {/* {products.map((product) => ( */}
+   64:                               <li  className="flex py-6">
+   65:                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+   66                                    <img
+
+   68                                      // alt={product.imageAlt}
+   69:                                     className="h-full w-full object-cover object-center"
+   70                                    />
+
+   72  
+   73:                                 <div className="ml-4 flex flex-1 flex-col">
+   74                                    {/* <div>
+   75:                                     <div className="flex justify-between text-base font-medium text-gray-900">
+   76                                        <h3>
+
+   78                                        </h3>
+   79:                                       <p className="ml-4">{product.price}</p>
+   80                                      </div>
+   81:                                     <div className=''>
+   82:                                     <p className="mt-0.5 text-xs text-gray-500">• {product.processing}</p>
+   83:                                     <p className="mt-0.5 text-xs text-gray-500">• {product.RAM}</p>
+   84:                                     <p className="mt-0.5 text-xs text-gray-500">• {product.SSD}</p>
+   85:                                     <p className="mt-0.5 text-xs text-gray-500">• {product.transfer}</p>
+   86                                      </div>
+   87                                    </div> */}
+   88:                                   <div className="flex flex-1 items-end justify-between text-sm mt-1">
+   89:                                   <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p>
+   90  
+   91:                                     <div className="flex">
+   92                                        <button
+   93                                          type="button"
+   94:                                         className="font-medium text-indigo-600 hover:text-indigo-500"
+   95                                        >
+
+  107  
+  108:                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
+  109:                       <div className="flex justify-between text-base font-medium text-gray-900">
+  110                          <p>Subtotal</p>
+
+  112                        </div>
+  113:                       <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+  114                        <Link href='/PasarelaPagos'>
+  115:                       <div className="mt-6">
+  116                          <a
+  117                            href="#"
+  118:                           className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+  119                          >
+
+  124  
+  125:                       <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
+  126                          <p>
+
+  129                              type="button"
+  130:                             className="font-medium text-indigo-600 hover:text-indigo-500"
+  131                              onClick={() => setOpen(false)}
+
+client\src\pages\index.js:
+  30        </Head>
+  31:       <main className={styles.main}>
+  32  
+  33:       <Spline className={styles.Spline} scene="https://prod.spline.design/pE91QTxCL5UWQMbK/scene.splinecode" />
+  34  
+
+client\src\pages\login.jsx:
+   91  return(
+   92: <section className="h-screen">
+   93:   <div className="px-6 h-full text-gray-800">
+   94      <div
+   95:       className="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6"
+   96      >
+   97        <div
+   98:         className="grow-0 shrink-1 md:shrink-0 basis-auto xl:w-6/12 lg:w-6/12 md:w-9/12 mb-12 md:mb-0"
+   99        >
+
+  101            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+  102:           className="w-full"
+  103            alt="Sample image"
+
+  105        </div>
+  106:       <div className="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0">
+  107          <form onSubmit={handleLoginWithEmail}>
+  108:           <div className="flex flex-row items-center justify-center lg:justify-start">
+  109:             <p className="text-lg mb-0 mr-4">Sign in with</p>
+  110              <button
+
+  113                data-mdb-ripple-color="light"
+  114:               class="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+  115              >
+  116                {/* <!-- Facebook --> */}
+  117:               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" className="w-4 h-4">
+  118                  {/* <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --> */}
+
+  129                data-mdb-ripple-color="light"
+  130:               className="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+  131              >
+  132                {/* <!-- Google --> */}
+  133:               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512" className="w-4 h-4">
+  134                  {/* <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->*/}
+
+  147                data-mdb-ripple-color="light"
+  148:               className="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+  149              >
+  150                {/* <!-- Linkedin --> */}
+  151:               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="w-4 h-4">
+  152                  {/* <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --> */}
+
+  161            <div
+  162:             className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
+  163            >
+  164:             <p className="text-center font-semibold mx-4 mb-0">Or</p>
+  165            </div>
+
+  168            {/* <!-- Email input --> */}
+  169:           <div className="mb-6">
+  170              <input
+  171                type="text"
+  172:               className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+  173                id="exampleFormControlInput2"
+
+  177              />
+  178:             <p className={styles.userMsg}>{userMsg}</p>
+  179  
+
+  182            {/* <!-- Password input --> */}
+  183:           <div className="mb-6">
+  184              <input
+  185                type="password"
+  186:               className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+  187                id="exampleFormControlInput2"
+
+  191  
+  192:           <div className="flex justify-between items-center mb-6">
+  193:             <div className="form-group form-check">
+  194                <input
+  195                  type="checkbox"
+  196:                 className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+  197                  id="exampleCheck2"
+  198                />
+  199:               <label className="form-check-label inline-block text-gray-800" for="exampleCheck2"
+  200                  >Remember me</label
+
+  202              </div>
+  203:             <a href="#!" className="text-gray-800">Forgot password?</a>
+  204            </div>
+  205  
+  206:           <div className="text-center lg:text-left">
+  207              <button
+  208            
+  209:               className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+  210              >
+
+  212              </button>
+  213:             <p className="text-sm font-semibold mt-2 pt-1 mb-0">
+  214                Don't have an account?
+
+  216                  href="#!"
+  217:                 className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+  218                  >Register</a
+
+  243  //return (
+  244: //     <div className={styles.container}>
+  245  //       <Head>
+
+  248  //
+  249: //       <header className={styles.header}>
+  250: //         <div className={styles.headerWrapper}>
+  251: //           <a className={styles.logoLink} href="/">
+  252: //             <div className={styles.logoWrapper}>
+  253  //               <Image
+
+  263  
+  264: //       <form className={styles.main} onSubmit={handleLoginWithEmail}>
+  265: //         <div className={styles.mainWrapper}>
+  266: //           <h1 className={styles.signinHeader}>Sign In</h1>
+  267  
+
+  270  //             placeholder="Email address"
+  271: //             className={styles.emailInput}
+  272  //             onChange={handleOnChangeEmail}
+
+  275  
+  276: //           <p className={styles.userMsg}>{userMsg}</p>
+  277: //           <button className={styles.loginBtn}>{ isLoading ? "Loading...":"Sign In"}</button>
+  278  //         </div>
+
+client\src\pages\cloudDedicados\cloudServers.jsx:
+  5    return (
+  6:     <div className="pt-10">
+  7        <Contenido/>
+
+client\src\pages\dominio\registro-de-dominios.jsx:
+  45        <SearchBar />
+  46:       <div className='hover:table-fixed"'>
+  47        <input 
+
+  50        value={term} onChange={handleChange} />
+  51:        <svg aria-hidden="true" className="w-20 h-20 mr-2 fill-current" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+  52        <ul  >
+  53          {filteredData.map(item => (
+  54:           <li className="relative inline-flex items-center w-full px-5 py-3 text-3xl font-medium border-b border-gray-200 rounded-t-lg hover:bg-gray-100 hover:text-blue-500 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+  55                      key={item.id}>{item.url}
+  56:                    <button type="button" className=" relative md:absolute bottom-1 right-10 p-0.5 mb-2 mr-2 overflow-hidden text-2xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+  57:                    <span className=" relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+  58    No disponible
+
+client\src\pages\hosting\planesCloudServer.jsx:
+  2    return (
+  3:     <h1 className="text-3xl font-bold underline">
+  4        Hello world!
+
+client\src\pages\hosting\servidores-dedicados.jsx:
+    7  
+    8: <div  className='bg-purple-300'>
+    9  
+
+   17  
+   18: <button type="button" className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2">
+   19:   <svg className="w-4 h-4 mr-2 -ml-1" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"></path></svg>
+   20    Sign in with Facebook
+
+   27  
+   28: <button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+   29:   <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+   30        Purple to blue
+
+   39  
+   40: <div className='mg-'>
+   41  
+   42    
+   43: <h1 className="mb-4 text-8xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-8xl"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Administralo</span> o dejalo en manos de nuestros expertos.</h1>
+   44  
+
+   57  
+   58: <h1 className="mb-4 text-8xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-8xl"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Nuestra solución administrada incluye un equipo de expertos que se encargará de cualquier cuestión técnica o pedidos de configuración que necesites realizar.</span> Elige la opción que se adapte a tu negocio.</h1>
+   59      
+   60:     {/* <h1 className="text-5xl">
+   61:         <span className="text-blue-700 tracking-wide">Nuestra solución administrada incluye un equipo de expertos que se encargará de cualquier cuestión técnica o pedidos de configuración que necesites realizar. Elige la opción que se adapte a tu negocio.</span>
+   62      </h1> */}
+
+   72        <div>
+   73:       <a href="#" className="  ml-12 mr-12 block     p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+   74        
+   75  
+   76: <div className="flex flex-col">
+   77:   <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+   78:     <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+   79:       <div className="overflow-hidden">
+   80:         <table className="min-w-full text-center">
+   81:           <thead className="border-b">
+   82              <tr>
+   83:               <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+   84                  
+   85                </th>
+   86:               <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+   87                Auto Administrado
+   88                </th>
+   89:               <th scope="col" className="text-sm font-medium text-gray-900 px-6 py-4">
+   90                Administrado
+
+   94            <tbody>
+   95:             <tr className="border-b">
+   96:               <td className="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+   97                 Sitema Operativo
+   98                </td>
+   99:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  100                 centOS, Ubuntu, Debian, Windows Server
+  101                </td>
+  102:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  103                  Proactivos: Red, Host, Estado de Hardware y Servicios
+
+  105              </tr>
+  106:             <tr className="border-b bg-blue-100 border-blue-200">
+  107:               <td className="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+  108                 Parchea y actualizaciones
+  109                </td>
+  110:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  111                 No
+  112                </td>
+  113:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  114                Actualizaciones de seguridad del sistema y panel -
+
+  117              </tr>
+  118:             <tr className="border-b bg-purple-100 border-purple-200">
+  119:               <td className="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+  120                Copias de seguridad
+  121                </td>
+  122:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  123                A cargo del cliente
+  124                </td>
+  125:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  126                Contenido relativo a hosting
+
+  128              </tr>
+  129:             <tr className="border-b bg-green-100 border-green-200">
+  130:               <td className="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+  131                Acceso root
+  132                </td>
+  133:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  134                SI
+  135                </td>
+  136:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  137                SI
+
+  139              </tr>
+  140:             <tr className="border-b bg-red-100 border-red-200">
+  141:               <td className="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+  142                Panel de control
+  143                </td>
+  144:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  145                NO
+  146                </td>
+  147:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  148                SI
+
+  150              </tr>
+  151:             <tr className="border-b bg-yellow-100 border-yellow-200">
+  152:               <td className="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+  153                  Warning
+  154                </td>
+  155:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  156                Migraciones de web hosting 
+  157                </td>
+  158:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  159                NO
+
+  161              </tr>
+  162:             <tr className="border-b bg-indigo-100 border-indigo-200">
+  163:               <td className="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+  164                Costo adicional
+  165                </td>
+  166:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  167                Instalacion de software bajo demanda
+  168                </td>
+  169:               <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  170                Costo adicional
+
+  172              </tr>
+  173:             <tr className="border-b bg-gray-50 border-gray-200">
+  174:               {/* <td class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap">
+  175                Costo adicional
+  176                </td> */}
+  177:               {/* <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  178                  Cell
+  179                </td>
+  180:               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+  181                  Cell
+
+  183              </tr>
+  184:             <tr className="border-b bg-gray-800 boder-gray-900">
+  185:               <td className="text-sm text-white font-medium px-6 py-4 whitespace-nowrap">
+  186                  Dark
+  187                </td>
+  188:               <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
+  189                  Cell
+  190                </td>
+  191:               <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
+  192                  Cell
+
+client\src\pages\hosting\w-hosting\HostingDom.jsx:
+    8  
+    9:     <div  className=' bg-purple-300'>
+   10          <br/>
+
+   31  
+   32:       <a href="#" className="  ml-80 mr-80 block     p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+   33  
+
+   54  
+   55:     <div  className='bg-violet-500 '>
+   56        <br/><br/><br/><br/><br/>
+
+   58  
+   59:       <div className="flex  ">
+   60:     <div className="flex items-center h-5  ">
+   61:         <input id="helper-radio" aria-describedby="helper-radio-text" type="radio" value="" className="w-4 h-4 text-purple-300 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+   62      </div>
+   63:     <div className="ml-2 text-3xl">
+   64:         <label for="helper-radio" className="font-medium text-purple-300 dark:text-gray-300">Registrar un nuevo dominio</label>
+   65:         <p id="helper-radio-text" className="text-xl font-normal text-purple-300 dark:text-gray-300">Registra ahora mismo un dominio para tu hosting a precio promocional.</p>
+   66          
+
+   69  <br/>
+   70: <div className="flex">
+   71:     <div className="flex items-center h-5">
+   72:         <input id="helper-radio" aria-describedby="helper-radio-text" type="radio" value="" className="w-4 h-4 text-purple-300 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+   73      </div>
+   74:     <div className="ml-2 text-3xl">
+   75:         <label for="helper-radio" className="font-medium text-purple-300 dark:text-purple-300">Ya tengo un dominio, quiero transferirlo a StarLink </label>
+   76:         <p id="helper-radio-text" className="text-xl font-normal text-purple-300 dark:text-gray-300">¿Tienes un dominio en otra empresa? Tráelo a DonWeb y obtén 1 año de renovación gratis.</p>
+   77      </div>
+
+   80  <br/>
+   81: <div className="flex">
+   82:     <div className="flex items-center h-5">
+   83:         <input id="helper-radio" aria-describedby="helper-radio-text" type="radio" value="" className="w-4 h-4 text-purple-300 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+   84      </div>
+   85      
+   86:     <div className="ml-2 text-3xl">
+   87:         <label for="helper-radio" className="font-medium text-purple-300 dark:text-gray-300">Ya tengo un dominio registrado, solo quiero el hosting </label>
+   88:         <p id="helper-radio-text" className="text-xl font-normal text-purple-300 dark:text-gray-300">Indícanos tu dominio y lo apuntaremos a tu nuevo hosting.</p>
+   89      </div>
+
+   92  <br/>
+   93: <div className="flex">
+   94:     <div className="flex items-center h-5">
+   95:         <input id="helper-radio" aria-describedby="helper-radio-text" type="radio" value="" className="w-4 h-4 text-purple-300 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+   96      </div>
+   97:     <div className="ml-2 text-3xl">
+   98:         <label for="helper-radio" className="font-medium text-purple-300 dark:text-gray-300">Lo decidiré más tarde</label>
+   99:         <p id="helper-radio-text" className="text-xs font-normal text-gray-500 dark:text-gray-300"></p>
+  100      </div>
+
+  112  
+  113: <div  className=' flex justify-center'>
+  114  <Link  href=' https://upload.wikimedia.org/wikipedia/commons/1/1e/SITIO-EN-CONSTRUCCION.jpg'>
+  115:               <button type='submit'className="bg-transparent hover:bg-purple-500 text-purple-300 font-semibold hover:text-white py-2 px-4 border border-blue-300   hover:border-transparent rounded">Continuar</button>
+  116                </Link>
+
+  157  <fieldset>
+  158: <legend className="sr-only">dominio-option</legend>
+  159  
+  160: <div className="flex items-center mb-4">
+  161:   <input id="dominio-option-1" type="radio" name="dominio-option" value="Registrar un nuevo dominio<" className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" checked/>
+  162:   <label for="dominio-option-1" className="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+  163    Registrar un nuevo dominio
+
+  165  
+  166: {/* <p id="helper-radio-text" class="text-xl font-normal text-purple-300 dark:text-gray-300">Registra ahora mismo un dominio para tu hosting a precio promocional.</p> */}
+  167  
+
+  169  
+  170: <div className="flex items-center mb-4">
+  171:   <input id="dominio-option-2" type="radio" name="dominio-option" value="Ya tengo un dominio, quiero transferirlo a StarLink" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"/>
+  172:   <label for="dominio-option-2" className="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+  173    Ya tengo un dominio, quiero transferirlo a StarLink
+
+  176  
+  177: <div className="flex items-center mb-4">
+  178:   <input id="dominio-option-3" type="radio" name="dominio-option" value="Ya tengo un dominio registrado, solo quiero el hosting" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600"/>
+  179:   <label for="dominio-option-3" className="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+  180    Ya tengo un dominio registrado, solo quiero el hosting
+
+  183  
+  184: <div className="flex items-center mb-4">
+  185:   <input id="dominio-option-4" type="radio" name="dominio-option" value="United Lo decidiré más tarde" className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring:blue-300 dark:focus-ring-blue-600 dark:bg-gray-700 dark:border-gray-600"/>
+  186:   <label for="dominio-option-4" className="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+  187    Lo decidiré más tarde
+
+client\src\pages\pagos\Pagos.jsx:
+   8    return (
+   9:     <div className={styles.container}>
+  10        <Head>
+
+  15  
+  16:       <main className={styles.main}>
+  17:         <div className={styles.card}>
+  18:         <h1 className={styles.title}>1 vCPU</h1>
+  19:         <div className={styles.grid}>
+  20            <div>
+
+  27              <p>sin atencion permanente</p>
+  28:             <button className={styles.button} onClick={(() => {
+  29                Checkout({
+
+  40        </div>
+  41:       <div className={styles.card}>
+  42:         <h1 className={styles.title}>2 vCPU</h1>
+  43:         <div className={styles.grid}>
+  44            <div>
+
+  51              <p>atencion per call</p>
+  52:             <button className={styles.button} onClick={(() => {
+  53                checkout({

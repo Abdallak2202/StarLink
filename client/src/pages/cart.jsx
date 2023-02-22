@@ -1,14 +1,25 @@
-import React, { Fragment, useState, useContext } from 'react'
+import React, { Fragment, useState, useReducer } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import productItem from 'components/cloudServers/contenido'
+import { shoppingInitialState, shoppingReducer } from '@/reducers/ShoppingReducers'
 
 
 
-const Cart = ({carrito}) => {
-  console.log(carrito)
- 
+const Cart = () => {
   const [open, setOpen] = useState(true)
+  const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
+  
+  const {products, cart } = state
+
+    const addToCart = (id) => {
+      console.log(id)
+    };
+
+    const delFromCart = () => {};
+
+    const clearCart = () => {};
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -60,11 +71,11 @@ const Cart = ({carrito}) => {
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
-                            {/* {products.map((product) => ( */}
+                            {products.map((product) => (<productItem key={product.id} product={products} addToCart={addToCart}/>))}
                               <li  className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
-                                    // src={product.imageSrc}
+                                    //src={product.imageSrc}
                                     // alt={product.imageAlt}
                                     className="h-full w-full object-cover object-center"
                                   />

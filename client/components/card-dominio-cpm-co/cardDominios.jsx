@@ -26,9 +26,9 @@ const config = {
              <h1 className="mb-4 text-9xl font-medium font-sans md:font-serif bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-cyan-700 to-blue-600  ">{TLD}</h1>
           <h2 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400"> Por solo</h2>
           <div className="flex items-baseline text-gray-900 dark:text-white">
-          <span class="text-5xl font-semibold ">$</span>
-          <span class="text-9xl font-extrabold tracking-tight ">{price}</span>
-          <span class="ml-1 text-2xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+          <span className="text-5xl font-semibold ">$</span>
+          <span className="text-9xl font-extrabold tracking-tight ">{price}</span>
+          <span className="ml-1 text-2xl font-normal text-gray-500 dark:text-gray-400">/month</span>
 
           </div>
           </div>
