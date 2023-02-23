@@ -1,66 +1,25 @@
-import React, { Fragment, useState, useContext } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-// import { Store } from "./Store";
-
-const products = [
-  {
-    id: 1,
-    name: "Basico",
-    category: "simple",
-    imageSrc: "/images/cloudServer.jpg",
-    imageAlt: 'fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-    price: 700,
-    processing: '1 vc',
-    RAM: '1 GB',
-    SSD:'1 GB',
-    transfer:'1 TB',
-    description: "sin atencion permanente",
-  },
-  {
-    id: 2,
-    name: "Intermedio",
-   category: "ultra",
-   imageSrc: "/images/cloudServer.jpg",
-   imageAlt: 'fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-    price: 2200,
-    processing: '2 vc',
-    RAM: '4 GB',
-    SSD:'30 GB',
-    transfer: '2 TB',
-    description: "atencion per call",
-  },
-  {
-    id: 3,
-    name: "Plus",
-    category: "vip",
-    imageSrc: "/images/cloudServer.jpg",
-    imageAlt: 'fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-    price: 5200,
-    processing: '8 vc',
-    RAM: '8 GB',
-    SSD:'50 GB',
-    transfer: '5 TB',
-    description: "atencion 24x7",
-  },
-  
-  // More products...
-]
-
-export default function Cart() {
-
-  // const {state, dispatch} = useContext(Store)
-  // const {cart} = state
-  // const [cartItemsCount, setCartItemsCount] = useState(0)
-
-  // useEffect(()=> {
-  //   setCartItemsCount(cart.cartItems.reduce((a, c)=> a + c.quantity, 0 ))
-
-  // }, [cart.cartItems])
+import productItem from 'components/cloudServers/contenido'
 
 
+
+
+const Cart = () => {
   const [open, setOpen] = useState(true)
+  
+  
+  //const {products, cart } = state
+
+    const addToCart = (id) => {
+      console.log(id)
+    };
+
+    const delFromCart = () => {};
+
+    const clearCart = () => {};
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -112,18 +71,18 @@ export default function Cart() {
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul role="list" className="-my-6 divide-y divide-gray-200">
-                            {products.map((product) => (
-                              <li key={product.id} className="flex py-6">
+                            {/* {products.map((product) => (<productItem key={product.id} product={products} addToCart={addToCart}/>))} */}
+                              <li  className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
-                                    src={product.imageSrc}
-                                    alt={product.imageAlt}
+                                    //src={product.imageSrc}
+                                    // alt={product.imageAlt}
                                     className="h-full w-full object-cover object-center"
                                   />
                                 </div>
 
                                 <div className="ml-4 flex flex-1 flex-col">
-                                  <div>
+                                  {/* <div>
                                     <div className="flex justify-between text-base font-medium text-gray-900">
                                       <h3>
                                         <a href={product.href}>{product.name}</a>
@@ -136,7 +95,7 @@ export default function Cart() {
                                     <p className="mt-0.5 text-xs text-gray-500">• {product.SSD}</p>
                                     <p className="mt-0.5 text-xs text-gray-500">• {product.transfer}</p>
                                     </div>
-                                  </div>
+                                  </div> */}
                                   <div className="flex flex-1 items-end justify-between text-sm mt-1">
                                   <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p>
 
@@ -151,7 +110,7 @@ export default function Cart() {
                                   </div>
                                 </div>
                               </li>
-                            ))}
+                            {/* ))} */}
                           </ul>
                         </div>
                       </div>
@@ -160,7 +119,7 @@ export default function Cart() {
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
-                        <p>$8100.00</p>
+                        <p></p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                       <Link href='/PasarelaPagos'>
@@ -200,9 +159,4 @@ export default function Cart() {
   )
 }
 
-
-
-
-
-
-// export default Cart;
+export default Cart;
