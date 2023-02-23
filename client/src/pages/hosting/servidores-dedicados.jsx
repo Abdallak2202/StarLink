@@ -1,43 +1,57 @@
-const servidoresDedicados = () => {
+import CardServer from 'components/host-server/CardServer'
+
+export async function getStaticProps() {
+  const req = await fetch(" https://star-link-back-end-production.up.railway.app/dedicated-servers");
+  const cards = await req.json();
+  return { props: { cards } };
+}
+
+
+
+const servidoresDedicados = ({cards}) => {
   return (
     
 
 <div>
 
-
 <div  className='bg-purple-300'>
 
+ 
+
+
+{/* 
+<-----------cards---------> */}
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-{/* <-----------button 1-----------------> */}
 <div>
-
-<button type="button" className="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55 mr-2 mb-2">
-  <svg className="w-4 h-4 mr-2 -ml-1" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.1 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.4 0 225.4 0c-73.22 0-121.1 44.38-121.1 124.7v70.62H22.89V288h81.39v224h100.2V288z"></path></svg>
-  Sign in with Facebook
-</button>
-</div>
+      {/* <SearchBar /> */}
 
 
-{/* <-----------button 2-----------------> */}
-<div>
-
-<button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-  <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-      Purple to blue
-  </span>
-</button>
+      <h1 className='text-8xl'>Elegi la mejor opcion</h1>
 
 
-</div>
+      {cards.map((cards) => (
+        <CardServer key={cards.id} brand={cards.brand} price = {cards.price} description={cards.description} processor = {cards.processor} Ram = {cards.Ram} SSD = {cards.SSD}  OS = {cards.OS}/>
+
+
+
+      ))}
+
+
+    </div>
+
+
+
+
+
+
+
 
 
 {/* <-----------texto 1-----------------> */}
-
-<div className='mg-'>
+<div className='container'>
+<div>
 
   
 <h1 className="mb-4 text-8xl font-extrabold text-center text-gray-900 dark:text-white md:text-5xl lg:text-8xl"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Administralo</span> o dejalo en manos de nuestros expertos.</h1>
@@ -60,6 +74,7 @@ const servidoresDedicados = () => {
     {/* <h1 className="text-5xl">
         <span className="text-blue-700 tracking-wide">Nuestra solución administrada incluye un equipo de expertos que se encargará de cualquier cuestión técnica o pedidos de configuración que necesites realizar. Elige la opción que se adapte a tu negocio.</span>
     </h1> */}
+      </div>
       </div>
 <br/>
 <br/>

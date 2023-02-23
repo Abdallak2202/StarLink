@@ -1,11 +1,11 @@
 import NavBarMain from "components/nav/NavBarMain";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { magic } from "../../lib/magic-client.js";
 import "../styles/globals.css";
 import Loading from "components/loading/Loading";
 import Footer from "components/footer/Footer";
 import { useFetchUser } from "lib/authContext";
+
 
 
 export default function App({ Component, pageProps }) {
@@ -15,6 +15,10 @@ export default function App({ Component, pageProps }) {
     setCarrito([...carrito, producto]);
   };
 
+
+import { SessionProvider, useSession } from "next-auth/react"
+
+
   const router = useRouter();
   // const [isLoading, setIsLoading] = useState(true);
 const {user,loading} = useFetchUser();
@@ -22,55 +26,47 @@ const {user,loading} = useFetchUser();
 
   useEffect(() => {
     const handleLoggedIn = async () => {
-      const isLoggedIn = await magic.user.isLoggedIn();
+      // const isLoggedIn = await magic.user.isLoggedIn();
       // switch (isLoggedIn) {
       //   case true :
       //     router.push("/")
       //   default:
       //     router.push("/login")
       // }
-      if (router.pathname !== "/mis-compras") router.push(router.pathname);
-      if (router.pathname === "/mis-compras" && !isLoggedIn) {
-        router.push("/login");
-      } else {
-        router.push(router.pathname);
-      }
+      // if (router.pathname === "/login" && user ) router.push('/');
+      // if (router.pathname === "/mis-compras" && !user) {
+      //   router.push("/login");
+      // } else {
+      //   router.push(router.pathname);
+      // }
+        // if (user) {
+        //   // route to /
+        //   router.push("/");
+        // } else {
+        //   // route to /login
+        //   router.push("/login");
+        // }
+      
 
-      //   if (isLoggedIn) {
-      //     // route to /
-      //     router.push("/");
-      //   } else {
-      //     // route to /login
-      //     router.push("/login");
-      //   }
-      // };
-      //   if (isLoggedIn) {
-      //     // route to /
-      //     router.push("/");
-      //   } else {
-      //     // route to /login
-      //     router.push("/login");
-      //   }
-      // };
     };
     handleLoggedIn();
-  }, [router.pathname]);
+  }, [router.pathname,]);
 
-  useEffect(() => {
-    const handleComplete = () => {
-      setIsLoading(false);
-    };
-    router.events.on("routeChangeComplete", handleComplete);
-    router.events.on("routeChangeError", handleComplete);
+  // useEffect(() => {
+  //   const handleComplete = () => {
+  //     setIsLoading(false);
+  //   };
+  //   router.events.on("routeChangeComplete", handleComplete);
+  //   router.events.on("routeChangeError", handleComplete);
 
-    return () => {
-      router.events.off("routeChangeComplete", handleComplete);
-      router.events.off("routeChangeError", handleComplete);
-    };
-  }, [router]);
+  //   return () => {
+  //     router.events.off("routeChangeComplete", handleComplete);
+  //     router.events.off("routeChangeError", handleComplete);
+  //   };
+  // }, [router]);
   return (
-    <>
-      {isLoading ? (
+    <SessionProvider session={session}>
+      {loading ? (
         <Loading />
       ) : (
         <div>
@@ -80,6 +76,6 @@ const {user,loading} = useFetchUser();
           {router.pathname !== "/login" && <Footer />}
         </div>
       )}
-    </>
+    </SessionProvider>
   );
 }
