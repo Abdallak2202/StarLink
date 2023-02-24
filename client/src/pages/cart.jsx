@@ -1,68 +1,38 @@
-import React, { Fragment, useState, useContext } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-// import { Store } from "./Store";
 
-const products = [
-  {
-    id: 1,
-    name: "Basico",
-    category: "simple",
-    imageSrc: "/images/cloudServer.jpg",
-    imageAlt: 'fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-    price: 700,
-    processing: '1 vc',
-    RAM: '1 GB',
-    SSD:'1 GB',
-    transfer:'1 TB',
-    description: "sin atencion permanente",
-  },
-  {
-    id: 2,
-    name: "Intermedio",
-   category: "ultra",
-   imageSrc: "/images/cloudServer.jpg",
-   imageAlt: 'fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-    price: 2200,
-    processing: '2 vc',
-    RAM: '4 GB',
-    SSD:'30 GB',
-    transfer: '2 TB',
-    description: "atencion per call",
-  },
-  {
-    id: 3,
-    name: "Plus",
-    category: "vip",
-    imageSrc: "/images/cloudServer.jpg",
-    imageAlt: 'fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-    price: 5200,
-    processing: '8 vc',
-    RAM: '8 GB',
-    SSD:'50 GB',
-    transfer: '5 TB',
-    description: "atencion 24x7",
-  },
+const Cart = ({carrito, eliminarProducto}) => {
+  // const [productos, setProductos] = useState([]);
+  const [open, setOpen] = useState(true);
+  const [total, setTotal] = useState(0);
+
+  useEffect(()=> {
+const calculoTotal = carrito.reduce(( total, producto) => total + producto.price, 0);
+
+setTotal(calculoTotal);
+  }, [carrito]);
   
-  // More products...
-]
-
-export default function Cart() {
-
-  // const {state, dispatch} = useContext(Store)
-  // const {cart} = state
-  // const [cartItemsCount, setCartItemsCount] = useState(0)
-
-  // useEffect(()=> {
-  //   setCartItemsCount(cart.cartItems.reduce((a, c)=> a + c.quantity, 0 ))
-
-  // }, [cart.cartItems])
 
 
-  const [open, setOpen] = useState(true)
+//   useEffect(() => {
+//     setProductos(carrito)
+// }, [])
+
+
+  //const {products, cart } = state
+
+    // const addToCart = (id) => {
+    //   console.log(id)
+    // };
+
+    // const delFromCart = () => {};
+
+    // const clearCart = () => {};
 
   return (
+    
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <Transition.Child
@@ -111,13 +81,16 @@ export default function Cart() {
 
                       <div className="mt-8">
                         <div className="flow-root">
-                          <ul role="list" className="-my-6 divide-y divide-gray-200">
-                            {products.map((product) => (
-                              <li key={product.id} className="flex py-6">
-                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                          <ul  role="list" className="-my-6 divide-y divide-gray-200">
+                           
+{carrito.length === 0 ? "Carrito Vacio": (
+ 
+                          carrito.map((producto) => (
+                              <li  key={producto.id} className="flex py-6">
+                                <div   className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
-                                    src={product.imageSrc}
-                                    alt={product.imageAlt}
+                                    // src={el.imageSrc}
+                                    // alt={el.imageAlt}
                                     className="h-full w-full object-cover object-center"
                                   />
                                 </div>
@@ -126,15 +99,15 @@ export default function Cart() {
                                   <div>
                                     <div className="flex justify-between text-base font-medium text-gray-900">
                                       <h3>
-                                        <a href={product.href}>{product.name}</a>
+                                        <a >{producto.name}</a>
                                       </h3>
-                                      <p className="ml-4">{product.price}</p>
+                                      <p className="ml-4">{producto.price}</p>
                                     </div>
                                     <div className=''>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {product.processing}</p>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {product.RAM}</p>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {product.SSD}</p>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {product.transfer}</p>
+                                    <p className="mt-0.5 text-xs text-gray-500">• {producto.processor}</p>
+                                    <p className="mt-0.5 text-xs text-gray-500">• {eliminarProducto.RAM}</p>
+                                    <p className="mt-0.5 text-xs text-gray-500">• {producto.SSD}</p>
+                                    <p className="mt-0.5 text-xs text-indigo-500">• {producto.transfer}</p>
                                     </div>
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm mt-1">
@@ -144,23 +117,31 @@ export default function Cart() {
                                       <button
                                         type="button"
                                         className="font-medium text-indigo-600 hover:text-indigo-500"
-                                      >
+                                      onClick={()=> eliminarProducto(producto.id)}>
                                         Remove
                                       </button>
                                     </div>
                                   </div>
                                 </div>
                               </li>
-                            ))}
-                          </ul>
+                              
+                              )))} 
+                              
+                              
+                              </ul>
                         </div>
                       </div>
                     </div>
 
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
-                        <p>Subtotal</p>
-                        <p>$8100.00</p>
+                        {total > 0 ? (
+                          <>
+                          
+                          <p>Total a pagar:${total}</p>
+                          <p></p>
+                          </>
+                        ):<>No hay productos</>}
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                       <Link href='/PasarelaPagos'>
@@ -200,9 +181,4 @@ export default function Cart() {
   )
 }
 
-
-
-
-
-
-// export default Cart;
+export default Cart;
