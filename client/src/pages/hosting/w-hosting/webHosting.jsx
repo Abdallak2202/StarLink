@@ -12,11 +12,12 @@ export async function getStaticProps() {
 
 
 export const webHosting = ({cards}) => {
+  let filtrado = cards.filter(e => e.id < 4);
   return (
     <div>
     {/* <SearchBar /> */}
 
-    {cards.map((cards) => (
+    {filtrado.map((cards) => (
       <CardHosting key={cards.id}  price = {cards.price} description={cards.description} name = {cards.name} floorSpace = {cards.floorSpace} 
       raks = {cards.raks} consumption = {cards.consumption}  />
 

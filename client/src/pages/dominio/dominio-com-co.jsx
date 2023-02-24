@@ -8,6 +8,8 @@ import React from "react";
 
 
 export async function getStaticProps() {
+ 
+ 
   const req = await fetch("https://star-link-back-end-production.up.railway.app/domains");
   const cards = await req.json();
   return { props: { cards } };
@@ -15,13 +17,13 @@ export async function getStaticProps() {
 
 
 
-export const dominioComCo = ({ cards, props  }) => {
+export const dominioComCo = ({ cards, props }) => {
   return (
     <div>
       <SearchBar />
 
       {cards.map((cards) => (
-        <Card key={cards.id} TLD={cards.TLD} price = {cards.price} description={cards.description} />
+        <Card key={cards.id} TLD={cards.TLD} price = {cards.price} description={cards.description} id={cards.id} />
 
 
       ))}
