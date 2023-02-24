@@ -6,9 +6,7 @@ import cloudServers from '@/pages/cloudDedicados/cloudServers'
 const productItem = ({products}) =>{
       
     const [cloud, setCloud] = useState([])
-    //const [cart, setCart]= useState([])
-    
-    
+      
     
     
     
@@ -20,7 +18,6 @@ const productItem = ({products}) =>{
     const obtenerDatos= async () => {
         const data = await fetch('https://star-link-back-end-production.up.railway.app/cloud-servers')
         const products = await data.json()
-        //console.log(products)
         setCloud(products)
     }
     
