@@ -101,13 +101,13 @@ setTotal(calculoTotal);
                                       <h3>
                                         <a >{producto.name}</a>
                                       </h3>
-                                      <p className="ml-4">{producto.price}</p>
+                                      <p className="ml-4">{producto.price} $</p>
                                     </div>
                                     <div className=''>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {producto.processor}</p>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {eliminarProducto.RAM}</p>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {producto.SSD}</p>
-                                    <p className="mt-0.5 text-xs text-indigo-500">• {producto.transfer}</p>
+                                    <p className="mt-0.5 text-xs text-gray-500">• {producto.processor} Vc</p>
+                                    <p className="mt-0.5 text-xs text-gray-500">• {eliminarProducto.RAM} GB</p>
+                                    <p className="mt-0.5 text-xs text-gray-500">• {producto.SSD} TB</p>
+                                    <p className="mt-0.5 text-xs text-indigo-500">• {producto.transfer} tf</p>
                                     </div>
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm mt-1">

@@ -2,8 +2,10 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-const ProductScreen = ({entrada, agregarCarrito})=> {
-   const {name, price, SSD, RAM, processor, transfer, id, description} = entrada
+const ServiceScreen = ({entrada, agregarCarrito})=> {
+
+  console.log(entrada);
+   const {TLD, price, description, id} = entrada
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,12 +13,8 @@ const ProductScreen = ({entrada, agregarCarrito})=> {
     //agragar al carrito
    let productoSeleccionado = {
 id,
-name,
+name: TLD,
 price,
-SSD,
-RAM,
-processor,
-transfer,
 description
    }
   
@@ -48,15 +46,11 @@ agregarCarrito(productoSeleccionado);
                             <br></br>
                             <br></br>
                             <br></br>
-<h2>Name:{entrada.name}</h2>
-<h2>Memoria:{entrada.RAM} GB</h2>
-<h2>Almacenamiento:{entrada.SSD} TB</h2>
-<h2>Procesador:{entrada.processor} UND</h2>
-<h2>Transferencia:{entrada.transfer} tf</h2>
+<h2>Name:{entrada.TLD}</h2>
 <h2>Descripción de Servicio:{entrada.description} </h2>
 <h2>precio:{entrada.price} $</h2>
         <form onSubmit={handleSubmit}>
-                          <Link href={'/cloudDedicados/cloudServers'} >
+                          <Link href={'/dominio/dominio-com-co'} >
                                <button className="bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 rounded-full py-3 px-10 mr-1" id="monthly">
                                RELOAD
                                    </button>
@@ -85,7 +79,7 @@ agregarCarrito(productoSeleccionado);
 }
    
 export async function getServerSideProps({query: { id }}){
-const url = `https://star-link-back-end-production.up.railway.app/cloud-servers/${id}`
+const url = `https://star-link-back-end-production.up.railway.app/domains/${id}`
 
   console.log(url)
 
@@ -101,4 +95,4 @@ entrada
 
 
 }
-export default ProductScreen;
+export default ServiceScreen;
