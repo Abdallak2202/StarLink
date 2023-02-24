@@ -1,5 +1,4 @@
 import s from 'src/styles/servHost.module.css'
-
 import React from "react";
 import { motion } from "framer-motion"
 import Link from 'next/link'
@@ -17,17 +16,11 @@ const config = {
 <div>
 
 <div>
-
-
     
 </div>
 
 
-
-
-
 <div >
-
 
         <motion.div
           transition={config}
@@ -45,11 +38,6 @@ const config = {
              <h2 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400"> {floorSpace}</h2>
              <h2 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400"> {racks}</h2>
              <h2 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400"> {consumption}</h2>
-
-
-
-
-
 
 
 
