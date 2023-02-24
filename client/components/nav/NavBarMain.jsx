@@ -256,7 +256,7 @@ setuser(values)
 
 
 
-        <Link href='/mis-compras' className={styles.logoCar}><ion-icon name="cart-outline" ></ion-icon></Link>
+        <Link href='/cart' className={styles.logoCar}><ion-icon name="cart-outline" ></ion-icon></Link>
         
 
         <div className={styles.navContainer}>

@@ -1,14 +1,36 @@
 import NavBarMain from "components/nav/NavBarMain";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import "../styles/globals.css";
 import Loading from "components/loading/Loading";
 import Footer from "components/footer/Footer";
 import { useFetchUser } from "lib/authContext";
 import { SessionProvider, useSession } from "next-auth/react"
+import { Carrois_Gothic } from "@next/font/google";
 
 
 export default function App({ Component,  pageProps: { session, ...pageProps }}) {
+  const [carrito, setCarrito] = useState([]);
+
+  useEffect(()=> {
+const carritoLS = JSON.parse(localStorage.getItem("carrito")) ?? [];
+setCarrito(carritoLS);
+  }, []);
+
+useEffect(()=> {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}, [carrito]);
+
+  const agregarCarrito = (producto) => {
+    setCarrito([...carrito, producto]);
+  };
+
+  const eliminarProducto = (id) => {
+    const carritoActualizado= carrito.filter((articulo)=> articulo.id !==id);
+    setCarrito(carritoActualizado);
+  };
+
+
   const router = useRouter();
   // const [isLoading, setIsLoading] = useState(true);
 const {user,loading} = useFetchUser();
@@ -62,7 +84,7 @@ const {user,loading} = useFetchUser();
         <div>
 
           {router.pathname !== "/login" && <NavBarMain />}
-          <Component {...pageProps} />
+          <Component {...pageProps} carrito={carrito} agregarCarrito={agregarCarrito}  eliminarProducto={eliminarProducto}/>
           {router.pathname !== "/login" && <Footer />}
         </div>
       )}

@@ -4,10 +4,9 @@ import cloudServers from '@/pages/cloudDedicados/cloudServers'
 
 
 const productItem = ({products}) =>{
-    
-    console.log(products)
+      
     const [cloud, setCloud] = useState([])
-    const [cart, setCart]= useState([])
+    //const [cart, setCart]= useState([])
     
     
     
