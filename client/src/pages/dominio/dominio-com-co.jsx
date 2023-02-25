@@ -27,11 +27,20 @@ export const dominioComCo = ({ cards, props }) => {
           </div>
           <div>
       {cards.map((cards) => (
+
         <Card key={cards.id} TLD={cards.TLD} price = {cards.price} description={cards.description} id={cards.id} />
         
         
         ))}
 </div>
+
+        <Card key={cards.id} TLD={cards.TLD} price = {cards.price} description={cards.description} id={cards.id} slug={cards.slug}/>
+
+
+      ))}
+
+
+
     </div>
 
   );

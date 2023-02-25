@@ -10,7 +10,7 @@ const config = {
       damping: 10,
       stiffness: 80
     };
-    export const CardHosting = ({ TLD, price, description, name, floorSpace, racks, consumption   }) => {
+    export const CardHosting = ({ price, description, name, floorSpace, racks, consumption , id , slug }) => {
       return (
 
 <div>
@@ -33,7 +33,7 @@ const config = {
               <div className={s.flipCardInner}>
              <div className= {s.flipCardFront} >
 
-             <h1 className="mb-4 text-9xl font-medium font-sans md:font-serif bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-cyan-700 to-blue-600  ">{TLD}</h1>
+             <h1 className="mb-4 text-9xl font-medium font-sans md:font-serif bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-cyan-700 to-blue-600  ">{slug}</h1>
              <h1 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400">{name}</h1>
              <h2 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400"> {floorSpace}</h2>
              <h2 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400"> {racks}</h2>
@@ -52,14 +52,17 @@ const config = {
 
           <div className={s.flipCardBack}>
             <br/>
-          <h1 className="mb-4 text-6xl font-extrabold text-purple-200  drop-shadow-lg">Eleji tu Plan {TLD}</h1>
+          <h1 className="mb-4 text-6xl font-extrabold text-purple-200  drop-shadow-lg">Eleji tu Plan {name}</h1>
           <br/>
           <br/>
           <p className=" mb-6 text-4xl font-bold text-purple-200 drop-shadow-lg shadow-ambar-300">{description}</p>
           
           <br/>
           
-          <Link href='home'>
+
+          {/* <Link href='HostingDom'>
+
+
 <button disabled type="button" class="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-purple-200 hover:bg-purple-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center">
     <svg aria-hidden="true" role="status" class="inline w-4 h-4 mr-3 text-gray-200 animate-spin dark:text-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
@@ -67,7 +70,12 @@ const config = {
     </svg>
     continuar
 </button>
-</Link>
+</Link> */}
+                      <Link href={`/racks/${id}`} >
+                        <button className="bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 rounded-full py-3 px-10 mr-1" id="monthly">
+                             View Product
+                        </button>
+                      </Link>  
 
         </div>
         </div>
