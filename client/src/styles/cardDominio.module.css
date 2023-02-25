@@ -1,21 +1,24 @@
 .container{
   float: left;
   width: 33.33%;
-  padding:3rem;
+  padding:4rem;
   text-align: center;
-  font-size: 25px;
   cursor: pointer;
+  background-color: white;
   
 }
+
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flipCard {
   background-color: transparent;
-  border-radius: 1rem;
-  width: 33rem;
-  height: 23rem;
-  border: 1px solid #f1f1f1;
+ backdrop-filter: blur(10px);
+  border-radius: 4rem;
+  width: 40rem;
+  height: 18rem;
+  border: 1px solid #FFF;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  
 
   border-radius: 1rem;
 }
@@ -60,17 +63,19 @@
 /* Style the back side */
 .flipCardBack {
   /* background-image: radial-gradient(circle, rgba(24, 180, 247, 1) 0%, rgba(15, 37, 123, 1) 100%); */
-  background-color: rgba(7, 155, 247, 1);
-  opacity: 0.8;
-  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, rgba(7, 155, 247, 1) 10px ), repeating-linear-gradient( #444cf755, #444cf7 );
-  background-repeat:unset;
+  background-image: url('https://img.freepik.com/free-vector/soft-clear-blurred-background_1034-596.jpg?w=740&t=st=1677343370~exp=1677343970~hmac=855b87239c3645b3a7250cb2f53c2914abd84ba7878382993174132cd3c1a945');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* opacity: 0.8; */
+  /* background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, rgb(84, 88, 91) 10px ), repeating-linear-gradient( #444cf755, #f1f1fa );
+  background-repeat:unset; */
   display:table-header-group;
-  padding: 1rem;
-  color: white;
+  padding: 4rem;
+  color: black;
   transform: rotateY(180deg);
   border-radius: 1rem;
 }
-.h1{
+/* .h1{
   text-shadow: 2px 3px 0px rgba(202, 202, 68, 0.46);
   font-size: 1.8rem;
  width: 22rem;
@@ -143,7 +148,7 @@ padding: 0.4rem;
 background: rgb(238,174,202);
 background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 border-radius: 1rem;
-}
+} */
 
 
 .p{

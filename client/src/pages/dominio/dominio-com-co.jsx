@@ -17,16 +17,19 @@ export async function getStaticProps() {
 
 export const dominioComCo = ({ cards, props  }) => {
   return (
-    <div>
+    <div  >
       <SearchBar />
-
+     
+      <div className="bg-no-repeat bg-cover p-0 " >
+          <img src="https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg?w=996&t=st=1677273993~exp=1677274593~hmac=7f22a767a2e0b403ad9417902d45a4274fc2569f80379816573ae7d87530780a" alt="fondo blur" className=" absolute  w-full" />
+          </div>
+          <div>
       {cards.map((cards) => (
         <Card key={cards.id} TLD={cards.TLD} price = {cards.price} description={cards.description} />
-
-
-      ))}
-
-
+        
+        
+        ))}
+</div>
     </div>
 
   );

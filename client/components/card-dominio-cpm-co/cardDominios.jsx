@@ -12,35 +12,48 @@ const config = {
     };
     const Card = ({ TLD, price, description }) => {
       return (
+        <>
+            <div className={s.container}>
+            <div>
         <motion.div
-          transition={config}
-              initial={{ scale: 0.3, opacity: 0 }}
-           animate={{ scale: 1, opacity: 1, transitionDuration: '0.2s' }}
-            exit={{ x: 0, opacity: 0 }}>
+            transition={config}
+                initial={{ scale: 0.3, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1, transitionDuration: '0.2s' }}
+              exit={{ x: 0, opacity: 0 }}>
+                
+          <div className= {s.flipCard} >
+                <div className={s.flipCardInner}>
+              <div className= {s.flipCardFront}>
+              
+              <h1 className="mb-4 text-9xl font-medium font-sans md:font-serif bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-cyan-700 to-blue-600 pb-3 ">{TLD}</h1>
+            </div>
+          
+              <div class="absolute inset-x-0 bottom-0 max-w-sm mx-auto my-0 ">
 
-        <div className={s.container}>
-        <div className= {s.flipCard} >
-              <div className={s.flipCardInner}>
-             <div className= {s.flipCardFront}>
+              <div class="w-30 md:w-100 bg-white mt-10 shadow-lg shadow-slate-600 rounded-lg overflow-hidden">
+          <div class="py-2 text-center font-bold uppercase tracking-wide text-neutral-500 text-xl sha">Por solo</div>
 
-             <h1 className="mb-4 text-9xl font-medium font-sans md:font-serif bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-cyan-700 to-blue-600  ">{TLD}</h1>
-          <h2 className="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400"> Por solo</h2>
-          <div className="flex items-baseline text-gray-900 dark:text-white">
-          <span class="text-5xl font-semibold ">$</span>
-          <span class="text-9xl font-extrabold tracking-tight ">{price}</span>
-          <span class="ml-1 text-2xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+            <div class="flex items-center justify-between h-14 py-2 px-3 bg-indigo-900">
+            <span class="text-white  font-bold text-2xl ">$ {price}</span>
+            <span class="text-xl text-white px-2 py-1 font-semibold ">/month</span>
 
+            
+            </div>
+            </div>
+            </div>
+
+
+            <div className={s.flipCardBack}>
+            <h1 className="mb-6 text-4xl  text-gray-600">Utilidades del dominio<p>{TLD}</p></h1>
+            <p className=" mb-6 text-2xl  text-gray-500">{description}</p>
           </div>
           </div>
+            </div>
+            </motion.div>
+            </div>
 
-          <div className={s.flipCardBack}>
-          <h1 className="mb-4 text-6xl font-extrabold text-sky-200  drop-shadow-lg">Utilidades del dominio {TLD}</h1>
-          <p className=" mb-6 text-4xl font-bold text-white drop-shadow-lg shadow-ambar-300">{description}</p>
-        </div>
-        </div>
-          </div>
-          </div>
-          </motion.div>
+            </div>
+            </>
       );
     };
 
