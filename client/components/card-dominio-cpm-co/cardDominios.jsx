@@ -1,6 +1,7 @@
 import s from "src/styles/cardDominio.module.css"
 import React from "react";
 import { motion } from "framer-motion"
+import Link from 'next/link'
 
 
     
@@ -10,7 +11,7 @@ const config = {
       damping: 10,
       stiffness: 80
     };
-    const Card = ({ TLD, price, description }) => {
+    const Card = ({ TLD, price, description, id }) => {
       return (
         <>
             <div className={s.container}>
@@ -37,8 +38,7 @@ const config = {
             <span class="text-white  font-bold text-2xl ">$ {price}</span>
             <span class="text-xl text-white px-2 py-1 font-semibold ">/month</span>
 
-            
-            </div>
+                        </div>
             </div>
             </div>
 
@@ -46,6 +46,12 @@ const config = {
             <div className={s.flipCardBack}>
             <h1 className="mb-6 text-4xl  text-gray-600">Utilidades del dominio<p>{TLD}</p></h1>
             <p className=" mb-6 text-2xl  text-gray-500">{description}</p>
+          <Link href={`/service/${id}`} >
+                             
+                             <button className="bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 rounded-full py-3 px-10 mr-1" id="monthly">
+                             View Product
+                                 </button>
+                                   </Link>  
           </div>
           </div>
             </div>

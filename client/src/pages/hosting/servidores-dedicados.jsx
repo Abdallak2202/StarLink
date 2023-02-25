@@ -9,6 +9,7 @@ export async function getStaticProps() {
 
 
 const servidoresDedicados = ({cards}) => {
+  
   return (
     
 
@@ -30,7 +31,7 @@ const servidoresDedicados = ({cards}) => {
       <h1 className='text-8xl'>Elegi la mejor opcion</h1>
 
       {cards.map((cards) => (
-        <CardServer key={cards.id} brand={cards.brand} price = {cards.price} description={cards.description} processor = {cards.processor} Ram = {cards.Ram} SSD = {cards.SSD}  OS = {cards.OS}/>
+        <CardServer key={cards.id} brand={cards.brand} price = {cards.price} description={cards.description} processor = {cards.processor} Ram = {cards.Ram} SSD = {cards.SSD}  OS = {cards.OS} id={cards.id}/>
 
 
       ))}

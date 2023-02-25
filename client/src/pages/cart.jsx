@@ -1,27 +1,38 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import productItem from 'components/cloudServers/contenido'
 
+const Cart = ({carrito, eliminarProducto}) => {
+  // const [productos, setProductos] = useState([]);
+  const [open, setOpen] = useState(true);
+  const [total, setTotal] = useState(0);
 
+  useEffect(()=> {
+const calculoTotal = carrito.reduce(( total, producto) => total + producto.price, 0);
 
-
-const Cart = () => {
-  const [open, setOpen] = useState(true)
+setTotal(calculoTotal);
+  }, [carrito]);
   
-  
+
+
+//   useEffect(() => {
+//     setProductos(carrito)
+// }, [])
+
+
   //const {products, cart } = state
 
-    const addToCart = (id) => {
-      console.log(id)
-    };
+    // const addToCart = (id) => {
+    //   console.log(id)
+    // };
 
-    const delFromCart = () => {};
+    // const delFromCart = () => {};
 
-    const clearCart = () => {};
+    // const clearCart = () => {};
 
   return (
+    
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <Transition.Child
@@ -70,32 +81,35 @@ const Cart = () => {
 
                       <div className="mt-8">
                         <div className="flow-root">
-                          <ul role="list" className="-my-6 divide-y divide-gray-200">
-                            {/* {products.map((product) => (<productItem key={product.id} product={products} addToCart={addToCart}/>))} */}
-                              <li  className="flex py-6">
-                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                          <ul  role="list" className="-my-6 divide-y divide-gray-200">
+                           
+{carrito.length === 0 ? "Carrito Vacio": (
+ 
+                          carrito.map((producto) => (
+                              <li  key={producto.id} className="flex py-6">
+                                <div   className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
-                                    //src={product.imageSrc}
-                                    // alt={product.imageAlt}
+                                    // src={el.imageSrc}
+                                    // alt={el.imageAlt}
                                     className="h-full w-full object-cover object-center"
                                   />
                                 </div>
 
                                 <div className="ml-4 flex flex-1 flex-col">
-                                  {/* <div>
+                                  <div>
                                     <div className="flex justify-between text-base font-medium text-gray-900">
                                       <h3>
-                                        <a href={product.href}>{product.name}</a>
+                                        <a >{producto.name}</a>
                                       </h3>
-                                      <p className="ml-4">{product.price}</p>
+                                      <p className="ml-4">{producto.price} $</p>
                                     </div>
                                     <div className=''>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {product.processing}</p>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {product.RAM}</p>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {product.SSD}</p>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {product.transfer}</p>
+                                    <p className="mt-0.5 text-xs text-gray-500">• {producto.processor} Vc</p>
+                                    <p className="mt-0.5 text-xs text-gray-500">• {eliminarProducto.RAM} GB</p>
+                                    <p className="mt-0.5 text-xs text-gray-500">• {producto.SSD} TB</p>
+                                    <p className="mt-0.5 text-xs text-indigo-500">• {producto.transfer} tf</p>
                                     </div>
-                                  </div> */}
+                                  </div>
                                   <div className="flex flex-1 items-end justify-between text-sm mt-1">
                                   <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p>
 
@@ -103,23 +117,31 @@ const Cart = () => {
                                       <button
                                         type="button"
                                         className="font-medium text-indigo-600 hover:text-indigo-500"
-                                      >
+                                      onClick={()=> eliminarProducto(producto.id)}>
                                         Remove
                                       </button>
                                     </div>
                                   </div>
                                 </div>
                               </li>
-                            {/* ))} */}
-                          </ul>
+                              
+                              )))} 
+                              
+                              
+                              </ul>
                         </div>
                       </div>
                     </div>
 
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
-                        <p>Subtotal</p>
-                        <p></p>
+                        {total > 0 ? (
+                          <>
+                          
+                          <p>Total a pagar:${total}</p>
+                          <p></p>
+                          </>
+                        ):<>No hay productos</>}
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
                       <Link href='/PasarelaPagos'>
