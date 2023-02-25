@@ -5,7 +5,7 @@ import Link from 'next/link'
 const ServerScreen = ({entrada, agregarCarrito})=> {
 
   console.log(entrada);
-   const {brand, price, description, id, OS, processor, RAM, SSD } = entrada
+   const {brand, price, description, id, OS, processor, RAM, SSD, slug } = entrada
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +19,8 @@ description,
 OS,
 processor,
 RAM,
-SSD
+SSD,
+slug
    }
   
 agregarCarrito(productoSeleccionado);
@@ -57,8 +58,8 @@ agregarCarrito(productoSeleccionado);
                           <Link href={'/hosting/servidores-dedicados'} >
                                <button className="bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 rounded-full py-3 px-10 mr-1" id="monthly">
                                RELOAD
-                                   </button>
-                                     </Link>  
+                                </button>
+                          </Link>  
                 {/* <Link href={'/cart'} > */}
                                
                       {/* <button className="bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 rounded-full py-3 px-10 mr-1" id="monthly">
@@ -67,13 +68,8 @@ agregarCarrito(productoSeleccionado);
                             {/* </Link>   */}
                             <input type="submit" value="Agregar al Carrito" />
         </form>
-                               
-                          </div> 
-
-
-
-
-
+     
+      </div> 
 
 </>:
 <div>Loading</div>

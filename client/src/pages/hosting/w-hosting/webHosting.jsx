@@ -19,7 +19,7 @@ export const webHosting = ({cards}) => {
 
     {filtrado.map((cards) => (
       <CardHosting key={cards.id}  price = {cards.price} description={cards.description} name = {cards.name} floorSpace = {cards.floorSpace} 
-      raks = {cards.raks} consumption = {cards.consumption}  />
+      raks = {cards.raks} consumption = {cards.consumption} id = {cards.id} slug = {cards.slug} />
 
 
     ))}

@@ -2,10 +2,10 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-const ServiceScreen = ({entrada, agregarCarrito})=> {
+const RackScreen = ({entrada, agregarCarrito})=> {
 
   console.log(entrada);
-   const {TLD, price, description, id, slug} = entrada
+   const {name, floorspace, racks, consumption, price, description, id, slug, location } = entrada
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,10 +13,15 @@ const ServiceScreen = ({entrada, agregarCarrito})=> {
     //agragar al carrito
    let productoSeleccionado = {
 id,
-name: TLD,
+name,
 price,
 description,
-slug
+location,
+floorspace,
+racks,
+consumption,
+slug,
+location
    }
   
 agregarCarrito(productoSeleccionado);
@@ -47,30 +52,20 @@ agregarCarrito(productoSeleccionado);
                             <br></br>
                             <br></br>
                             <br></br>
-<h2>Name:{entrada.TLD}</h2>
+<h2>Name:{entrada.name}</h2>
 <h2>Descripción de Servicio:{entrada.description} </h2>
 <h2>precio:{entrada.price} $</h2>
         <form onSubmit={handleSubmit}>
-                          <Link href={'/dominio/dominio-com-co'} >
+                          <Link href={'/hosting/w-hosting/webHosting'} >
                                <button className="bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 rounded-full py-3 px-10 mr-1" id="monthly">
                                RELOAD
-                                   </button>
-                                     </Link>  
-                {/* <Link href={'/cart'} > */}
-                               
-                      {/* <button className="bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 rounded-full py-3 px-10 mr-1" id="monthly">
-                      + add
-                          </button> */}
-                            {/* </Link>   */}
-                            <input type="submit" value="Agregar al Carrito" />
+                                </button>
+                          </Link>  
+                
+    <input type="submit" value="Agregar al Carrito" />
         </form>
-                               
-                          </div> 
-
-
-
-
-
+     
+      </div> 
 
 </>:
 <div>Loading</div>
@@ -80,7 +75,7 @@ agregarCarrito(productoSeleccionado);
 }
    
 export async function getServerSideProps({query: { id }}){
-const url = `https://star-link-back-end-production.up.railway.app/domains/${id}`
+const url = `https://star-link-back-end-production.up.railway.app/housings/${id}`
 
   console.log(url)
 
@@ -96,4 +91,4 @@ entrada
 
 
 }
-export default ServiceScreen;
+export default RackScreen;

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 const ProductScreen = ({entrada, agregarCarrito})=> {
-   const {name, price, SSD, RAM, processor, transfer, id, description} = entrada
+   const {name, price, SSD, RAM, processor, transfer, id, description, slug} = entrada
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,6 +17,7 @@ SSD,
 RAM,
 processor,
 transfer,
+slug,
 description
    }
   
