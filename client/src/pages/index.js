@@ -4,20 +4,25 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
 import Spline from '@splinetool/react-spline'
+import { getRoleFromLocalCookie } from 'lib/auth'
 
 export default function Home() {
-  /* const [services, setServices] = useState([]);
-  const { Services } = useServices(services);
+  // const [services, setServices] = useState([]);
+  // const { Services } = useServices(services);
 
-//llamado a la api
+
  useEffect(() => {
-  const obtenerServices = async () => {
-    const resultado = await axios.get('http://localhost:1337/api/cloudserver1s');
-
-    setServices(resultado.data);
+  const setRole = async () => {
+    try {
+      
+      const role = await getRoleFromLocalCookie();
+      console.log({role});
+    } catch (error) {
+      console.log({error});
+    }
   }
-obtenerServices();
- }, []); */
+  setRole()
+ }, []); 
 
 //  startFetchMyQuery();
 

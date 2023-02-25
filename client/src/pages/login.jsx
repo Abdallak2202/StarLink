@@ -1,5 +1,5 @@
 // import { ValidateEmail } from "helpers/validateEmail";
-import { getUserFromLocalCookie, setToken } from "lib/auth";
+import { getRoleFromLocalCookie, getUserFromLocalCookie, setToken } from "lib/auth";
 import { fetcher } from "lib/getUsers";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -13,6 +13,7 @@ const Login = (
  ) => {
   // const [email, setEmail] = useState("");
   const { data: session } = useSession()
+  const router = useRouter();
 // console.log({session});
   const [userMsg, setUserMsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -23,21 +24,35 @@ const Login = (
   });
  
   const { identifier, password } = data;
-  const {user} = useFetchUser();
-  useEffect(() => {
-   if(session || user){
-    router.push("/")
-   }
-
-  }, [session])
+  // const {user} = useFetchUser();
+  // useEffect(() => {
+  //  if(session || user){
+  //   router.push('/dominio/dominio-com-co')
+  //  }
+  
+  // }, [session,user])
   
   
   // const {user,loading} = useFetchUser()
   useEffect(() => {
-    const user = getUserFromLocalCookie()
-    if(user || session) {
-      router.push('/')
+    
+ 
+    async function setUserState() {
+      try {
+        const user = await getUserFromLocalCookie();
+        console.log({ user });
+          
+
+    if(user || session) router.push('/');
+    
+        //set coffee stores
+      } catch (error) {
+        //set error
+        console.log("Error", { error });
+      }
     }
+  
+  setUserState();
   }, [])
   
   const handleSubmit = async (e) => {
@@ -57,7 +72,7 @@ const Login = (
           }),
         }
       );
-      console.log(responseData);
+      console.log({responseData});
       if (responseData.user) {
         setToken(responseData);
       
@@ -75,7 +90,7 @@ const Login = (
     setData({ ...data, [target.name]: target.value });
   };
 
-  const router = useRouter();
+ 
 
   useEffect(() => {
     const handleComplete = () => {

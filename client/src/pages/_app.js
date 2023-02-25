@@ -14,33 +14,33 @@ export default function App({ Component,  pageProps: { session, ...pageProps }})
 const {user,loading} = useFetchUser();
 
 
-  useEffect(() => {
-    const handleLoggedIn = async () => {
-      // const isLoggedIn = await magic.user.isLoggedIn();
-      // switch (isLoggedIn) {
-      //   case true :
-      //     router.push("/")
-      //   default:
-      //     router.push("/login")
-      // }
-      // if (router.pathname === "/login" && user ) router.push('/');
-      // if (router.pathname === "/mis-compras" && !user) {
-      //   router.push("/login");
-      // } else {
-      //   router.push(router.pathname);
-      // }
+  // useEffect(() => {
+  //   const handleLoggedIn = async () => {
+  //     // const isLoggedIn = await magic.user.isLoggedIn();
+  //     // switch (isLoggedIn) {
+  //     //   case true :
+  //     //     router.push("/")
+  //     //   default:
+  //     //     router.push("/login")
+  //     // }
+  //     // if (router.pathname === "/login" && user ) router.push('/');
+  //     // if (router.pathname === "/mis-compras" && !user) {
+  //     //   router.push("/login");
+  //     // } else {
+  //     //   router.push(router.pathname);
+  //     // }
 
-        // if (user) {
-        //   // route to /
-        //   router.push("/");
-        // } else {
-        //   // route to /login
-        //   router.push("/login");
-        // }
-      
-    };
-    handleLoggedIn();
-  }, [router.pathname,]);
+  //       // if (user) {
+  //       //   // route to /
+  //       //   router.push("/");
+  //       // } else {
+  //       //   // route to /login
+  //       //   router.push("/login");
+  //       // }
+
+  //   };
+  //   handleLoggedIn();
+  // }, [router.pathname,]);
 
   // useEffect(() => {
   //   const handleComplete = () => {

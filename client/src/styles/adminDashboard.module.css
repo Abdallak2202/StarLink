@@ -1,0 +1,46 @@
+ /* mainColor  #3730a3 */
+ /* Second Color rgb(55 48 163 / 0) */
+
+.mainContainer{
+    font-family: sans-serif;
+    background: rgb(195,174,238);
+    background: radial-gradient(circle, rgba(195,174,238,1) 0%, rgba(55,48,163,1) 100%);
+    border-top: 1rem solid #444 ;;
+    font-size: 30px;
+    /* width: 1000px; */
+    margin-top: 5rem;
+    height:600px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+   
+}
+
+.navBar {
+    grid-row: 1/-1;
+    background:#999;
+    border-right: 1rem solid #444;
+}
+
+.addInformation {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem;
+    gap: 2rem;
+}
+
+.formElements {
+    display: flex;
+    gap: 3rem;
+}
+
+.labelPrueba{
+    display: block;
+    width: 16rem;
+}
+
+.innerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
