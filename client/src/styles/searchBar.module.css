@@ -1,16 +1,17 @@
 .containerSearch {
-    background-image:url("/cloud.png");
-    /* background-color: rgb(94, 204, 241); */
-    padding: 4rem;
+    background-color: rgba(237, 243, 249, 0.701);
+    padding-top: 8rem;
+    padding-bottom: 2rem;
     display: grid;
     justify-content: center;
     align-items: center;
    box-shadow: 3px 3px 3px 3px rgba(21, 10, 103, 0.3) ;
+  
    
 }
 
 .inputSearch {
-    display:inline-flex
+    display:inline-flex;
 }
 .inputResults {
     position: relative;
@@ -28,19 +29,18 @@ top:100vh;
 
 }
 .placeholder {
-    width: 60vh;
-    height: 100%;
-    color:rgb(15, 18, 61);
-    border-bottom-left-radius: 0.5rem;
-    border-top-left-radius: 0.5rem;
-    padding-left: 0.4rem;
+    width: 70rem;
+    height: 4rem;
+    color:rgb(120, 120, 120);
+    font-size: 1.5rem;
+   border-radius: 2rem;
+    padding-left: 2rem;
+    
+    
 
 }
 .icon{
-
-    width: 4rem;
-    height: 4rem;
-    background-color: rgb(15, 18, 61);
+    
     padding-inline: 1.5rem;
    
  
