@@ -30,7 +30,7 @@ const Register = () => {
         }
       );
       setToken(responseData);
-      router.redirect('/profile');
+      router.redirect('/');
     } catch (error) {
       console.error(error);
     }
