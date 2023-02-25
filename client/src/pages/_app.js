@@ -13,7 +13,8 @@ export default function App({ Component,  pageProps: { session, ...pageProps }})
   const [carrito, setCarrito] = useState([]);
 
   useEffect(()=> {
-const carritoLS = JSON.parse(localStorage.getItem("carrito")) ?? [];
+const carritoLS = JSON.parse(localStorage.getItem("carrito"))
+carritoLS.length === 0 ? '':
 setCarrito(carritoLS);
   }, []);
 
@@ -29,6 +30,15 @@ useEffect(()=> {
     const carritoActualizado= carrito.filter((articulo)=> articulo.id !==id);
     setCarrito(carritoActualizado);
   };
+
+
+const [cartItemsCount, setCartItemsCount] = useState(0)
+useEffect(()=> {
+setCartItemsCount(carrito.length)
+//console.log(cartItemsCount)
+},[carrito])
+
+
 
 
   const router = useRouter();
@@ -83,8 +93,8 @@ const {user,loading} = useFetchUser();
       ) : (
         <div>
 
-          {router.pathname !== "/login" && <NavBarMain />}
-          <Component {...pageProps} carrito={carrito} agregarCarrito={agregarCarrito}  eliminarProducto={eliminarProducto}/>
+          {router.pathname !== "/login" && <NavBarMain  cartItemsCount={cartItemsCount}/>}
+          <Component {...pageProps} carrito={carrito} agregarCarrito={agregarCarrito}  eliminarProducto={eliminarProducto} cartItemsCount={cartItemsCount}/>
           {router.pathname !== "/login" && <Footer />}
         </div>
       )}

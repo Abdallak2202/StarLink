@@ -1,18 +1,18 @@
 import styles from "./NavBarMain.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { getUserFromLocalCookie, unsetToken } from "lib/auth";
 import { useSession,signOut } from "next-auth/react";
 
 
-const NavBarMain = ({value}) => {
+const NavBarMain = ({value, cartItemsCount, carrito}) => {
   const router = useRouter();
   const [user, setuser] = useState('')
   const [values, setvalues] = useState('')
   const { data: session } = useSession()
-console.log(session);
+  console.log(session);
   useEffect(() => {
     const getData = async () => {
       const values = await getUserFromLocalCookie()
@@ -134,6 +134,8 @@ console.log(session);
     };
   }, []);
 
+  //------------------Para el conteo de los elementos de compra que suben al carrito-----------------------------------------------------------
+let countCart = 10;
 
 
   //------------------------------------------------------------------------------
@@ -373,7 +375,7 @@ console.log(session);
 
 
 
-        <Link href='/cart' className={styles.logoCar}><ion-icon name="cart-outline" ></ion-icon></Link>
+        <Link href='/cart' className={styles.logoCar}><span className="text-white bg-danger rounded p-1">{cartItemsCount}</span><ion-icon name="cart-outline" ></ion-icon></Link>
         
         <div className={styles.navContainer}>
         <div>

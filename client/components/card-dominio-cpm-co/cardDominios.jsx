@@ -11,7 +11,7 @@ const config = {
       damping: 10,
       stiffness: 80
     };
-    const Card = ({ TLD, price, description, id }) => {
+    const Card = ({ TLD, price, description, id, slug}) => {
       return (
         <motion.div
           transition={config}
