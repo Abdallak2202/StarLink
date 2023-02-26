@@ -95,7 +95,7 @@ const {user,loading} = useFetchUser();
 
           {router.pathname !== "/login" && <NavBarMain  cartItemsCount={cartItemsCount}/>}
           <Component {...pageProps} carrito={carrito} agregarCarrito={agregarCarrito}  eliminarProducto={eliminarProducto} cartItemsCount={cartItemsCount}/>
-          {router.pathname !== "/login" && <Footer />}
+          {(router.pathname !== "/login" && router.pathname !== "/admin-dashboard")  && <Footer />}
         </div>
       )}
     </SessionProvider>
