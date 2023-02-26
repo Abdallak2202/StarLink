@@ -3,7 +3,7 @@
   align-items: center;
 }
 
-body {
+/* body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -12,8 +12,8 @@ body {
   align-content: center;
   height: 100vh;
   width: 100vw;
-}
-
+} */
+/* 
 form {
   width: 30vw;
   min-width: 500px;
@@ -22,7 +22,7 @@ form {
     0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
   border-radius: 7px;
   padding: 40px;
-}
+} */
 
 
 #payment-message {
@@ -38,7 +38,7 @@ form {
 }
 
 /* Buttons and links */
-button {
+/* button {
   background: #5469d4;
   font-family: Arial, sans-serif;
   color: #ffffff;
@@ -61,7 +61,7 @@ button:hover {
 button:disabled {
   opacity: 0.5;
   cursor: default;
-}
+} */
 
 /* spinner/processing state, errors */
 .spinner,
@@ -128,8 +128,8 @@ button:disabled {
 }
 
 @media only screen and (max-width: 600px) {
-  form {
+  /* form {
     width: 80vw;
     min-width: initial;
-  }
+  } */
 }
