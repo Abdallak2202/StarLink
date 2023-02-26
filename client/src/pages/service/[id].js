@@ -140,7 +140,7 @@ agregarCarrito(productoSeleccionado);
                                 class="text-lg text-indigo-50 transition duration-150 hover:bg-indigo-500 bg-indigo-600 font-semibold py-2 px-14 rounded-r">
                                 Next
                             </button>
-						</div> 
+						</div>  
                           </div> 
                           </div> 
                           </div>
