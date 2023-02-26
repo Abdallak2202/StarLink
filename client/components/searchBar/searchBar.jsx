@@ -19,7 +19,7 @@ const SearchBar = () => {
 
   return (
     <form>
-      <div className="flex flex-col pt-28 pb-6  m-h-screen bg-slate-100">
+      <div className="flex flex-col pt-40 pb-6  m-h-screen bg-slate-100">
 
     <div className="bg-white items-center justify-between w-full flex rounded-full shadow-lg p-2 mb-1 sticky">
 
