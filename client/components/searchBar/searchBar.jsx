@@ -12,10 +12,20 @@ const SearchBar = () => {
   };
 
   useEffect(() => {
-    axios.get(` https://star-link-back-end-production.up.railway.app/registered-domains/search?q=${searchTerm}`)
+     //axios.get(` https://star-link-back-end-production.up.railway.app/registered-domains/search?q=${searchTerm}`)
+     axios.get(` https://star-link-back-end-production.up.railway.app/registered-domains/?name=${searchTerm}`)
       .then(response => setSearchResults(response.data))
       .catch(error => console.error(error));
   }, [searchTerm]);
+
+
+//   const obtenerDominios= async () => {
+//     const data = await fetch(` https://star-link-back-end-production.up.railway.app/registered-domains/search?q=${searchTerm}`)
+//     const control = await data.json()
+//     setCloud(control)
+// }
+
+
 
   return (
     <form>

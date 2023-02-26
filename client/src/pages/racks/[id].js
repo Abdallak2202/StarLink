@@ -164,13 +164,9 @@ agregarCarrito(productoSeleccionado);
    
 export async function getServerSideProps({query: { id }}){
 const url = `https://star-link-back-end-production.up.railway.app/housings/${id}`
-
   console.log(url)
-
 const respuesta = await fetch(url)
 const entrada = await respuesta.json()
-
-
   return {
     props:{
 entrada
