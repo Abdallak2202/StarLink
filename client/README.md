@@ -36,3 +36,42 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+# Accept a Payment
+
+Build a simple checkout form to collect payment details. Included are some basic
+build and run scripts you can use to start up the application.
+
+## Running the sample
+
+### Development
+1. Build the application
+~~~shell
+$ npm install
+~~~
+
+2. _Optional_: download and run the [Stripe CLI](https://stripe.com/docs/stripe-cli)
+~~~shell
+$ stripe listen --forward-to localhost:5050/api/webhooks
+~~~
+
+3. Run the application
+~~~shell
+$ STRIPE_WEBHOOK_SECRET=$(stripe listen --print-secret) npm run dev
+~~~
+
+4. Go to [localhost:5050](http://localhost:5050)
+
+### Production
+1. Build the application
+~~~shell
+$ npm install
+
+$ npm build
+~~~
+
+2. Run the application
+~~~shell
+$ npm start
+~~~

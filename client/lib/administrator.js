@@ -22,3 +22,21 @@ export const setNewCloudService = async(data) => {
   }
 }
 
+export const getCloudService = async(data) => {
+    const jwt = getTokenFromLocalCookie();
+        if (jwt) {
+    try {
+        const response = await fetcher(`${process.env.NEXT_PUBLIC_API_URL}/cloud-servers`, {
+           headers: {
+             Authorization: `Bearer ${jwt}`,
+           },
+         })
+        
+        return response;
+        
+    } catch (error) {
+       console.log({error}); 
+    }
+  }
+}
+
