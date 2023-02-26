@@ -10,6 +10,10 @@ const Register = () => {
     username: '',
     email: '',
     password: '',
+    FirstName: '',
+    LastName: '',
+    Address: '',
+    Phone: ''
   });
 
   const handleSubmit = async (e) => {
@@ -21,16 +25,13 @@ const Register = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            email: userData.email,
-            password: userData.password,
-            username: userData.username,
-          }),
+          body: JSON.stringify(userData),
           method: 'POST',
         }
       );
+      // console.log(responseData)
       setToken(responseData);
-      router.redirect('/');
+      // router.redirect('/');
     } catch (error) {
       console.error(error);
     }
@@ -88,6 +89,55 @@ const Register = () => {
               required
             />
           </div>
+          <div className="flex flex-col mb-6 md:w-full">
+            <label className="font-bold text-lg mb-2" htmlFor="FirstName">
+              First Name
+            </label>
+            <input
+              className="border-2 py-2 px-3"
+              type="text"
+              name="FirstName"
+              onChange={(e) => handleChange(e)}
+              required
+            />
+          </div>
+          <div className="flex flex-col mb-6 md:w-full">
+            <label className="font-bold text-lg mb-2" htmlFor="LastName">
+             LastName
+            </label>
+            <input
+              className="border-2 py-2 px-3"
+              type="text"
+              name="LastName"
+              onChange={(e) => handleChange(e)}
+              required
+            />
+          </div>
+          <div className="flex flex-col mb-6 md:w-full">
+            <label className="font-bold text-lg mb-2" htmlFor="Address">
+             Address
+            </label>
+            <input
+              className="border-2 py-2 px-3"
+              type="text"
+              name="Address"
+              onChange={(e) => handleChange(e)}
+              required
+            />
+          </div>
+          <div className="flex flex-col mb-6 md:w-full">
+            <label className="font-bold text-lg mb-2" htmlFor="Phone">
+             Phone Number
+            </label>
+            <input
+              className="border-2 py-2 px-3"
+              type="tel"
+              name="Phone"
+              onChange={(e) => handleChange(e)}
+              required
+            />
+          </div>
+          
           <button
             className="block bg-teal-400 text-lg rounded p-4 mx-auto"
             type="submit"
