@@ -1,0 +1,18 @@
+# Query: localhost
+# ContextLines: 1
+
+4 resultados - Archivos de 2
+
+README.md:
+  55  ~~~shell
+  56: $ stripe listen --forward-to localhost:3000/api/webhooks
+  57  ~~~
+
+  63  
+  64: 4. Go to [localhost:5050](http://localhost:5050)
+  65  
+
+components/stripe/CheckoutForm.jsx:
+  63          // Aca se debe colocar la pagina final de pago - no entendi bien esto, no se si con el deploy ya esta o hay que usar la url de stripe
+  63:         return_url: "https://star-link-sooty.vercel.app/", //como se haria para devolver a un componente 
+  64        },
