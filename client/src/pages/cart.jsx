@@ -2,19 +2,45 @@ import React, { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
+import { getUserFromLocalCookie } from 'lib/auth'
 
 const Cart = ({carrito, eliminarProducto}) => {
   // const [productos, setProductos] = useState([]);
   const [open, setOpen] = useState(true);
   const [total, setTotal] = useState(0);
-
+  const router = useRouter();
+  const { data: session } = useSession();
   useEffect(()=> {
 const calculoTotal = carrito.reduce(( total, producto) => total + producto.price, 0);
 
 setTotal(calculoTotal);
   }, [carrito]);
   
-
+  
+  
+ 
+  useEffect(() => {
+    async function setPageState() {
+        try {
+          const user = await getUserFromLocalCookie();
+          console.log({ user });
+         if(!user &&!session) router.push("/login");
+          //set coffee stores
+        } catch (error) {
+          //set error
+          console.log("Error", { error });
+        }
+      }
+    
+    setPageState();
+//  setfirst(user)
+//     if( !first){
+//      router.push("/login")
+//     }
+ 
+   }, [])
 
 //   useEffect(() => {
 //     setProductos(carrito)
@@ -83,9 +109,9 @@ setTotal(calculoTotal);
                         <div className="flow-root">
                           <ul  role="list" className="-my-6 divide-y divide-gray-200">
                            
-{carrito.length === 0 ? "Carrito Vacio": (
+{carrito?.length === 0 ? "Carrito Vacio": (
  
-                          carrito.map((producto) => (
+                          carrito?.map((producto) => (
                               <li  key={producto.id} className="flex py-6">
                                 <div   className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img

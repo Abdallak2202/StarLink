@@ -148,13 +148,13 @@
   color: var(--color-2);
   border-radius: 0.5rem /* 4px */;
 
-  border-color: var(--color-2) 5em;
+  border-color: var(--color-3) 5em;
 
   box-shadow: var(--shadow30, 0 0 #8c2f2f00), var(--ring-shadow, 0 0 #6b0d0d00),
     var(--shadow30);
 }
 .navDropdown:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--color-4);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5px);
