@@ -26,8 +26,8 @@ useEffect(()=> {
     setCarrito([...carrito, producto]);
   };
 
-  const eliminarProducto = (id) => {
-    const carritoActualizado= carrito.filter((articulo)=> articulo.id !==id);
+  const eliminarProducto = (slug) => {
+    const carritoActualizado= carrito.filter((articulo)=> articulo.slug !==slug);
     setCarrito(carritoActualizado);
   };
 
