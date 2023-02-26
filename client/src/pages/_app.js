@@ -14,7 +14,7 @@ export default function App({ Component,  pageProps: { session, ...pageProps }})
 
   useEffect(()=> {
 const carritoLS = JSON.parse(localStorage.getItem("carrito"))
-carritoLS.length === 0 ? '':
+carritoLS?.length === 0 ? '':
 setCarrito(carritoLS);
   }, []);
 
@@ -34,7 +34,7 @@ useEffect(()=> {
 
 const [cartItemsCount, setCartItemsCount] = useState(0)
 useEffect(()=> {
-setCartItemsCount(carrito.length)
+setCartItemsCount(carrito?.length)
 //console.log(cartItemsCount)
 },[carrito])
 
