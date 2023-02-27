@@ -144,13 +144,13 @@ let countCart = 10;
     <nav className={styles.menu}>
      <Link className={styles.logoLink} href="/">
 
-         <Image 
+         {/* <Image 
         src={'/starLinkFondoNegro.jfif'}
         alt="StarLink"
         width={130}
         height={130}
         className={styles.logoLink}
-        />
+        /> */}
      
         </Link>
 
@@ -231,13 +231,13 @@ let countCart = 10;
             onClick={handleShowDropdown}
           >
             Hosting
-            <Image
+            {/* <Image
               src="static/icons/expand_more.svg"
               alt="Expand more"
               width={24}
               height={24}
               name="hostingState"
-            />
+            /> */}
           </button>
 
           {showDropdown.hostingState && (
@@ -311,13 +311,13 @@ let countCart = 10;
             onClick={handleShowDropdown}
           >
             cloud & Dedicados
-            <Image
+            {/* <Image
               src="static/icons/expand_more.svg"
               alt="Expand more"
               width={24}
               height={24}
               name="cloudState"
-            />
+            /> */}
           </button>
 
           {showDropdown.cloudState && (
@@ -385,13 +385,13 @@ let countCart = 10;
               onClick={handleShowDropdown}
             >
              {user?user:"SignIn"}
-              <Image
+              {/* <Image
               src="static/icons/expand_more.svg"
               alt="Expand more"
               width={24}
               height={24}
               name="userState"
-            />
+            /> */}
             </button>
 
             {showDropdown.userState && (
