@@ -7,7 +7,7 @@ import Footer from "components/footer/Footer";
 import { useFetchUser } from "lib/authContext";
 import { SessionProvider, useSession } from "next-auth/react";
 import { Carrois_Gothic } from "@next/font/google";
-import { FiltrosCombinados } from "./filtrado/FiltrosCombinados.jsx";
+
 
 export default function App({
   Component,
