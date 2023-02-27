@@ -51,3 +51,7 @@ body {
   --blue: rgba(75, 85, 99, 1);
   --blue20: rgb(55, 65, 81);
 }
+
+input[type="text"], input[type="number"], input[type="date"]  {
+  color:#141414
+}
