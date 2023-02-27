@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import ListFiltros from '../../../components/filtrosComb/ListFiltros';
+import ListFiltros from 'components/filtrosComb/ListFiltros';
 
-export const FiltrosCombinados = () => {
+const FiltrosCombinados = () => {
   const [amount, setAmount] = useState("");//monto que colocara el cliente
   const [price, setPrice] = useState("");
   const [product, setProduct] = useState("");
