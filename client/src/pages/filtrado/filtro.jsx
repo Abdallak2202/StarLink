@@ -1,7 +1,7 @@
 import React from 'react';
-import FiltrosCombinados from '../filtrado/FiltrosCombinados'
+import FiltrosCombinados from 'components/filtrosComb/FiltrosCombinados'
 
-export const Filtro = () => {
+const Filtro = () => {
   return (
     <div>
       <FiltrosCombinados/>
