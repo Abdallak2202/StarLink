@@ -1,0 +1,10 @@
+.container{
+    float: left;
+    width: 33.33%;
+    padding:6rem;
+    margin-top: 6rem;
+    text-align: center;
+    cursor: pointer;
+    background-image:"/fondoBlur.jpg";
+    
+  }

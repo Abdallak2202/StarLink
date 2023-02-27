@@ -1,4 +1,4 @@
-import s from 'src/styles/servHost.module.css'
+import s from "components/host-server/CardServer.module.css"
 import React from "react";
 import Link from 'next/link'
 import { motion } from "framer-motion"
@@ -17,49 +17,79 @@ const config = {
            animate={{ scale: 1, opacity: 1, transitionDuration: '0.2s' }}
             exit={{ x: 0, opacity: 0 }}>
 
-        <div className={s.container}>
-        <div className= {s.flipCard} >
-              <div className={s.flipCardInner}>
-             <div className= {s.flipCardFront} >
-
-             <h1 className="mb-4 text-9xl font-medium font-sans md:font-serif bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-cyan-700 to-blue-600  ">{TLD}</h1>
 
 
-             <h2 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400"> {brand}</h2>
-          
+<div class={s.container}>
+<div class="flex flex-wrap justify-center">
 
-              <h2 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400"> {processor}</h2>
-              <h2 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400"> {RAM}</h2>
-              <h2 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400"> {SSD}</h2>
-              <h2 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400"> {OS}</h2>
+<div class="  max-w-xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
+  <div class="m-2 p-2">
+  <h1 className="mb-4 text-8xl font-extrabold text-purple-900  drop-shadow-lg">Eleji tu Plan {TLD}</h1>
+  <p className=" mb-6 text-4xl font-bold text-purple-700 drop-shadow-lg shadow-ambar-300">{description}</p>
 
+      
 
+      <h2 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">{brand}</h2>
+      <ul>
+      <li class="flex space-x-3">
+              {/* <!-- Icon --> */}
+              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-purple-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span class="text-3xl font-bold leading-tight text-gray-500 dark:text-gray-400">{processor}</span>
+              </li>
+              <li class="flex space-x-3">
+              {/* <!-- Icon --> */}
+              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-purple-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span class="text-3xl font-bold leading-tight text-gray-500 dark:text-gray-400">{RAM}</span>
+              </li>
+              <li class="flex space-x-3">
+              {/* <!-- Icon --> */}
+              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-purple-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span class="text-3xl font-bold leading-tight text-gray-500 dark:text-gray-400">{SSD}</span>
+              </li>
+              <li class="flex space-x-3">
+              {/* <!-- Icon --> */}
+              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-purple-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span class="text-3xl font-bold leading-tight text-gray-500 dark:text-gray-400">{OS}</span>
+              </li>
+              </ul>
 
-
-
-
-
-
-
-
-          <h2 className="mb-4 text-xl font-medium text-purple-500 dark:text-gray-400"> Por solo</h2>
-          <div className="flex items-baseline text-purple-500 dark:text-white">
-          <span class="text-5xl font-semibold ">$</span>
-          <span class="text-7xl font-extrabold tracking-tight ">{price}</span>
-          <span class="ml-1 text-2xl font-normal text-purple-500 dark:text-gray-400">/month</span>
-
+              <h2 className=" underline decoration-wavy italic mb-4 px-3 py-4 text-3xl font-mono font-medium text-gray-500 dark:text-gray-400"> Por solo</h2>
+          <div className="flex items-baseline text-purple-500 dark:text-white drop-shadow-3xl">
+          <span class="text-7xl py-8 font-extrabold tracking-tight box-decoration-clone rounded-xl bg-gradient-to-r from-indigo-600 to-blue-300 text-white px-2">$ {price}/month</span>
           </div>
-          </div>
+          <br />
 
-          <div className={s.flipCardBack}>
+          <Link href={`/server/${id}`} >
+                        <button           class="cursor-pointer text-gray-100 text-3xl font-semibold transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300  rounded-lg  px-6 py-4 inline-flex justify-center w-full text-center">
+
+                             View Product
+                        </button>
            
-          <h1 className="mb-4 text-6xl font-extrabold text-purple-200  drop-shadow-lg">Eleji tu Plan {TLD}</h1>
-          <br/>
-          <br/>
-          <p className=" mb-6 text-4xl font-bold text-purple-200 drop-shadow-lg shadow-ambar-300">{description}</p>
-          <br/>
-          <br/>
+                      </Link>  
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           
           {/* <Link href='DashBoard'>
 <button disabled type="button" class="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-purple-200 hover:bg-purple-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 inline-flex items-center">
@@ -70,16 +100,28 @@ const config = {
     continuar
 </button>
 </Link> */}
-                      <Link href={`/server/${id}`} >
-                      <button className="bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none text-base leading-none text-gray-600 rounded-full py-3 px-10 mr-1" id="monthly">
-                             View Product
-                      </button>
-                      </Link> 
+                      
+      
 
         </div>
         </div>
           </div>
-          </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </motion.div>
       );
     };
