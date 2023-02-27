@@ -204,7 +204,9 @@ const Login = (
                   type="button"
                   onClick={(e) => {
                     e.preventDefault();
-                    signIn();
+                    const prueba = signIn();
+                    console.log({prueba});
+                  
                   }}
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"

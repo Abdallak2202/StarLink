@@ -130,10 +130,8 @@ setTotal(calculoTotal);
                                       <p className="ml-4">{producto.price} $</p>
                                     </div>
                                     <div className=''>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {producto.processor} Vc</p>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {eliminarProducto.RAM} GB</p>
-                                    <p className="mt-0.5 text-xs text-gray-500">• {producto.SSD} TB</p>
-                                    <p className="mt-0.5 text-xs text-indigo-500">• {producto.transfer} tf</p>
+                                    {/* <p className="mt-0.5 text-xs text-gray-500">• {producto.slug} </p> */}
+                                    {/* <p className="mt-0.5 text-xs text-gray-500">• {producto.description} </p> */}
                                     </div>
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm mt-1">
@@ -143,7 +141,7 @@ setTotal(calculoTotal);
                                       <button
                                         type="button"
                                         className="font-medium text-indigo-600 hover:text-indigo-500"
-                                      onClick={()=> eliminarProducto(producto.id)}>
+                                      onClick={()=> eliminarProducto(producto.slug)}>
                                         Remove
                                       </button>
                                     </div>
@@ -176,7 +174,7 @@ setTotal(calculoTotal);
                           href="#"
                           className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                         >
-                          Pay
+                          Buy
                         </a>
                       </div>
                       </Link>
@@ -184,6 +182,7 @@ setTotal(calculoTotal);
                       <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                         <p>
                           or
+                          <Link href='/'>
                           <button
                             type="button"
                             className="font-medium text-indigo-600 hover:text-indigo-500"
@@ -192,6 +191,7 @@ setTotal(calculoTotal);
                             Continue Shopping
                             <span aria-hidden="true"> &rarr;</span>
                           </button>
+                          </Link>
                         </p>
                       </div>
                     </div>
