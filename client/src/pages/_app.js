@@ -5,46 +5,43 @@ import "../styles/globals.css";
 import Loading from "components/loading/Loading";
 import Footer from "components/footer/Footer";
 import { useFetchUser } from "lib/authContext";
-import { SessionProvider, useSession } from "next-auth/react"
+import { SessionProvider, useSession } from "next-auth/react";
 import { Carrois_Gothic } from "@next/font/google";
+import { FiltrosCombinados } from "./filtrado/FiltrosCombinados.jsx";
 
-
-export default function App({ Component,  pageProps: { session, ...pageProps }}) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   const [carrito, setCarrito] = useState([]);
 
-  useEffect(()=> {
-const carritoLS = JSON.parse(localStorage.getItem("carrito"))
-carritoLS?.length === 0 ? '':
-setCarrito(carritoLS);
+  useEffect(() => {
+    const carritoLS = JSON.parse(localStorage.getItem("carrito"));
+    carritoLS?.length === 0 ? "" : setCarrito(carritoLS);
   }, []);
 
-useEffect(()=> {
-  localStorage.setItem("carrito", JSON.stringify(carrito));
-}, [carrito]);
+  useEffect(() => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }, [carrito]);
 
   const agregarCarrito = (producto) => {
     setCarrito([...carrito, producto]);
   };
 
   const eliminarProducto = (id) => {
-    const carritoActualizado= carrito.filter((articulo)=> articulo.id !==id);
+    const carritoActualizado = carrito.filter((articulo) => articulo.id !== id);
     setCarrito(carritoActualizado);
   };
 
-
-const [cartItemsCount, setCartItemsCount] = useState(0)
-useEffect(()=> {
-setCartItemsCount(carrito?.length)
-//console.log(cartItemsCount)
-},[carrito])
-
-
-
+  const [cartItemsCount, setCartItemsCount] = useState(0);
+  useEffect(() => {
+    setCartItemsCount(carrito?.length);
+    //console.log(cartItemsCount)
+  }, [carrito]);
 
   const router = useRouter();
   // const [isLoading, setIsLoading] = useState(true);
-const {user,loading} = useFetchUser();
-
+  const { user, loading } = useFetchUser();
 
   // useEffect(() => {
   //   const handleLoggedIn = async () => {
@@ -91,12 +88,21 @@ const {user,loading} = useFetchUser();
       {loading ? (
         <Loading />
       ) : (
-        <div>
-
-          {router.pathname !== "/login" && <NavBarMain  cartItemsCount={cartItemsCount}/>}
-          <Component {...pageProps} carrito={carrito} agregarCarrito={agregarCarrito}  eliminarProducto={eliminarProducto} cartItemsCount={cartItemsCount}/>
-          {router.pathname !== "/login" && <Footer />}
-        </div>
+        <>
+          <div>
+            {router.pathname !== "/login" && (
+              <NavBarMain cartItemsCount={cartItemsCount} />
+            )}
+            <Component
+              {...pageProps}
+              carrito={carrito}
+              agregarCarrito={agregarCarrito}
+              eliminarProducto={eliminarProducto}
+              cartItemsCount={cartItemsCount}
+            />
+            {router.pathname !== "/login" && <Footer />}
+          </div>
+        </>
       )}
     </SessionProvider>
   );
