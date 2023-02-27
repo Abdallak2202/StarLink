@@ -7,14 +7,15 @@
     /* background: radial-gradient(circle, rgba(195,174,238,1) 0%, rgba(55,48,163,1) 100%); */
     border-top: 1rem solid #444 ;;
     font-size: 30px;
+    color: #fff;
     /* width: 1000px; */
     margin-top: 8rem;
     margin-bottom: 4rem;
-    height:600px;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr 1fr 1fr;
-   
+   background-color: #999;
 }
 
 .navBar {
@@ -39,9 +40,9 @@
 }
 
 .backgroundChange {
-background: hsla(230, 48%, 34%, 1);
-background: linear-gradient(90deg, hsla(230, 48%, 34%, 1) 11%, hsla(260, 65%, 81%, 1) 86%);
-background: -moz-linear-gradient(90deg, hsla(230, 48%, 34%, 1) 11%, hsla(260, 65%, 81%, 1) 86%);
+background: rgb(73, 92, 187);
+background: linear-gradient(90deg, rgb(68, 83, 156) 11%, hsla(260, 65%, 81%, 1) 86%);
+background: -moz-linear-gradient(90deg, rgb(87, 103, 183) 11%, hsla(260, 65%, 81%, 1) 86%);
 background: -webkit-linear-gradient(90deg, hsla(230, 48%, 34%, 1) 11%, hsla(260, 65%, 81%, 1) 86%);
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2D3B80", endColorstr="#C3AEEE", GradientType=1 );
 }
@@ -56,4 +57,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2D3B80", en
     flex-direction: column;
     gap: 2rem;
     
+}
+
+.bgColor {
+    background-color: rgb(195,174,238);
 }
