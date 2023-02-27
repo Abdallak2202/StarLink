@@ -35,27 +35,30 @@ setTotal(calculoTotal);
       }
     
     setPageState();
-//  setfirst(user)
-//     if( !first){
-//      router.push("/login")
-//     }
- 
+
    }, [])
 
-//   useEffect(() => {
-//     setProductos(carrito)
-// }, [])
+const cartData = JSON.parse(localStorage.getItem('carrito'));
+fetch('https://star-link-back-end-production.up.railway.app/backdeployado/carts/add-to-cart', {
+  method: 'POST',
+  headers: {
+    'Coontent-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    cartData
+  })
+})
+.then(response => response.json())
+.then(data => {
+  console.log(data);
+})
+.catch(error => {
+  console.error(error)
+});
+
+   
 
 
-  //const {products, cart } = state
-
-    // const addToCart = (id) => {
-    //   console.log(id)
-    // };
-
-    // const delFromCart = () => {};
-
-    // const clearCart = () => {};
 
   return (
     
@@ -168,14 +171,21 @@ setTotal(calculoTotal);
                         ):<>No hay productos</>}
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
-                      <Link href='/PasarelaPagos'>
+                      <Link href='/Pagos/pagos'>
                       <div className="mt-6">
+                      <button
+                            type="button"
+                            className="font-medium text-indigo-600 hover:text-indigo-500"
+                            onClick={() => cartData()}
+                          >
                         <a
                           href="#"
                           className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                        >
+                          >
                           Buy
                         </a>
+                          </button>
+        
                       </div>
                       </Link>
 
