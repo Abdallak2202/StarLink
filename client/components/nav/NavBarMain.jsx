@@ -7,7 +7,8 @@ import { getUserFromLocalCookie, unsetToken } from "lib/auth";
 import { useSession,signOut } from "next-auth/react";
 
 
-const NavBarMain = ({value, cartItemsCount, carrito}) => {
+
+const NavBarMain = ({value, cartItemsCount, carrito,FilterableListPage}) => {
   const router = useRouter();
   const [user, setuser] = useState('')
   const [values, setvalues] = useState('')
@@ -38,6 +39,7 @@ const NavBarMain = ({value, cartItemsCount, carrito}) => {
     hostingState: false,
     userState: false,
     cloudState: false,
+
   });
 
   // const [username, setUsername] = useState("Ingresar");
@@ -84,6 +86,12 @@ const NavBarMain = ({value, cartItemsCount, carrito}) => {
         name === "userState"
           ? !showDropdown.userState
           : (showDropdown.userState = false),
+
+          filtradoState:
+          name === "filtradoState"
+            ? !showDropdown.userState
+            : (showDropdown.userState = false),
+
     });
   };
 
@@ -162,13 +170,13 @@ let countCart = 10;
             onClick={handleShowDropdown}
           >
             Dominio
-            <Image
+            {/* <Image
               src="static/icons/expand_more.svg"
               alt="Expand more"
               width={24}
               height={24}
               name="dominioState"
-            />
+            /> */}
           </button>
      
           {showDropdown.dominioState && (
@@ -231,13 +239,13 @@ let countCart = 10;
             onClick={handleShowDropdown}
           >
             Hosting
-            <Image
+            {/* <Image
               src="static/icons/expand_more.svg"
               alt="Expand more"
               width={24}
               height={24}
               name="hostingState"
-            />
+            /> */}
           </button>
 
           {showDropdown.hostingState && (
@@ -311,13 +319,13 @@ let countCart = 10;
             onClick={handleShowDropdown}
           >
             cloud & Dedicados
-            <Image
+            {/* <Image
               src="static/icons/expand_more.svg"
               alt="Expand more"
               width={24}
               height={24}
               name="cloudState"
-            />
+            /> */}
           </button>
 
           {showDropdown.cloudState && (
@@ -374,6 +382,18 @@ let countCart = 10;
     </div>
 
 
+    {/* //----------------------------filtros-carrito-login------------------------------------ */}
+
+
+    <Link    href="filtrado/FilterableListPage" className={styles.usernameBtn}>
+  <span className="text-white bg-danger rounded p-1">
+    Filtros
+  </span>
+
+</Link>
+
+
+
 
         <Link href='/cart' className={styles.logoCar}><span className="text-white bg-danger rounded p-1">{cartItemsCount}</span><ion-icon name="cart-outline" ></ion-icon></Link>
         
@@ -385,13 +405,13 @@ let countCart = 10;
               onClick={handleShowDropdown}
             >
              {user?user:"SignIn"}
-              <Image
+              {/* <Image
               src="static/icons/expand_more.svg"
               alt="Expand more"
               width={24}
               height={24}
               name="userState"
-            />
+            /> */}
             </button>
 
             {showDropdown.userState && (

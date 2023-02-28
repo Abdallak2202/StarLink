@@ -1,31 +1,43 @@
-import React, { useState } from 'react';
-import ListFiltros from 'components/filtrosComb/ListFiltros';
+import { useState } from 'react';
 
-const FiltrosCombinados = () => {
-  const [amount, setAmount] = useState("");//monto que colocara el cliente
-  const [price, setPrice] = useState("");
-  const [product, setProduct] = useState("");
+const Filter = ({ data, onChange }) => {
+  const [selectedValues, setSelectedValues] = useState([]);
+
+  const handleChange = (value) => {
+    let newSelectedValues;
+    if (selectedValues.includes(value)) {
+      newSelectedValues = selectedValues.filter((v) => v !== value);
+    } else {
+      newSelectedValues = [...selectedValues, value];
+    }
+    setSelectedValues(newSelectedValues);
+    onChange(newSelectedValues);
+  };
+
+  const filterOptions = data.map((item) => ({
+    label: `${item.name} - ${item.price}`,
+    value: item.options
+  }));
+
   return (
     <div>
-      <h2> Filtrado </h2>
-
-      <h3>Coloca el monto para tu presupuesto</h3>
-
-      <ListFiltros title="amounts" url="" handleChange={(e) => {setAmount(e.target.value);}} />
-
-      {amount && (<ListFiltros title="price" url="" handleChange={(e) => {setPrice(e.target.value);}} />
-      )}
-
-      {price && (<ListFiltros title="name" url="" handleChange={(e) => {setProduct(e.target.value);}} />
-      )}
-  
-      <pre>
-        <code>
-          {amount} - {price} - {product}
-        </code>
-      </pre>
+      {filterOptions.map((option) => (
+        <label key={option.value}>
+          <input
+            type="checkbox"
+            checked={selectedValues.includes(option.value)}
+            onChange={() => handleChange(option.value)}
+          />
+          {option.label}
+        </label>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default FiltrosCombinados;
+export default Filter;
+
+
+
+
+
