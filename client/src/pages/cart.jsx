@@ -162,12 +162,12 @@ async function addToCart() {
                                       <p className="ml-4">{producto.price} $</p>
                                     </div>
                                     <div className=''>
-                                    {/* <p className="mt-0.5 text-xs text-gray-500">• {producto.slug} </p> */}
+                                    <p className="mt-0.5 text-xs text-gray-500">• service: {producto.service} </p>
                                     {/* <p className="mt-0.5 text-xs text-gray-500">• {producto.description} </p> */}
                                     </div>
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm mt-1">
-                                  <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p>
+                                  {/* <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p> */}
 
                                     <div className="flex">
                                       <button
@@ -199,7 +199,7 @@ async function addToCart() {
                           </>
                         ):<>No hay productos</>}
                       </div>
-                      <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                      {/* <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p> */}
                       <Link href='/pagos/pasarela'>
                       <div className="mt-6">
                       <button
@@ -209,6 +209,7 @@ async function addToCart() {
                           onClick={()=> addToCart()}>
                           Buy
                         </button>
+
                       </div>
                       </Link>
 
