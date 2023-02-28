@@ -5,7 +5,7 @@ import Link from 'next/link'
 const RackScreen = ({entrada, agregarCarrito})=> {
 
   console.log(entrada);
-   const {name, floorspace, racks, consumption, price, description, id, slug, location } = entrada
+   const {name, floorspace, racks, consumption, price, description, id, slug, location, service } = entrada
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +21,7 @@ floorspace,
 racks,
 consumption,
 slug,
+service,
 location
    }
   
