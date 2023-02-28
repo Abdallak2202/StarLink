@@ -20,13 +20,14 @@ import {
   uploadDedicatedService,
 } from "lib/administrator";
 import { getRoleFromLocalCookie } from "lib/auth";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "../../styles/adminDashboard.module.css";
 
 export const AdminDashboard = () => {
   const router = useRouter();
-  const { formState, onInputChange, onResetForm , setFormState} = useForm({
+  const { formState, onInputChange, onResetForm, setFormState } = useForm({
     name: "",
     description: "",
     price: "",
@@ -46,17 +47,16 @@ export const AdminDashboard = () => {
     racks: "",
     consumption: "",
     hostingId: "",
-    domainId:"",
-    username:"",
-    password:"",
-    FirstName:"",
-    LastName:"",
-    Adress:"",
-    Phone:"",
-    email:"",
-    userId:"",
-    cloudIdUpload:""
-
+    domainId: "",
+    username: "",
+    password: "",
+    FirstName: "",
+    LastName: "",
+    Adress: "",
+    Phone: "",
+    email: "",
+    userId: "",
+    cloudIdUpload: "",
   });
   const [barSelector, seTbarSelector] = useState("");
 
@@ -89,9 +89,7 @@ export const AdminDashboard = () => {
     Phone,
     email,
     userId,
-    cloudIdUpload
-    
-
+    cloudIdUpload,
   } = formState;
 
   useEffect(() => {
@@ -116,6 +114,12 @@ export const AdminDashboard = () => {
     setRoleState();
   }, []);
 
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    buttonRef.current.click();
+  }, []);
+
   const handleSubmit = async (e, formName) => {
     e.preventDefault();
     if (formName === "form1") {
@@ -126,7 +130,6 @@ export const AdminDashboard = () => {
       const data = await setNewdedicatedService(formState);
     }
     if (formName === "form3") {
-      
       const data = await setNewDomainService(formState);
     }
     if (formName === "form4") {
@@ -154,18 +157,18 @@ export const AdminDashboard = () => {
       const deleteData1 = await deleteDomainService(domainId);
     }
     if (formName === "form4") {
-      const deleteData1 = await deleteHosting (hostingId);
+      const deleteData1 = await deleteHosting(hostingId);
     }
     if (formName === "form5") {
-      const deleteData1 = await deleteUser (userId);
+      const deleteData1 = await deleteUser(userId);
     }
-    
+
     onResetForm();
   };
 
   // const [items, setItems] = useState([]);
   const myDivRef = useRef(null);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   // const [items, setItems] = useState([])
   const displayTable = async (e) => {
     const data = await getCloudService();
@@ -288,50 +291,47 @@ export const AdminDashboard = () => {
     }
   };
 
-// uploades
+  // uploades
   const [selectedValue, setSelectedValue] = useState("");
   const [attributeValue, setattributeValue] = useState("");
 
-  function handleSelectChange({target}) {
+  function handleSelectChange({ target }) {
     // Set the selected value to the value of the selected option
     setSelectedValue(target.value);
   }
 
-  function handleAttributeChange({target}) {
+  function handleAttributeChange({ target }) {
     // Set the selected value to the value of the selected option
     setattributeValue(target.value);
   }
 
+  //   const onSelectChange = (e) => {
+  //     setFormState({
+  //         ...formState,
+  //         [ selectedValue]: attributeValue
+  //     });
+  // }
 
-//   const onSelectChange = (e) => {
-//     setFormState({
-//         ...formState,
-//         [ selectedValue]: attributeValue
-//     });
-// }
+  const handleModification = async (e, formName) => {
+    e.preventDefault();
+    const dataJson = { [selectedValue]: attributeValue };
+    console.log(selectedValue);
+    if (formName === "form1") {
+      const uploadData1 = await uploadCloudService(cloudIdUpload, dataJson);
+    }
+    if (formName === "form2") {
+      const uploadData1 = await uploadDedicatedService(cloudIdUpload, dataJson);
+    }
 
-const handleModification =async (e,formName)=> {
-  e.preventDefault();
-  const dataJson = {[selectedValue]:attributeValue}
-  console.log(selectedValue);
-  if (formName === "form1") {
-    const uploadData1 = await uploadCloudService(cloudIdUpload,dataJson);
-  }
-  if (formName === "form2") {
-    const uploadData1 = await uploadDedicatedService(cloudIdUpload,dataJson);
-  }
-
-  
-  onResetForm();
-}
-
+    onResetForm();
+  };
 
   return (
     <div className={styles.mainContainer}>
       <div className={styles.navBar}>
         <ul>
           <li>
-            <button onClick={handleMainDisplay} name="general">
+            <button ref={buttonRef} onClick={handleMainDisplay} name="general">
               Informacion General
             </button>
           </li>
@@ -364,24 +364,30 @@ const handleModification =async (e,formName)=> {
       </div>
       {barSelector === "general" && (
         <div>
-          <q>
-            "Bienvenido a su panel de control, donde tiene el poder de marcar la
-            diferencia. Cada clic, cada decisión, cada acción que realice aquí
-            puede tener un impacto positivo en su organización y en las personas
-            a las que sirve. Recuerde que usted es el líder de este mundo
-            digital". y un gran poder conlleva una gran responsabilidad. Así que
-            acepta el desafío, mantente enfocado y nunca pierdas de vista tus
-            objetivos. Tienes las herramientas, el talento y la determinación
-            para impulsar el cambio y crear un futuro más brillante. ¡Pongámonos
-            a trabajar! ¡y haz que suceda!"
-          </q>
+          <div className={styles.blockquoteWrapper}>
+            <div className={styles.blockquote}>
+              <h1>
+                "Bienvenido a su panel de control, donde tiene el poder de
+                marcar la diferencia. Cada clic, cada decisión, cada acción que
+                realice aquí puede tener un impacto positivo en su organización
+                y en las personas a las que sirve. Recuerde que usted es el
+                líder de este mundo digital". y un gran poder conlleva una gran
+                responsabilidad. Así que acepta el desafío, mantente enfocado y
+                nunca pierdas de vista tus objetivos. Tienes las herramientas,
+                el talento y la determinación para impulsar el cambio y crear un
+                futuro más brillante. ¡Pongámonos a trabajar! ¡y haz que
+                suceda!"
+              </h1>
+              <h4>&mdash;StarLink</h4>
+            </div>
+          </div>
         </div>
       )}
       {barSelector === "cloud" && (
         <div>
           <div>
             <div className={styles.addInformation}>
-              <header>Adiciona un servicio</header>
+              <header className={styles.brandTitle}>Adiciona un servicio</header>
               <form onSubmit={(e) => handleSubmit(e, "form1")}>
                 {/* "processor": 2,
   "RAM": 2,
@@ -466,13 +472,13 @@ const handleModification =async (e,formName)=> {
                     />
                   </div>
                 </div>
-                <input type="submit" value="Adicionar Elemento"/>
+                <input type="submit" value="Adicionar Elemento" />
               </form>
             </div>
           </div>
 
           <div className={styles.backgroundChange}>
-            <h2>Servicios Existentes</h2>
+            <h2 className={styles.brandTitle } style={{ color: '#444'}}>Servicios Existentes</h2>
             <div ref={myDivRef}></div>
             <button onClick={displayTable}>ver</button>
           </div>
@@ -497,42 +503,41 @@ const handleModification =async (e,formName)=> {
             <form onSubmit={(e) => handleModification(e, "form1")}>
               <h2>Actualizar Información</h2>
               <div className={`${styles.formElements}`}>
-
-              <label for="propiedad" className={styles.labelPrueba}>
-                 Propiedad
+                <label for="propiedad" className={styles.labelPrueba}>
+                  Propiedad
                 </label>
-              <select  value={selectedValue} onChange={handleSelectChange}>
-  <option value="name">name</option>
-  <option value="description">description</option>
-  <option value="price">price</option>
-  <option value="processor">processor</option>
-  <option value="price">price</option>
-  <option value="RAM">RAM</option>
-  <option value="SSD">SSD</option>
-  <option value="transfer">transfer</option>
-</select>
+                <select value={selectedValue} onChange={handleSelectChange}>
+                  <option value="name">name</option>
+                  <option value="description">description</option>
+                  <option value="price">price</option>
+                  <option value="processor">processor</option>
+                  <option value="price">price</option>
+                  <option value="RAM">RAM</option>
+                  <option value="SSD">SSD</option>
+                  <option value="transfer">transfer</option>
+                </select>
 
-<div>
-                <label for="attributeValue" className={styles.labelPrueba}>
-                 Atribute
-                </label>
-                <input
-                  type="text"
-                  name="attributeValue"
-                  value={attributeValue}
-                  onChange={ handleAttributeChange}
-                />
+                <div>
+                  <label for="attributeValue" className={styles.labelPrueba}>
+                    Atribute
+                  </label>
+                  <input
+                    type="text"
+                    name="attributeValue"
+                    value={attributeValue}
+                    onChange={handleAttributeChange}
+                  />
                 </div>
                 <div>
-                <label for="cloudIdUpload" className={styles.labelPrueba}>
-                  cloudId:
-                </label>
-                <input
-                  type="text"
-                  name="cloudIdUpload"
-                  value={cloudIdUpload}
-                  onChange={onInputChange}
-                />
+                  <label for="cloudIdUpload" className={styles.labelPrueba}>
+                    cloudId:
+                  </label>
+                  <input
+                    type="text"
+                    name="cloudIdUpload"
+                    value={cloudIdUpload}
+                    onChange={onInputChange}
+                  />
                 </div>
               </div>
               <input type="submit" value="Actualizar Elemento" />
@@ -660,41 +665,40 @@ const handleModification =async (e,formName)=> {
             <form onSubmit={(e) => handleModification(e, "form2")}>
               <h2>Actualizar Información</h2>
               <div className={`${styles.formElements}`}>
-
-              <label for="propiedad" className={styles.labelPrueba}>
-                 Propiedad
+                <label for="propiedad" className={styles.labelPrueba}>
+                  Propiedad
                 </label>
-              <select  value={selectedValue} onChange={handleSelectChange}>
-  <option value="brand">brand</option>
-  <option value="description">description</option>
-  <option value="price">price</option>
-  <option value="OS">OS</option>
-  <option value="processor">processor</option>
-  <option value="RAM">RAM</option>
-  <option value="SSD">SSD</option>
-</select>
+                <select value={selectedValue} onChange={handleSelectChange}>
+                  <option value="brand">brand</option>
+                  <option value="description">description</option>
+                  <option value="price">price</option>
+                  <option value="OS">OS</option>
+                  <option value="processor">processor</option>
+                  <option value="RAM">RAM</option>
+                  <option value="SSD">SSD</option>
+                </select>
 
-<div>
-                <label for="attributeValue" className={styles.labelPrueba}>
-                 Atribute
-                </label>
-                <input
-                  type="text"
-                  name="attributeValue"
-                  value={attributeValue}
-                  onChange={ handleAttributeChange}
-                />
+                <div>
+                  <label for="attributeValue" className={styles.labelPrueba}>
+                    Atribute
+                  </label>
+                  <input
+                    type="text"
+                    name="attributeValue"
+                    value={attributeValue}
+                    onChange={handleAttributeChange}
+                  />
                 </div>
                 <div>
-                <label for="cloudIdUpload" className={styles.labelPrueba}>
-                  cloudId:
-                </label>
-                <input
-                  type="text"
-                  name="cloudIdUpload"
-                  value={cloudIdUpload}
-                  onChange={onInputChange}
-                />
+                  <label for="cloudIdUpload" className={styles.labelPrueba}>
+                    cloudId:
+                  </label>
+                  <input
+                    type="text"
+                    name="cloudIdUpload"
+                    value={cloudIdUpload}
+                    onChange={onInputChange}
+                  />
                 </div>
               </div>
               <input type="submit" value="Actualizar Elemento" />
@@ -916,13 +920,13 @@ const handleModification =async (e,formName)=> {
           </div>
         </div>
       )}
-       {barSelector === "User" && (
+      {barSelector === "User" && (
         <div>
           <div>
             <div className={styles.addInformation}>
               <header>Adiciona un Usuario</header>
               <form onSubmit={(e) => handleSubmit(e, "form5")}>
-              {/* username: '',
+                {/* username: '',
     email: '',
     password: '',
     FirstName: '',
@@ -965,7 +969,7 @@ const handleModification =async (e,formName)=> {
                   </div>
                   <div className={styles.formElements}>
                     <label for="FirstName" className={styles.labelPrueba}>
-                    FirstName:
+                      FirstName:
                     </label>
                     <input
                       type="text"
@@ -976,7 +980,7 @@ const handleModification =async (e,formName)=> {
                   </div>
                   <div className={styles.formElements}>
                     <label for="LastName" className={styles.labelPrueba}>
-                    LastName:
+                      LastName:
                     </label>
                     <input
                       type="text"
@@ -987,7 +991,7 @@ const handleModification =async (e,formName)=> {
                   </div>
                   <div className={styles.formElements}>
                     <label for="Adress" className={styles.labelPrueba}>
-                    Address:
+                      Address:
                     </label>
                     <input
                       type="text"
@@ -998,7 +1002,7 @@ const handleModification =async (e,formName)=> {
                   </div>
                   <div className={styles.formElements}>
                     <label for="Phone" className={styles.labelPrueba}>
-                    Phone:
+                      Phone:
                     </label>
                     <input
                       type="text"
@@ -1006,7 +1010,7 @@ const handleModification =async (e,formName)=> {
                       value={Phone}
                       onChange={onInputChange}
                     />
-                  </div> 
+                  </div>
                 </div>
                 <input type="submit" value="Adicionar Elemento" />
               </form>

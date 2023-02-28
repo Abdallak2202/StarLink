@@ -55,3 +55,27 @@ body {
 input[type="text"], input[type="number"], input[type="date"], input[type="email"], input[type="password"],select {
   color:#141414
 }
+
+table{
+  width:100%;
+  table-layout: fixed;
+}
+
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #0372D5;
+  text-transform: uppercase;
+}
+
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #555;
+  border-bottom: solid 2px rgba(220, 38, 38,0.1);
+}
