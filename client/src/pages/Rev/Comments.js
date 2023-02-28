@@ -1,6 +1,6 @@
 import React from 'react'
-import CommentsForm from 'components/rev-comments/CommentsForm'
-import CommentsCard from 'components/rev-comments/CommentsCard'
+import CommentsForm from 'components/revComments/CommentsForm'
+import CommentsCard from 'components/revComments/CommentsCard'
 
 const Comments = () => {
   return (
