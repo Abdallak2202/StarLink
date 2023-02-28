@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 
 const Filter = ({ data, onChange }) => {
   const [selectedValues, setSelectedValues] = useState([]);
@@ -15,43 +15,19 @@ const Filter = ({ data, onChange }) => {
   };
 
   const filterOptions = data
-    .filter((item) => item.price <= 1500) 
+    .filter((item) => item.price <= 50) // Filtrar productos con precio <= 50
     .map((item) => ({
       label: `${item.slug} - ${item.description} - ${item.price}`,
       value: item.options
     }));
 
-  /* return (
-    <div class="pt-40">
-      <select multiple value={selectedValues} onChange={handleChange}>
-        {filterOptions.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-    </div>
-  ); */
-
   return (
-    <div class="pt-40">
+    <select multiple value={selectedValues} onChange={handleChange}>
       {filterOptions.map((option) => (
-        <label key={option.value}>
-          <input
-            type="checkbox"
-            checked={selectedValues.includes(option.value)}
-            onChange={() => handleChange(option.value)}
-          />
+        <option key={option.value} value={option.value}>
           {option.label}
-        </label>
+        </option>
       ))}
-    </div>
+    </select>
   );
 };
-
-export default Filter;
-
-
-
-
-
