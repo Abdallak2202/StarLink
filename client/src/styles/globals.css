@@ -52,6 +52,6 @@ body {
   --blue20: rgb(55, 65, 81);
 }
 
-input[type="text"], input[type="number"], input[type="date"]  {
+input[type="text"], input[type="number"], input[type="date"], input[type="email"], input[type="password"],select {
   color:#141414
 }
