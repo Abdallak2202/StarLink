@@ -12,6 +12,7 @@
     "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/core": "^11.0.0",
     "@emotion/styled": "^11.10.5",
+    "@floating-ui/core": "^1.2.1",
     "@headlessui/react": "^1.7.10",
     "@heroicons/react": "^2.0.15",
     "@magic-sdk/admin": "^1.8.0",
@@ -35,6 +36,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "^6.8.1",
+    "react-select": "^5.7.0",
     "stripe": "^11.11.0",
     "tailwind": "^4.0.0"
   },
