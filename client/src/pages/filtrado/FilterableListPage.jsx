@@ -84,8 +84,12 @@ const FilterableList = () => {
                 <td class="px-6 py-4">
                 ${item.price}
                 </td>
-                <td class="px-6 py-4 text-md-center">
+                <td class="px-6 py-4 text-center">
                   {item.description}
+                  </td>
+                  <td class="px-6 py-4 text-center">
+                  {item.service}
+                  
                 </td>
             </tr>
         </tbody>

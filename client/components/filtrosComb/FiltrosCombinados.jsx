@@ -3,37 +3,44 @@ import { useState } from 'react';
 const Filter = ({ data, onChange }) => {
   const [selectedPrice, setSelectedPrice] = useState('');
   const [selectedSlug, setSelectedSlug] = useState('');
+  const [selectedOption, setSelectedOption] = useState(null);
 
   const handlePriceChange = (event) => {
     const value = event.target.value;
     setSelectedPrice(value);
     setSelectedSlug('');
+    setSelectedOption(null);
     onChange({ price: value, slug: '' });
   };
 
   const handleSlugChange = (event) => {
     const value = event.target.value;
     setSelectedSlug(value);
+    const option = slugOptions.find((o) => o.value === value);
+    setSelectedOption(option);
     onChange({ price: selectedPrice, slug: value });
   };
 
   const priceRanges = [
-    { label: '0-1000', min: 0, max: 1000 },
+    { label: '1-350', min: 1, max: 350 },
+    { label: '401-1000', min: 401, max: 1000 },
     { label: '1001-2000', min: 1001, max: 2000 },
     { label: '2001-3000', min: 2001, max: 3000 },
     { label: '3001-4000', min: 3001, max: 4000 },
     { label: '<4000', min: 4001, max: Number.MAX_SAFE_INTEGER }
   ];
 
-  const slugOptions = data
-    .filter((item) => {
-      const price = parseInt(selectedPrice);
-      return price >= item.price && price < item.price + 1000;
-    })
-    .map((item) => ({
-      label: `${item.slug} - ${item.description}`,
-      value: item.slug
-    }));
+  const slugOptions = selectedPrice >= 1 && selectedPrice <= 8000
+    ? data
+      .filter((item) => {
+        const price = parseInt(selectedPrice);
+        return price >= item.price && price < item.price + 1000;
+      })
+      .map((item) => ({
+        label: `${item.slug} - ${item.description}`,
+        value: item.slug
+      }))
+    : [];
 
   return (
     <div class="pt-40">
@@ -59,6 +66,12 @@ const Filter = ({ data, onChange }) => {
           ))}
         </select>
       </div>
+      {selectedOption && (
+        <div>
+          <p>Selected option:</p>
+          <p>{selectedOption.label}</p>
+        </div>
+      )}
     </div>
   );
 };
