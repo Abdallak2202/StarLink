@@ -27,10 +27,11 @@ const FilterableList = () => {
   };
 
   const filteredData = data.filter((item) =>
-    Object.entries(selectedOptions).every(([filterSlug, values]) =>
-      values.length === 0 || item.options.some((option) => values.includes(option))
-    )
-  );
+  Object.entries(selectedOptions).every(([filterSlug, values]) =>
+    values.length === 0 || (item.options && item.options.some((option) => values.includes(option)))
+  )
+);
+
 
   
   return (
