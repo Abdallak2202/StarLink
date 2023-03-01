@@ -272,6 +272,30 @@ export const deleteDomainService = async (id) => {
   }
 };
 
+// uploadDomainService
+export const uploadDomaindService = async (id,formItem) => {
+  const jwt = getTokenFromLocalCookie();
+  // console.log({formItem});
+  if (jwt) {
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${jwt}`);
+    myHeaders.append("Content-Type", "application/json");
+    
+    var raw = JSON.stringify(formItem);
+    
+    var requestOptions = {
+      method: 'PUT',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/domains/${id}`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
+};
 // Hostiong Service
 
 export const setNewHostingService = async (data) => {
@@ -338,6 +362,32 @@ export const deleteHosting = async (id) => {
   }
 };
 
+// uploadHostingService
+
+export const uploadHostingService = async (id,formItem) => {
+  const jwt = getTokenFromLocalCookie();
+  // console.log({formItem});
+  if (jwt) {
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${jwt}`);
+    myHeaders.append("Content-Type", "application/json");
+    
+    var raw = JSON.stringify(formItem);
+    
+    var requestOptions = {
+      method: 'PUT',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/housings/${id}`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
+};
+
 // setNewUser /users
 
 export const setNewUser = async (data) => {
@@ -401,5 +451,31 @@ export const deleteUser = async (id) => {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
+  }
+};
+
+// uploadUserService
+
+export const uploadUserService = async (id,formItem) => {
+  const jwt = getTokenFromLocalCookie();
+  // console.log({formItem});
+  if (jwt) {
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", `Bearer ${jwt}`);
+    myHeaders.append("Content-Type", "application/json");
+    
+    var raw = JSON.stringify(formItem);
+    
+    var requestOptions = {
+      method: 'PUT',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+    
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/${id}`, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
   }
 };

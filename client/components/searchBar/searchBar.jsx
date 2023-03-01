@@ -12,7 +12,7 @@ const SearchBar = () => {
   };
 
   useEffect(() => {
-     axios.get( 'https://star-link-back-end-production.up.railway.app/registered-domains/?name='+ searchTerm)
+     axios.get( 'https://star-link-back-end-production.up.railway.app/registered-domains/?name='+searchTerm)
       .then(response => setSearchResults(response.data))
       .catch(error => console.error(error));
       console.log(searchResults)

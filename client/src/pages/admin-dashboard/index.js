@@ -18,6 +18,9 @@ import {
   setNewUser,
   uploadCloudService,
   uploadDedicatedService,
+  uploadDomaindService,
+  uploadHostingService,
+  uploadUserService,
 } from "lib/administrator";
 import { getRoleFromLocalCookie } from "lib/auth";
 import Image from "next/image";
@@ -57,6 +60,9 @@ export const AdminDashboard = () => {
     email: "",
     userId: "",
     cloudIdUpload: "",
+    domainIdUpload:"",
+    hostingIdUpload: "",
+    userIdUpload:","
   });
   const [barSelector, seTbarSelector] = useState("");
 
@@ -90,6 +96,9 @@ export const AdminDashboard = () => {
     email,
     userId,
     cloudIdUpload,
+    domainIdUpload,
+    hostingIdUpload,
+    userIdUpload
   } = formState;
 
   useEffect(() => {
@@ -322,6 +331,15 @@ export const AdminDashboard = () => {
     if (formName === "form2") {
       const uploadData1 = await uploadDedicatedService(cloudIdUpload, dataJson);
     }
+    if (formName === "form3") {
+      const uploadData1 = await uploadDomaindService(domainIdUpload, dataJson);
+    }
+    if (formName === "form4") {
+      const uploadData1 = await uploadHostingService(hostingIdUpload, dataJson);
+    }
+    if (formName === "form5") {
+      const uploadData1 = await uploadUserService(userIdUpload, dataJson);
+    }
 
     onResetForm();
   };
@@ -484,7 +502,7 @@ export const AdminDashboard = () => {
           </div>
           <div className={styles.bgColor}>
             <form onSubmit={(e) => handleDelete(e, "form1")}>
-              <h2>Borrar Información</h2>
+              <h2 className={styles.brandTitle}>Borrar Información</h2>
               <div className={`${styles.formElements}`}>
                 <label for="cloudId" className={styles.labelPrueba}>
                   cloudId:
@@ -499,9 +517,9 @@ export const AdminDashboard = () => {
               <input type="submit" value="Borrar Elemento" />
             </form>
           </div>
-          <div className={styles.bgColor}>
+          <div className={`${styles.bgColor} ${styles.blueBack}`}>
             <form onSubmit={(e) => handleModification(e, "form1")}>
-              <h2>Actualizar Información</h2>
+              <h2 className={styles.brandTitle} >Actualizar Información</h2>
               <div className={`${styles.formElements}`}>
                 <label for="propiedad" className={styles.labelPrueba}>
                   Propiedad
@@ -549,7 +567,7 @@ export const AdminDashboard = () => {
         <div>
           <div>
             <div className={styles.addInformation}>
-              <header>Adiciona un servicio</header>
+              <header className={styles.brandTitle}>Adiciona un servicio</header>
               <form onSubmit={(e) => handleSubmit(e, "form2")}>
                 {/* "processor": 2,
   "RAM": 2,
@@ -640,13 +658,13 @@ export const AdminDashboard = () => {
           </div>
 
           <div className={styles.backgroundChange}>
-            <h2>Servicios Existentes</h2>
+            <h2 className={styles.brandTitle}>Servicios Existentes</h2>
             <div ref={mySecondDivRef}></div>
             <button onClick={displayServerTable}>ver</button>
           </div>
           <div className={styles.bgColor}>
             <form onSubmit={(e) => handleDelete(e, "form2")}>
-              <h2>Borrar Informacion</h2>
+              <h2 className={styles.brandTitle}>Borrar Informacion</h2>
               <div className={`${styles.formElements}`}>
                 <label for="serverId" className={styles.labelPrueba}>
                   serverId:
@@ -663,7 +681,7 @@ export const AdminDashboard = () => {
           </div>
           <div className={styles.bgColor}>
             <form onSubmit={(e) => handleModification(e, "form2")}>
-              <h2>Actualizar Información</h2>
+              <h2 className={styles.brandTitle}>Actualizar Información</h2>
               <div className={`${styles.formElements}`}>
                 <label for="propiedad" className={styles.labelPrueba}>
                   Propiedad
@@ -691,7 +709,7 @@ export const AdminDashboard = () => {
                 </div>
                 <div>
                   <label for="cloudIdUpload" className={styles.labelPrueba}>
-                    cloudId:
+                    serverId:
                   </label>
                   <input
                     type="text"
@@ -710,7 +728,7 @@ export const AdminDashboard = () => {
         <div>
           <div>
             <div className={styles.addInformation}>
-              <header>Adiciona un servicio</header>
+              <header className={styles.brandTitle}>Adiciona un servicio</header>
               <form onSubmit={(e) => handleSubmit(e, "form3")}>
                 {/* "processor": 2,
   "RAM": 2,
@@ -779,7 +797,7 @@ export const AdminDashboard = () => {
           </div>
 
           <div className={styles.backgroundChange}>
-            <h2>Servicios Existentes</h2>
+            <h2 className={styles.brandTitle}>Servicios Existentes</h2>
             <div ref={myThirdDivRef}></div>
             <button onClick={displayDomainTable}>ver</button>
           </div>
@@ -800,13 +818,57 @@ export const AdminDashboard = () => {
               <input type="submit" value="Borrar Elemento" />
             </form>
           </div>
+          <div className={`${styles.bgColor} ${styles.blueBack}`}>
+            <form onSubmit={(e) => handleModification(e, "form3")}>
+              <h2 className={styles.brandTitle} >Actualizar Información</h2>
+              <div className={`${styles.formElements}`}>
+                <label for="propiedad" className={styles.labelPrueba}>
+                  Propiedad
+                </label>
+                <select value={selectedValue} onChange={handleSelectChange}>
+                  <option value="TLD">TLD</option>
+                  <option value="description">description</option>
+                  <option value="price">price</option>
+                  {/* <option value="processor">processor</option>
+                  <option value="price">price</option>
+                  <option value="RAM">RAM</option>
+                  <option value="SSD">SSD</option>
+                  <option value="transfer">transfer</option> */}
+                </select>
+
+                <div>
+                  <label for="attributeValue" className={styles.labelPrueba}>
+                    Atribute
+                  </label>
+                  <input
+                    type="text"
+                    name="attributeValue"
+                    value={attributeValue}
+                    onChange={handleAttributeChange}
+                  />
+                </div>
+                <div>
+                  <label for="domainIdUpload" className={styles.labelPrueba}>
+                   domainId:
+                  </label>
+                  <input
+                    type="text"
+                    name="domainIdUpload"
+                    value={domainIdUpload}
+                    onChange={onInputChange}
+                  />
+                </div>
+              </div>
+              <input type="submit" value="Actualizar Elemento" />
+            </form>
+          </div>
         </div>
       )}
       {barSelector === "Hosting" && (
         <div>
           <div>
             <div className={styles.addInformation}>
-              <header>Adiciona un servicio</header>
+              <header className={styles.brandTitle}>Adiciona un servicio</header>
               <form onSubmit={(e) => handleSubmit(e, "form4")}>
                 {/* "processor": 2,
   "RAM": 2,
@@ -897,13 +959,13 @@ export const AdminDashboard = () => {
           </div>
 
           <div className={styles.backgroundChange}>
-            <h2>Servicios Existentes</h2>
+            <h2 className={styles.brandTitle}>Servicios Existentes</h2>
             <div ref={myFourthDivRef}></div>
             <button onClick={displayHostingTable}>ver</button>
           </div>
           <div className={styles.bgColor}>
             <form onSubmit={(e) => handleDelete(e, "form4")}>
-              <h2>Borrar información</h2>
+              <h2 className={styles.brandTitle}>Borrar información</h2>
               <div className={`${styles.formElements}`}>
                 <label for="hostingId" className={styles.labelPrueba}>
                   HostingId:
@@ -918,13 +980,57 @@ export const AdminDashboard = () => {
               <input type="submit" value="Borrar Elemento" />
             </form>
           </div>
+          <div className={`${styles.bgColor} ${styles.blueBack}`}>
+            <form onSubmit={(e) => handleModification(e, "form4")}>
+              <h2 className={styles.brandTitle} >Actualizar Información</h2>
+              <div className={`${styles.formElements}`}>
+                <label for="propiedad" className={styles.labelPrueba}>
+                  Propiedad
+                </label>
+                <select value={selectedValue} onChange={handleSelectChange}>
+                  <option value="name">name</option>
+                  <option value="description">description</option>
+                  <option value="price">price</option>
+                  <option value="floorspace">floorspace</option>
+                  <option value="racks">racks</option>
+                  <option value="consumption">consumption</option>
+                  {/* <option value="SSD">SSD</option>
+                  <option value="transfer">transfer</option> */}
+                </select>
+
+                <div>
+                  <label for="attributeValue" className={styles.labelPrueba}>
+                    Atribute
+                  </label>
+                  <input
+                    type="text"
+                    name="attributeValue"
+                    value={attributeValue}
+                    onChange={handleAttributeChange}
+                  />
+                </div>
+                <div>
+                  <label for="hostingIdUpload" className={styles.labelPrueba}>
+                    HostingId:
+                  </label>
+                  <input
+                    type="text"
+                    name="hostingIdUpload"
+                    value={hostingIdUpload}
+                    onChange={onInputChange}
+                  />
+                </div>
+              </div>
+              <input type="submit" value="Actualizar Elemento" />
+            </form>
+          </div>
         </div>
       )}
       {barSelector === "User" && (
         <div>
           <div>
             <div className={styles.addInformation}>
-              <header>Adiciona un Usuario</header>
+              <header className={styles.brandTitle}>Adiciona un Usuario</header>
               <form onSubmit={(e) => handleSubmit(e, "form5")}>
                 {/* username: '',
     email: '',
@@ -1018,13 +1124,13 @@ export const AdminDashboard = () => {
           </div>
 
           <div className={styles.backgroundChange}>
-            <h2>Servicios Existentes</h2>
+            <h2 className={styles.brandTitle}>Servicios Existentes</h2>
             <div ref={myFifthDivRef}></div>
             <button onClick={displayUserTable}>ver</button>
           </div>
           <div className={styles.bgColor}>
             <form onSubmit={(e) => handleDelete(e, "form5")}>
-              <h2>Borrar información</h2>
+              <h2 className={styles.brandTitle}>Borrar información</h2>
               <div className={`${styles.formElements}`}>
                 <label for="userId" className={styles.labelPrueba}>
                   UserId:
@@ -1037,6 +1143,50 @@ export const AdminDashboard = () => {
                 />
               </div>
               <input type="submit" value="Borrar Elemento" />
+            </form>
+          </div>
+          <div className={`${styles.bgColor} ${styles.blueBack}`}>
+            <form onSubmit={(e) => handleModification(e, "form5")}>
+              <h2 className={styles.brandTitle} >Actualizar Información</h2>
+              <div className={`${styles.formElements}`}>
+                <label for="propiedad" className={styles.labelPrueba}>
+                  Propiedad
+                </label>
+                <select value={selectedValue} onChange={handleSelectChange}>
+                  <option value="username">username</option>
+                  <option value="email">email</option>
+                  <option value="FirstName">FirstName</option>
+                  <option value="LastName">LastName</option>
+                  <option value="Adress">racks</option>
+                  <option value="Phone">consumption</option>
+                  {/* <option value="SSD">SSD</option>
+                  <option value="transfer">transfer</option> */}
+                </select>
+
+                <div>
+                  <label for="attributeValue" className={styles.labelPrueba}>
+                    Atribute
+                  </label>
+                  <input
+                    type="text"
+                    name="attributeValue"
+                    value={attributeValue}
+                    onChange={handleAttributeChange}
+                  />
+                </div>
+                <div>
+                  <label for="userIdUpload" className={styles.labelPrueba}>
+                    userId:
+                  </label>
+                  <input
+                    type="text"
+                    name="userIdUpload"
+                    value={userIdUpload}
+                    onChange={onInputChange}
+                  />
+                </div>
+              </div>
+              <input type="submit" value="Actualizar Elemento" />
             </form>
           </div>
         </div>

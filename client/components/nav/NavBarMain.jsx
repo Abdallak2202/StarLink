@@ -203,16 +203,16 @@ let countCart = 10;
                 </Link> */}
 
 
-                <Link href="/dominio/email-profesional">
+                {/* <Link href="/dominio/email-profesional">
                 <div >
-                <svg className="absolute inset-y-18 left-2 w-12 fill-gray-800 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <svg className="absolute inset-y-18 left-2 w-12 fill-gray-800 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"> */}
                   {/* <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> */}
-                  <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+                  {/* <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
                 </svg>
                 </div>
                 <div className={styles.linkName}>Correo profesional</div>
                 <span class="grid max-w-screen-xl px-6 py-1 mx-auto text-3xl font-light text-gray-900 dark:text-gray-100">Genera mayor credibilidad teniendo un correo con tu dominio.</span>
-                </Link>
+                </Link> */}
 
 
                 {/* <Link href="/dominio/registro-privado" className={styles.linkName}>
@@ -291,19 +291,6 @@ let countCart = 10;
               Hosting para revendedores
                 </Link> */}
 
-
-                <Link href="/hosting/servidores-dedicados" >
-                  <div>
-                  <svg className="absolute inset-y-18 left-2 w-12 fill-gray-800 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    {/* <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> */}
-                  <path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/>
-                  </svg>
-                  </div>
-                  <div className={styles.linkName}> -Servidores dedicados</div>
-                 <span class="grid max-w-screen-xl px-6 py-1 mx-auto text-3xl font-light text-gray-900 dark:text-gray-100">Lo máximo en Performance y control.</span>
-                </Link>
-
-
              </li>
          </ul>
      </div>
@@ -346,6 +333,17 @@ let countCart = 10;
             <span class=" grid max-w-screen-xl px-6 py-1 mx-auto text-3xl font-light text-gray-900 dark:text-gray-100">Alojamiento rápido, escalable y confiable
                       para tus aplicaciones.</span>
           </Link>
+          <Link href="/hosting/servidores-dedicados" >
+                  <div>
+                  <svg className="absolute inset-y-18 left-2 w-12 fill-gray-800 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    {/* <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> */}
+                  <path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/>
+                  </svg>
+                  </div>
+                  <div className={styles.linkName}> -Servidores dedicados</div>
+                 <span class="grid max-w-screen-xl px-6 py-1 mx-auto text-3xl font-light text-gray-900 dark:text-gray-100">Lo máximo en Performance y control.</span>
+                </Link>
+
 
 
                 {/* <Link href="/dominio/registro-de-dominios" className={styles.linkName}>
