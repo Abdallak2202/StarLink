@@ -7,25 +7,15 @@ const CommentsCards = ({username, service, stars,comment }) => {
 
 <div>
 
-<section class="text-neutral-700 dark:text-neutral-300">
-  <div class="mx-auto text-center md:max-w-xl lg:max-w-3xl">
-    <h3 class="mb-6 text-3xl font-bold">Testimonials</h3>
-    
-  </div>
-
-  <div class="grid gap-6 text-center md:grid-cols-3">
-    
+<section class="text-neutral-700 dark:text-neut ral-300">
+  {/* <div class="grid gap-6 text-center md:grid-cols-3 "> */}
+  <div class="flex justify-center items-center h-screen">
     <div>
       <div
         class="block rounded-lg bg-white shadow-lg dark:bg-neutral-700 dark:shadow-black/30">
-        <div class="h-28 overflow-hidden rounded-t-lg bg-[#6d5b98]"></div>
-        {/* <div
-          class="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white bg-white dark:border-neutral-800 dark:bg-neutral-800">
-          <img
-            src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp" />
-        </div> */}
+        <div class="h-28 overflow-hidden rounded-t-lg bg-[#59a0d0]"></div>
         <div class="p-6">
-          <h4 class="mb-4 text-2xl font-semibold">John Smith</h4>
+          <h4 class="mb-4 text-6xl font-semibold">{username}</h4>
           <hr />
           <p class="mt-4">
             <svg
@@ -39,12 +29,9 @@ const CommentsCards = ({username, service, stars,comment }) => {
             Delectus impedit saepe officiis ab aliquam repellat rem unde
             ducimus.
           </p>
-          <h1>User:{username}</h1>
-          <h2>Servicio:{service}</h2>
-          <h3>Estrellas:{stars}</h3>
-          <h3>Testimonios:{comment}</h3>
-
-
+          <h2 Class='text-5xl'>Servicio:{service}</h2>
+          <h3 Class='text-5xl '>Estrellas:{stars}</h3>
+          <h3 Class='text-3xl '>Testimonios:{comment}</h3>
         </div>
       </div>
     </div>
