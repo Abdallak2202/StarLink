@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 import SearchBar from 'components/searchBar/searchBar';
 
@@ -6,24 +5,16 @@ import SearchBar from 'components/searchBar/searchBar';
 const RegistroDeDominios = () => {
   // const [data, setData] = useState([]);
   // const [term, setTerm] = useState('');
-  const [nomdominio, setNonDominio] = useState([]);
+  const [nomdominio, setNomDominio] = useState([]);
   
   
     useEffect(()=> {
       const dominioLS = JSON.parse(localStorage.getItem("nombre"))
       dominioLS?.length === 0 ? '':
-      setNonDominio(dominioLS);
+      console.log(dominioLS)
+      setNomDominio(dominioLS);
         }, []);
   
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = await axios(
-  //       'https://star-link-back-end-production.up.railway.app/registered-domains',
-  //     );
-
-  //     setData(result.data);
-  //   };
 
   //   fetchData();
   // }, []);
