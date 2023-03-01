@@ -38,7 +38,7 @@ const FilterableList = () => {
     <div>
       <Filter data={data} onChange={(values) => handleFilterChange('options', values)} />
       {filteredData.map((item) => (
-        <div key={item.id}>
+        <div key={item.slug}>
           {/* <h1>{item.name}</h1>
           <h2>{item.price}</h2> */}
 
