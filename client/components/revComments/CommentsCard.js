@@ -10,11 +10,11 @@ const CommentsCards = () => {
 <section class="text-neutral-700 dark:text-neutral-300">
   <div class="mx-auto text-center md:max-w-xl lg:max-w-3xl">
     <h3 class="mb-6 text-3xl font-bold">Testimonials</h3>
-    <p class="mb-6 pb-2 md:mb-12 md:pb-0">
+    {/* <p class="mb-6 pb-2 md:mb-12 md:pb-0">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
       error amet numquam iure provident voluptate esse quasi, veritatis
       totam voluptas nostrum quisquam eum porro a pariatur veniam.
-    </p>
+    </p> */}
   </div>
 
   <div class="grid gap-6 text-center md:grid-cols-3">
