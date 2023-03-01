@@ -6,13 +6,13 @@ import SearchBar from 'components/searchBar/searchBar';
 const RegistroDeDominios = () => {
   // const [data, setData] = useState([]);
   // const [term, setTerm] = useState('');
-  const [nomdominio, setNonDominio] = useState([]);
+  const [nomdominio, setNomDominio] = useState([]);
   
   
     useEffect(()=> {
       const dominioLS = JSON.parse(localStorage.getItem("nombre"))
-      dominioLS?.length === 0 ? '':
-      setNonDominio(dominioLS);
+      // dominioLS?.length === 0 ? '':
+      setNomDominio(dominioLS);
         }, []);
   
 
