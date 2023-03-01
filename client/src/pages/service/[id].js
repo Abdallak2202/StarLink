@@ -44,7 +44,7 @@ agregarCarrito(productoSeleccionado);
     <div class="flex flex-row-reverse items-center justify-between">
     <div>
       
-    <Link href='/dominio//dominio-com-co'> 
+    <Link href='/dominio/dominio-com-co'> 
     <button class="bg-indigo-600 px-4 py-3 rounded-md text-white font-semibold tracking-wide cursor-pointer text-lg" id="monthly" onClick={()=>router.push('/dominio/dominio-com-co')}>continue shopping</button></Link>
 					
 				</div>
