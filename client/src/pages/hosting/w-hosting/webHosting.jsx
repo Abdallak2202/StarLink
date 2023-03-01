@@ -15,7 +15,7 @@ export const webHosting = ({cards}) => {
   let filtrado = cards.filter(e => e.id < 4);
   return (
     <div>
-    {/* <SearchBar /> */}
+    {/* <SearchBar /> */}   
 
     {filtrado.map((cards) => (
       <CardHosting key={cards.id}  price = {cards.price} description={cards.description} name = {cards.name} floorspace = {cards.floorspace} 
