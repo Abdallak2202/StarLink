@@ -25,7 +25,11 @@ export default function App({
   }, [carrito]);
 
   const agregarCarrito = (producto) => {
+    if (carrito.some((articulo)=> articulo.slug === producto.slug)){
+alert("Estimado cliente ya usted selecciono un servicio con este plan")
+    }else {
     setCarrito([...carrito, producto]);
+    }
   };
 
   const eliminarProducto = (slug) => {
