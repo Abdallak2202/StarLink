@@ -89,32 +89,51 @@ const Filter = ({ data, onChange }) => {
       </div >
      
       {selectedOption && (
-        <div class="pt-40 flex items-center justify-center h-screen">
+        <div class="pt-20 flex items-center justify-center h-screen">
 
 
 <div className={s.container}>
-          <div class="max-w-7xl p-10 w-200 h-200 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div class="max-w- 7xl p-10 w-200 h-200 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <svg class="w-20 h-30 mb-10 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg>
     <a href="#">
     <svg aria-hidden="true" class="w-10 h-10 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
         <h5 class="mb-10 text-7xl font-semibold tracking-tight text-gray-900 dark:text-white">Servicios que ofrecemos en el rango de precios seleccionados</h5>
     </a>
-    <p class="mb-3 font-normal text-6xl text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">{selectedOption.label}</p>
+    <div class="bg-gradient-to-r to-sky-50 from-sky-300 ">
+    <p class="mb-3 font-bold text-6xl text-transparent bg-clip-text bg-gradient-to-r to-sky-300 from-sky-600 ">{selectedOption.label}</p>
+    </div>
     
-    
-    <select id="select" onChange={handleSelectChange} class="mb-3 font-bold text-6xl text-blue-900">
-  <option value="domains">Dominio</option>
-  <option value="housings">Hostings</option>
-  <option value="dedicated-servers">Cloud y dedicados</option>
-</select>
+   <h1 class="text-2xl px-2 py-10 underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">Encuentre este Servicio en:</h1>
 
-<a id="link" href="#" class="inline-flex items-center text-blue-600 hover:underline">
+
+  <option value="domains" class="text-3xl">Dominio</option>
+ <a id="Dominio" href='/dominio/dominio-com-co' class=" text-2xl inline-flex items-center text-blue-600 hover:underline">
   See our guideline
   <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
     <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
     <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
   </svg>
 </a>
+
+<option value="housings" class="text-3xl">Hostings</option>
+<a id="housings" href='/hosting/w-hosting/webHosting' class=" text-2xl inline-flex items-center text-blue-600 hover:underline">
+  See our guideline
+  <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+  </svg>
+</a>
+
+<option value="dedicated-servers" class="text-3xl">Cloud y dedicados</option>
+<a id="dedicated-servers" href='/cloudDedicados/cloudServers' class=" text-2xl inline-flex items-center text-blue-600 hover:underline">
+  See our guideline
+  <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+  </svg>
+</a>
+
+
 
 </div>
 
