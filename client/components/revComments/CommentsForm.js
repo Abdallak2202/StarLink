@@ -2,8 +2,8 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa"; //  icono de estrella 
 
 export const CommentForm = () => {
-  const [userId, setUserId] = useState("");
-  const [serviceType, setServiceType] = useState("");
+  const [id, setId] = useState("");
+  const [service, setService] = useState("");
   const [stars, setStars] = useState(0); // valor inicial en 0
   const [comment, setComment] = useState("");
 
@@ -16,15 +16,15 @@ export const CommentForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ userId, serviceType, stars, comment }),
+        body: JSON.stringify({ id, service, stars, comment }),
       });
       alert("Comment submitted successfully!");
     } catch (error) {
       alert(error.message);
     }
 
-    setUserId("");
-    setServiceType("");
+    setId("");
+    setService("");
     setStars(0); //  establecer el valor en 0
     setComment("");
   };
@@ -54,8 +54,8 @@ export const CommentForm = () => {
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="user-id"
           type="text"
-          value={userId}
-          onChange={(e) => setUserId(e.target.value)}
+          value={id}
+          onChange={(e) => setId(e.target.value)}
         />
       </div>
       <br />
@@ -66,8 +66,8 @@ export const CommentForm = () => {
         <select
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="service-type"
-          value={serviceType}
-          onChange={(e) => setServiceType(e.target.value)}
+          value={service}
+          onChange={(e) => setService(e.target.value)}
         >
           <option value="">Select a type</option>
           <option value="Cloud Server">Cloud Server</option>
