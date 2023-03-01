@@ -9,7 +9,7 @@ const CommentsCards = ({username, service, stars,comment }) => {
 
 <section class="text-neutral-700 dark:text-neutral-300">
   <div class="mx-auto text-center md:max-w-xl lg:max-w-3xl">
-    <h3 class="mb-6 text-3xl font-bold">Testimonials</h3>
+    {/* <h3 class="mb-6 text-3xl font-bold">Testimonials</h3> */}
     
   </div>
 
@@ -25,7 +25,7 @@ const CommentsCards = ({username, service, stars,comment }) => {
             src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp" />
         </div> */}
         <div class="p-6">
-          <h4 class="mb-4 text-2xl font-semibold">John Smith</h4>
+          <h4 class="mb-4 text-2xl font-semibold">{username}</h4>
           <hr />
           <p class="mt-4">
             <svg
@@ -36,8 +36,7 @@ const CommentsCards = ({username, service, stars,comment }) => {
               <path
                 d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z" />
             </svg>
-            Delectus impedit saepe officiis ab aliquam repellat rem unde
-            ducimus.
+            {comment}
           </p>
           <h1>User:{username}</h1>
           <h2>Servicio:{service}</h2>
