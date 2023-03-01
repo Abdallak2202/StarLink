@@ -11,6 +11,7 @@ export default function userProfile() {
       <img src="https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80" alt="fondo"/>
       
     </div>
+    
     </div>
   
     <div class="relative py-16 bg-gray-200">
@@ -28,6 +29,7 @@ export default function userProfile() {
       <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
     </svg>
           </div>
+
         </div>
 
         <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
