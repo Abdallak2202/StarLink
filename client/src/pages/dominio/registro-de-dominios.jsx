@@ -8,13 +8,19 @@ const RegistroDeDominios = () => {
   const [nomdominio, setNomDominio] = useState([]);
   
   
-    useEffect(()=> {
-      const dominioLS = JSON.parse(localStorage.getItem("nombre"))
-      dominioLS?.length === 0 ? '':
-      console.log(dominioLS)
-      setNomDominio(dominioLS);
-        }, []);
+
+    // useEffect(()=> {
+    //   const dominioLS = JSON.parse(localStorage.getItem("nombre"))
+    //   dominioLS?.length === 0 ? '':
+    //   setNonDominio(dominioLS);
+    //   console.log(dominioLS);
+    //     }, []);
+
   
+    const setTargetName = (searchData)=>{
+    setNonDominio(searchData);
+      // setNonDominio(searchData)
+    }
 
   //   fetchData();
   // }, []);
@@ -44,7 +50,7 @@ const RegistroDeDominios = () => {
       type="text" 
 
       value={term} onChange={handleChange} /> */}
-      <SearchBar />
+      <SearchBar  onTargetName={setTargetName}/>
       
       <div class="flex flex-col p-2 py-6 m-h-screen">
       <div className="flex flex-col gap-4 lg:p-4 p-2  rounde-lg m-2">
