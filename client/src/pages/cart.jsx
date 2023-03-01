@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { getUserFromLocalCookie } from 'lib/auth'
+import axios from 'axios'
 
 const Cart = ({carrito, eliminarProducto}) => {
   // const [productos, setProductos] = useState([]);
@@ -56,6 +57,37 @@ setTotal(calculoTotal);
     // const delFromCart = () => {};
 
     // const clearCart = () => {};
+    
+//-------------------------funcion para enviar objeto de local store y cookies-----
+
+async function addToCart() {
+     const cartData = JSON.parse(localStorage.getItem('carrito'));
+    const cookies = Object.fromEntries(
+      document.cookie.split("; ").map(c => {
+        const [key, ...v] = c.split("=");
+        return [key, decodeURIComponent(v.join("="))];
+      })
+    );
+    const requestData = {
+      cookies,
+      cartData,
+    };
+    console.log(requestData);
+  
+    try {
+      const response = await fetch('https://star-link-back-end-production.up.railway.app/carts/add-to-cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestData)
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     
@@ -130,12 +162,12 @@ setTotal(calculoTotal);
                                       <p className="ml-4">{producto.price} $</p>
                                     </div>
                                     <div className=''>
-                                    {/* <p className="mt-0.5 text-xs text-gray-500">• {producto.slug} </p> */}
+                                    <p className="mt-0.5 text-xs text-gray-500">• service: {producto.service} </p>
                                     {/* <p className="mt-0.5 text-xs text-gray-500">• {producto.description} </p> */}
                                     </div>
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm mt-1">
-                                  <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p>
+                                  {/* <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p> */}
 
                                     <div className="flex">
                                       <button
@@ -167,15 +199,17 @@ setTotal(calculoTotal);
                           </>
                         ):<>No hay productos</>}
                       </div>
-                      <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
-                      <Link href='/PasarelaPagos'>
+                      {/* <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p> */}
+                      <Link href='/pagos/pasarela'>
                       <div className="mt-6">
-                        <a
+                      <button
+                        type="button"
                           href="#"
                           className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                        >
+                          onClick={()=> addToCart()}>
                           Buy
-                        </a>
+                        </button>
+
                       </div>
                       </Link>
 

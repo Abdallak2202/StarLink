@@ -5,7 +5,7 @@ import Link from 'next/link'
 const ServerScreen = ({entrada, agregarCarrito})=> {
 
   console.log(entrada);
-   const {brand, price, description, id, OS, processor, RAM, SSD, slug } = entrada
+   const {brand, price, description, id, OS, processor, RAM, SSD, slug, service  } = entrada
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +20,7 @@ OS,
 processor,
 RAM,
 SSD,
+service,
 slug
    }
   

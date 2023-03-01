@@ -5,7 +5,7 @@ import Link from 'next/link'
 const ServiceScreen = ({entrada, agregarCarrito})=> {
 
   console.log(entrada);
-   const {TLD, price, description, id, slug} = entrada
+   const {TLD, price, description, id, slug, service} = entrada
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +16,7 @@ id,
 name: TLD,
 price,
 description,
+service,
 slug
    }
   

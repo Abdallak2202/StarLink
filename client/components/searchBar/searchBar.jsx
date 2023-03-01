@@ -8,7 +8,7 @@ const SearchBar = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   const handleInputChange = (event) => {
-    setSearchTerm(event.target.value.replaceAll(/^\s+/g, "").replaceAll(/\s+/g, " "));
+     setSearchTerm(event.target.value.toLowerCase().replaceAll(/^\s+/g, "").replaceAll(/\s+/g, " "))
   };
 
   useEffect(() => {
