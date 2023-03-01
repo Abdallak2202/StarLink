@@ -383,19 +383,10 @@ let countCart = 10;
 
 
     {/* //----------------------------filtros-carrito-login------------------------------------ */}
-
-
-    <Link    href="filtrado/FilterableListPage" className={styles.usernameBtn}>
-  <span className="text-white bg-danger rounded p-1">
-    Filtros
-  </span>
-
-</Link>
-
-
-
-
-        <Link href='/cart' className={styles.logoCar}><span className="text-white bg-danger rounded p-1">{cartItemsCount}</span><ion-icon name="cart-outline" ></ion-icon></Link>
+    <div className="px-2">
+    <Link  href="/filtrado/FilterableListPage" className={styles.usernameBtn}>Busca tu servicio ideal</Link>
+    </div>
+    <Link href='/cart' className={styles.logoCar}><span className="text-white bg-danger rounded p-1">{cartItemsCount}</span><ion-icon name="cart-outline" ></ion-icon></Link>
         
         <div className={styles.navContainer}>
         <div>
