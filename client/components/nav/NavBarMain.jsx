@@ -152,13 +152,13 @@ let countCart = 10;
     <nav className={styles.menu}>
      <Link className={styles.logoLink} href="/">
 
-         {/* <Image 
+          <Image 
         src={'/starLinkFondoNegro.jfif'}
         alt="StarLink"
         width={130}
         height={130}
         className={styles.logoLink}
-        /> */}
+        /> 
      
         </Link>
 
