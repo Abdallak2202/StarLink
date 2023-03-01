@@ -51,7 +51,7 @@ const Filter = ({ data, onChange }) => {
       <div>
         <label htmlFor="slug-select">Slug:</label>
         <select id="slug-select" value={selectedSlug} onChange={handleSlugChange} disabled={!selectedPrice}>
-          <option value="">Select a slug</option>
+          <option value="">Seleccione su producto</option>
           {slugOptions.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
