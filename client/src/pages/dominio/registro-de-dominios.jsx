@@ -17,6 +17,7 @@ const RegistroDeDominios = () => {
     //     }, []);
   
     const setTargetName = (searchData)=>{
+      console.log({searchData});
     setNonDominio(searchData);
       // setNonDominio(searchData)
     }
@@ -58,7 +59,7 @@ const RegistroDeDominios = () => {
       type="text" 
 
       value={term} onChange={handleChange} /> */}
-      <SearchBar  onTargetName={setTargetName}/>
+      <SearchBar  onTargetName={(data)=>setTargetName(data)}/>
       
       <div class="flex flex-col p-2 py-6 m-h-screen">
       <div className="flex flex-col gap-4 lg:p-4 p-2  rounde-lg m-2">
@@ -74,7 +75,7 @@ const RegistroDeDominios = () => {
       
       <ul className=' space-y-6'>
        
-       {nomdominio.map(item => (
+       {nomdominio.length===0? <div className='text-slate-400 text-6xl	 font-semibold	'>Disponible!!!</div>: nomdominio.map(item => (
 
         <div className="flex items-center justify-between w-full p-4 lg:rounded-full md:rounded-full hover:bg-gray-50 cursor-pointer border-2 rounded-lg">
 
