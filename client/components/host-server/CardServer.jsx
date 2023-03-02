@@ -18,45 +18,45 @@ const config = {
             exit={{ x: 0, opacity: 0 }}>
 
 
+<div className={s.container}>
 
-<div class={s.container}>
-<div class="flex flex-wrap justify-center">
+<div class="flex flex-wrap justify-center ">
 
-<div class="  max-w-xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="  w-full max-w-full max-h-full bg-white  border-b-4 border-l-4 border-gray-700 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
   <div class="m-2 p-2">
-  <h1 className="mb-4 text-8xl font-extrabold text-purple-900  drop-shadow-lg">Eleji tu Plan {TLD}</h1>
-  <p className=" mb-6 text-4xl font-bold text-purple-700 drop-shadow-lg shadow-ambar-300">{description}</p>
+  <h1 class="mb-4 text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-blue-900 from-blue-400  drop-shadow-lg">Eleji tu Plan {TLD}</h1>
+  <p class=" mb-6 text-5xl font-bold text-purple-900 drop-shadow-lg shadow-ambar-300">{description}</p>
 
       
 
-      <h2 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">{brand}</h2>
+      <h2 class="mb-2 text-5xl font-bold font-mono uppercase tracking-tight text-sky-100 dark:text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500">{brand}</h2>
       <ul>
       <li class="flex space-x-3">
               {/* <!-- Icon --> */}
-              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-purple-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <svg aria-hidden="true" class="flex-shrink-0 w-8 h-8 text-blue-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
               <span class="text-3xl font-bold leading-tight text-gray-500 dark:text-gray-400">{processor}</span>
               </li>
               <li class="flex space-x-3">
               {/* <!-- Icon --> */}
-              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-purple-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-              <span class="text-3xl font-bold leading-tight text-gray-500 dark:text-gray-400">{RAM}</span>
+              <svg aria-hidden="true" class="flex-shrink-0 w-8 h-8 text-blue-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <span class="text-3xl font-bold leading-tight text-gray-500 dark:text-gray-400">{RAM} de memoria RAM</span>
               </li>
               <li class="flex space-x-3">
               {/* <!-- Icon --> */}
-              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-purple-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <svg aria-hidden="true" class="flex-shrink-0 w-8 h-8 text-blue-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
               <span class="text-3xl font-bold leading-tight text-gray-500 dark:text-gray-400">{SSD}</span>
               </li>
               <li class="flex space-x-3">
               {/* <!-- Icon --> */}
-              <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-purple-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              <svg aria-hidden="true" class="flex-shrink-0 w-8 h-8 text-blue-500 dark:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Check icon</title><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
               <span class="text-3xl font-bold leading-tight text-gray-500 dark:text-gray-400">{OS}</span>
               </li>
               </ul>
 
               <h2 className=" underline decoration-wavy italic mb-4 px-3 py-4 text-3xl font-mono font-medium text-gray-500 dark:text-gray-400"> Por solo</h2>
           <div className="flex items-baseline text-purple-500 dark:text-white drop-shadow-3xl">
-          <span class="text-7xl py-8 font-extrabold tracking-tight box-decoration-clone rounded-xl bg-gradient-to-r from-indigo-600 to-blue-300 text-white px-2">$ {price}/month</span>
+          <span class="text-7xl py-8 inline-flex justify-center w-full text-center font-extrabold tracking-tight box-decoration-clone rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 text-white px-11">$ {price}/month</span>
           </div>
           <br />
 
