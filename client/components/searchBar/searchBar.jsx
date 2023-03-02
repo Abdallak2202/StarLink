@@ -21,11 +21,17 @@ const SearchBar = ({ onTargetName }) => {
 
   const handleForm = async () => {
     // console.log('entre');
-    const data = await axios.get(
-      `https://star-link-back-end-production.up.railway.app/registered-domains/?name=${searchTerm}`
-    );
-    console.log(data);
-    onTargetName(data.data);
+    try {
+      
+      const {data} = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/registered-domains/?name=${searchTerm}`
+      );
+      console.log(data);
+      onTargetName(data);
+    } catch (error) {
+      console.log({error});
+    }
+
   };
 
   // useEffect(()=> {
