@@ -305,7 +305,7 @@ let countCart = 10;
             name="cloudState"
             onClick={handleShowDropdown}
           >
-            cloud & Dedicados
+            Cloud & Dedicados
             {/* <Image
               src="static/icons/expand_more.svg"
               alt="Expand more"
