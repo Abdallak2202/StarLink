@@ -1,38 +1,50 @@
 import Link from 'next/link';
 import s from './cloudHosting.module.css';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { motion } from "framer-motion"
 
 export default function CardCloud () {
+    const config = {
+        type: 'spring',
+        damping: 10,
+        stiffness: 80
+      };
+    
   return (
     <div>
-        <div >
-        <div class="carousel">
-    <div class="carousel-inner">
-        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked"/>
-        <div class="carousel-item">
-            <img src="/images/cloudServerss.png"/>
-        </div>
-        <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden=""/>
-        <div class="carousel-item">
-            <img src="/images/AlojamientoREC.png"/>
-        </div>
-        <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden=""/>
-        <div class="carousel-item">
-            <img src="/images/apliaciones.png"/>
-        </div>
-
-       
-    </div>
-</div>
+        
+        <Carousel>
+      <div >
+        <img src="/images/cloudD.png" alt="carousel-1" />
+        <p className="legend">Lo tenés al alcance de tu mano</p>
+      </div>
+      <div>
+        <img src="/images/seguro.png" alt="carousel-2" />
+        <p className="legend">La mayor seguridad y confiabilidad nos avalan</p>
+      </div>
+      <div>
+        <img src="/images/alojamiento-rapido-escalable-confiable.png" alt="carousel-3" />
+        <p className="legend">Todo esto y mucho mas.. Encontras en nuestra empresa</p>
+      </div>
+    </Carousel>
 
 
   {/* Cards */}
-  <div class={s.container}>
+  <motion.div
+          transition={config}
+              initial={{ scale: 0.3, opacity: 0 }}
+           animate={{ scale: 1, opacity: 1, transitionDuration: '0.2s' }}
+            exit={{ x: 0, opacity: 0 }}>
+  
+  <div class=" pt-30 relative overflow-x-auto shadow-md sm:rounded-lg bg-blue-200">
+    <div class="flex items-center justify-between pb-3 bg-gray-200" >
 
-  <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <div class="max-w-xl p-10 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
         <img class="rounded-t-lg" src='/images/rapido.png/' alt="rapido" />
     </a>
-    <div class="p-5">
+    <div class="p-4 ">
         <a href="#">
         <h1 class="mb-2 text-4xl text-center font-bold tracking-tight text-blue-800 dark:text-white">RÁPIDO</h1>
 
@@ -55,11 +67,11 @@ export default function CardCloud () {
 
 {/* // ---------------------------------------------------------------- */}
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="max-w-xl p-10  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
-        <img class="rounded-t-lg" src='/images/escalable.png/' alt="escalable" />
+        <img class="rounded-t-lg w-full h-full" src='/images/escalable.png/' alt="escalable" />
     </a>
-    <div class="p-5">
+    <div class="p-16">
         <a href="#">
         <h1 class="mb-2 text-4xl text-center font-bold tracking-tight text-blue-800 dark:text-white">ESCALABLE</h1>
 
@@ -80,11 +92,11 @@ export default function CardCloud () {
 
 {/* // ---------------------------------------------------------------- */}
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="max-w-xl p-10 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
         <img class="rounded-t-lg" src='/images/simple.png/' alt="simple" />
     </a>
-    <div class="p-5">
+    <div class="p-6 px-6 ">
         <a href="#">
         <h1 class="mb-2 text-4xl text-center font-bold tracking-tight text-blue-800 dark:text-white">SIMPLE</h1>
 
@@ -106,11 +118,11 @@ inscríbete en nuestros talleres online.
 
 {/* // ---------------------------------------------------------------- */}
 
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div class="max-w-xl p-10 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
         <img class="rounded-t-lg" src='/images/confiable.png/' alt="confiable" />
     </a>
-    <div class="p-5">
+    <div class="p-11">
         <a href="#">
         <h1 class="mb-2 text-4xl text-center font-bold tracking-tight text-blue-800 dark:text-white">CONFIABLE</h1>
 
@@ -132,9 +144,10 @@ inscríbete en nuestros talleres online.
 
 </div>
 
+</div>
+</motion.div>
+</div>
 
-</div>
-</div>
 
 
 
