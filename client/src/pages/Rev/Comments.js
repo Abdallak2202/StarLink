@@ -6,23 +6,21 @@ const Comments = ({ reviews }) => {
   const filtrado = reviews.filter(e => e.id < 4);
 
   return (
-    <div className="flex flex-wrap pt-40">
-      <div className="w-full mb-2">
-        <h1>Reviews:</h1>
-        <div className="flex flex-wrap -mx-2">
-          {reviews.map((review) => (
-            <div key={review.id} className="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
-              <CommentsCard
-                username={review.user?.username || 'Anonymous'}
-                service={review.service}
-                stars={review.stars}
-                comment={review.comment}
-              />
-            </div>
-          ))}
-        </div>
+    <div className="pt-40">
+     {/*  <h1 className="text-center mb-4">Reviews:</h1> */}
+      <div className="flex flex-nowrap">
+        {reviews.map((review) => (
+          <div key={review.id} className="w-3/4 sm:w-1/3 md:w-1/4 lg:w-1/5 px-2 mb-4">
+            <CommentsCard
+              username={review.user?.username || 'Anonymous'}
+              service={review.service}
+              stars={review.stars}
+              comment={review.comment}
+            />
+          </div>
+        ))}
       </div>
-      <div className="w-full mb-4">
+      <div className="mt-8">
         <CommentsForm />
       </div>
     </div>
