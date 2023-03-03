@@ -5,7 +5,8 @@ import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import { getUserFromLocalCookie, unsetToken } from "lib/auth";
 import { useSession,signOut } from "next-auth/react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 
 const NavBarMain = ({value, cartItemsCount, carrito,FilterableListPage}) => {
@@ -340,7 +341,7 @@ let countCart = 10;
                   <path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/>
                   </svg>
                   </div>
-                  <div className={styles.linkName}> -Servidores dedicados</div>
+                  <div className={styles.linkName}> -Servidores Dedicados</div>
                  <span class="grid max-w-screen-xl px-6 py-1 mx-auto text-3xl font-light text-gray-900 dark:text-gray-100">Lo máximo en Performance y control.</span>
                 </Link>
 
@@ -382,7 +383,12 @@ let countCart = 10;
 
     {/* //----------------------------filtros-carrito-login------------------------------------ */}
     <div className="px-2">
-    <Link  href="/filtrado/FilterableListPage" className={styles.usernameBtn}>Busca tu servicio ideal</Link>
+      <Link  href="/filtrado/FilterableListPage" className={styles.usernameBtn}>Busca tu servicio ideal</Link>
+    </div>
+    <div className="px-2">
+      <Link href="/Rev/Comments" className={styles.usernameBtn}>
+        <FontAwesomeIcon icon={faStar} /> Reviews
+      </Link>
     </div>
     <Link href='/cart' className={styles.logoCar}><span className="text-white bg-danger rounded p-1">{cartItemsCount}</span><ion-icon name="cart-outline" ></ion-icon></Link>
         
