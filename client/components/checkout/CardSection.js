@@ -6,6 +6,7 @@ function CardSection(props) {
   return (
     
     <div >
+      
       <div>
         <label htmlFor="card-element">Credit or debit card</label>
 
