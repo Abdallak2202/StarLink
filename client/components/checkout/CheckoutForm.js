@@ -73,10 +73,11 @@ if(response.ok){
   window.location.reload()
 } 
     if (!response.ok) {
-      setError(response.statusText);
+      setError('Su pago fue Rechazado');
+      console.log({error});
     }
-   } catch (error) {
-    console.log({error})
+   } catch (er) {
+    console.log({er})
    }
     
    
