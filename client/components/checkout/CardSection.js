@@ -24,7 +24,11 @@ function CardSection(props) {
                 <button onClick={props.submitOrder} className=' className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-20 py-3 text-base font-medium text-white shadow-lg hover:bg-indigo-800"'>Confirm order</button>
               </div>
               {props.stripeError ? (
-                <div>{props.stripeError.toString()}</div>
+                <div class="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 mt-4" role="alert">
+                <p class="font-bold">Alerta</p>
+                <p>{props.stripeError}</p>
+              </div>
+                // <div>{props.stripeError.toString()}</div>
               ) : null}
               <div id="card-errors" role="alert" />
             </div>
