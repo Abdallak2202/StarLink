@@ -17,124 +17,82 @@
 text-align: center;
 }
 
+
 .body {
-  margin: 0px;
-  padding: 0px;
-  background: url("http://digital.bnint.com/filelib/s9/photos/white_wood_4500x3000_lo_res.jpg");
+  margin: 0;
+  background: lightgray;
+  text-align: center;
+  font-family: sans-serif;
+  color: #fefefe;
+  margin: auto;
+  font-size: 2rem;
+}
+.container {
+  position: relative;
+  width: 320px;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
 }
 
 .carousel {
-  position: relative;
-  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
-  margin-top: 26px;
-}
-
-.carousel-inner {
-  position: relative;
-  overflow: hidden;
+  position: absolute;
   width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; 
+  animation: rotate360 60s infinite forwards linear;
 }
-
-.carousel-open:checked + .carousel-item {
-  position: static;
-  opacity: 100;
-}
-
-.carousel-item {
+.carouselFace { 
   position: absolute;
-  opacity: 0;
-  -webkit-transition: opacity 0.6s ease-out;
-  transition: opacity 0.6s ease-out;
+  width: 300px;
+  height: 187px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  box-shadow:inset 0 0 0 2000px rgba(248, 246, 246, 0.5);
+  display: flex;
 }
 
-.carousel-item img {
-  display: block;
-  height: auto;
-  max-width: 100%;
+
+
+.carouselFace:nth-child(1) {
+  background-image: url("/images/hosting1.png");
+  transform: rotateY(  0deg) translateZ(430px); }
+.carouselFace:nth-child(2) { 
+  background-image: url("/images/hosting2.png");
+    transform: rotateY( 40deg) translateZ(430px); }
+.carouselFace:nth-child(3) {
+  background-image: url("/images/hosting3.png");
+  transform: rotateY( 80deg) translateZ(430px); }
+.carouselFace:nth-child(4) {
+  background-image: url("/images/hosting4.png");
+  transform: rotateY(120deg) translateZ(430px); }
+.carouselFace:nth-child(5) { 
+  background-image: url("/images/hostin5.png");
+ transform: rotateY(160deg) translateZ(430px); }
+.carouselFace:nth-child(6) { 
+  background-image: url("/images/hosting6.png");
+ transform: rotateY(200deg) translateZ(430px); }
+.carouselFace:nth-child(7) { 
+  background-image: url("/images/hosting7.png");
+ transform: rotateY(240deg) translateZ(430px); }
+.carouselFace:nth-child(8) {
+  background-image: url("/images/hosting8.png");
+  transform: rotateY(280deg) translateZ(430px); }
+.carouselFace:nth-child(9) {
+  background-image: url("/images/hosting9.png");
+  transform: rotateY(320deg) translateZ(430px); }
+
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
 }
 
-.carousel-control {
-  background: rgba(0, 0, 0, 0.28);
-  border-radius: 50%;
-  color: #fff;
-  cursor: pointer;
-  display: none;
-  font-size: 40px;
-  height: 40px;
-  line-height: 35px;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-  cursor: pointer;
-  -ms-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  text-align: center;
-  width: 40px;
-  z-index: 10;
-}
 
-.carousel-control.prev {
-  left: 2%;
-}
 
-.carousel-control.next {
-  right: 2%;
-}
-
-.carousel-control:hover {
-  background: rgba(0, 0, 0, 0.8);
-  color: #aaaaaa;
-}
-
-#carousel-1:checked ~ .control-1,
-#carousel-2:checked ~ .control-2,
-#carousel-3:checked ~ .control-3 {
-  display: block;
-}
-
-.carousel-indicators {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  bottom: 2%;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 10;
-}
-
-.carousel-indicators li {
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.carousel-bullet {
-  color: #fff;
-  cursor: pointer;
-  display: block;
-  font-size: 35px;
-}
-
-.carousel-bullet:hover {
-  color: #aaaaaa;
-}
-
-#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-  color: #428bca;
-}
-
-#title {
-  width: 100%;
-  position: absolute;
-  padding: 0px;
-  margin: 0px auto;
-  text-align: center;
-  font-size: 27px;
-  color: rgba(255, 255, 255, 1);
-  font-family: 'Open Sans', sans-serif;
-  z-index: 9999;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
-}
