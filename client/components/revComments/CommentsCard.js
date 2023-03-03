@@ -1,7 +1,15 @@
 import React from 'react'
 import s from "components/revComments/reviews.module.css";
-
+import { FaStar } from 'react-icons/fa';
 const CommentsCards = ({username, service, stars,comment }) => {
+
+  const yellowStars = Array.from({ length: stars }, (_, i) => (
+    <FaStar key={i} className="text-yellow-500 text-2xl" />
+  ));
+  const emptyStars = Array.from({ length: 5 - stars }, (_, i) => (
+    <FaStar key={i + stars} className="text-gray-400 text-2xl" />
+  ));
+  const allStars = [...yellowStars, ...emptyStars];
   return (
     <div >
 <img src='https://coobis.com/wp-content/uploads/2018/09/comentarios-en-instagram-destacada.jpg' alt='icono comentario'width={100} height={100}/>
@@ -32,12 +40,14 @@ const CommentsCards = ({username, service, stars,comment }) => {
                       <path
                         d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z" />
                     </svg>
-                    {comment}
+                    <span className="text-3xl">{comment}</span>
+                    
                   </p>
-                  <h1 class="text-2xl">User:{username}</h1>
-                  <h2 class="text-2xl">Servicio:{service}</h2>
-                  <h3 class="text-3xl">Estrellas:{stars}</h3>
-                  <h3 class="text-3xl">Testimonios:{comment}</h3>
+                
+                  <div className="flex flex-row items-center justify-center">
+      <h2 className="text-5xl">{service}</h2>
+      <h3 className="text-3xl mx-2">{allStars}</h3>
+    </div>
 
 
         </div>
