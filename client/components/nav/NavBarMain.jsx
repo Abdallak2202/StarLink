@@ -154,7 +154,7 @@ let countCart = 10;
      <Link className={styles.logoLink} href="/">
 
           <Image 
-        src={'/starLinkFondoNegro.jfif'}
+        src={'/images/starLinkSinFondo.png'}
         alt="StarLink"
         width={130}
         height={130}
@@ -189,7 +189,7 @@ let countCart = 10;
                       
                 <Link href="/dominio/dominio-com-co" >
                 <div>
-                <svg className="absolute inset-y-8 left-2 w-11 fill-gray-800 shadow-lg " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <svg className="absolute inset-y-8 left-2 w-11 fill-orange-500 shadow-lg " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                  {/* <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> */}
                 <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
                 </svg>
@@ -258,7 +258,7 @@ let countCart = 10;
 
                 <Link href="/hosting/w-hosting/webHosting" >
                   <div>
-                  <svg className="absolute inset-y-18 left-2 w-12 fill-gray-800 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <svg className="absolute inset-y-18 left-2 w-12 fill-orange-500 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     {/* <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> */}
                     <path d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
                   </svg>
@@ -275,7 +275,7 @@ let countCart = 10;
 
                 <Link href="/hosting/hosting-cloud-servers-vps">
                   <div>
-                  <svg className="absolute inset-y-18 left-2 w-12 fill-gray-800 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                  <svg className="absolute inset-y-18 left-2 w-12 fill-orange-500 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                     {/* <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> */}
                   <path d="M0 336c0 79.5 64.5 144 144 144H512c70.7 0 128-57.3 128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7 6.4-22.4 6.4-34.6c0-53-43-96-96-96c-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32C167.6 32 96 103.6 96 192c0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336z"/>
                   </svg>
@@ -325,7 +325,7 @@ let countCart = 10;
 
          <Link href="/cloudDedicados/cloudServers">
           <div>
-          <svg className="absolute inset-y-18 left-2 w-12 fill-gray-800 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+          <svg className="absolute inset-y-18 left-2 w-12 fill-orange-500 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                     {/* <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> */}
            <path d="M0 336c0 79.5 64.5 144 144 144H512c70.7 0 128-57.3 128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7 6.4-22.4 6.4-34.6c0-53-43-96-96-96c-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32C167.6 32 96 103.6 96 192c0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336z"/>
             </svg>
@@ -336,7 +336,7 @@ let countCart = 10;
           </Link>
           <Link href="/hosting/servidores-dedicados" >
                   <div>
-                  <svg className="absolute inset-y-18 left-2 w-12 fill-gray-800 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <svg className="absolute inset-y-18 left-2 w-12 fill-orange-500 shadow-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     {/* <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> */}
                   <path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/>
                   </svg>
