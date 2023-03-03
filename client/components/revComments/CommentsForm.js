@@ -50,7 +50,7 @@ export const CommentForm = () => {
     <form className="w-full max-w-2xl mx-auto mt-8" onSubmit={handleSubmit}>
       <div className="mb-4">
         <label className="block text-gray-100 font-bold mb-2 bg-indigo-500 text-4xl" htmlFor="user-id">
-          User:
+          Usuario:
         </label>
         <input
           className="appearance-none border rounded w-full py-2 px-3 text-gray-900  text-4xl leading-tight focus:outline-none focus:shadow-outline"
@@ -63,7 +63,7 @@ export const CommentForm = () => {
       <br />
       <div className="mb-4 ">
         <label className="block text-gray-100 font-bold mb-2 text-4xl bg-indigo-500" htmlFor="service-type">
-          Service Type:
+          Tipo de Servicio:
         </label>
         <select
           className="appearance-none border rounded w-full text-4xl  py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline"
@@ -89,7 +89,7 @@ export const CommentForm = () => {
       <br />
       <div className="mb-4">
         <label className="block text-gray-100 bg-indigo-500 font-bold mb-2 text-4xl" htmlFor="comment">
-          Comment:
+          Comentarios:
         </label>
         <textarea
           className="appearance-none border rounded w-full text-4xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -102,7 +102,7 @@ export const CommentForm = () => {
       <br />
       <div className="text-4xl bg-indigo-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 type="submit" >
-      <button type="submit">Submit Review</button>
+      <button type="submit">Subir Comentario</button>
       </div>
     </form>
     </div>
