@@ -1,30 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa"; //  icono de estrella 
 import s from "components/revComments/reviews.module.css";
+import { getIdFromLocalCookie, getTokenFromLocalCookie, getUserFromLocalCookie} from "lib/auth";
 
-export const CommentForm = () => {
-  const [id, setId] = useState("");
+export const CommentForm = ({onFormActivation}) => {
+  // const [formActive, setFormActive] = useState(false);
+  const [id, setId] = useState("Invitado");
   const [service, setService] = useState("");
   const [stars, setStars] = useState(0); // valor inicial en 0
   const [comment, setComment] = useState("");
 
+  useEffect(() => {
+    const handleName = async () =>{
+      const user = await  getUserFromLocalCookie();
+      setId(user)
+    }
+  handleName()
+    
+  }, [])
+
+
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+   
+    console.log('entre');
+    const jwt = await getTokenFromLocalCookie();
+    const user = await getIdFromLocalCookie();
+    // setId(user)
+    if(jwt ){
     try {
-      await fetch("https://star-link-back-end-production.up.railway.app/reviews", {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reviews`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+           Authorization: `Bearer ${jwt}`,
         },
-        body: JSON.stringify({ id, service, stars, comment }),
+        body: JSON.stringify({ user, service, stars, comment }),
       });
       alert("Comment submitted successfully!");
+      console.log('hecho');
+      onFormActivation()
     } catch (error) {
       alert(error.message);
     }
-
-    setId("");
+  }
+    // setId("");
     setService("");
     setStars(0); //  establecer el valor en 0
     setComment("");
@@ -50,15 +72,15 @@ export const CommentForm = () => {
     <form className="w-full max-w-2xl mx-auto mt-8" onSubmit={handleSubmit}>
       <div className="mb-4">
         <label className="block text-gray-100 font-bold mb-2 bg-indigo-500 text-4xl" htmlFor="user-id">
-          Usuario:
+          {id} 
         </label>
-        <input
+        {/* <input
           className="appearance-none border rounded w-full py-2 px-3 text-gray-900  text-4xl leading-tight focus:outline-none focus:shadow-outline"
           id="user-id"
           type="text"
           value={id}
           onChange={(e) => setId(e.target.value)}
-        />
+        /> */}
       </div>
       <br />
       <div className="mb-4 ">
