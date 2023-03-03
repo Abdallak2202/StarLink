@@ -19,6 +19,7 @@ const config = {
 
 
 <div className={s.container}>
+<img src="https://media2.giphy.com/media/9igGG6KxpY0eY0Sr5u/giphy.gif" alt="Logo" class="w-400 h-300" />
 
 <div class="flex flex-wrap justify-center ">
 
@@ -61,7 +62,7 @@ const config = {
           <br />
 
           <Link href={`/server/${id}`} >
-                        <button           class="cursor-pointer text-gray-100 text-3xl font-semibold transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300  rounded-lg  px-6 py-4 inline-flex justify-center w-full text-center">
+                        <button  class="cursor-pointer text-gray-100 text-3xl font-semibold transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300  rounded-lg  px-6 py-4 inline-flex justify-center w-full text-center">
 
                              View Product
                         </button>
