@@ -14,7 +14,7 @@ const Cart = ({carrito, eliminarProducto}) => {
   const router = useRouter();
   const { data: session } = useSession();
   useEffect(()=> {
-const calculoTotal = carrito.reduce(( total, producto) => total + producto.price, 0);
+const calculoTotal = carrito?.reduce(( total, producto) => total + producto.price, 0);
 
 setTotal(calculoTotal);
   }, [carrito]);
@@ -72,7 +72,7 @@ async function addToCart() {
       cookies,
       cartData,
     };
-    console.log(requestData);
+    console.log({requestData});
   
     try {
       const response = await fetch('https://star-link-back-end-production.up.railway.app/carts/add-to-cart', {
@@ -200,7 +200,7 @@ async function addToCart() {
                         ):<>No hay productos</>}
                       </div>
                       {/* <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p> */}
-                      <Link href='/pagos/pasarela'>
+                      <Link href='/checkout'>
                       <div className="mt-6">
                       <button
                         type="button"
