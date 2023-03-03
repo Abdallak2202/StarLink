@@ -6,7 +6,7 @@ import Image from "next/image";
 import { getUserFromLocalCookie, unsetToken } from "lib/auth";
 import { useSession,signOut } from "next-auth/react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+//import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 
 const NavBarMain = ({value, cartItemsCount, carrito,FilterableListPage}) => {
@@ -387,7 +387,7 @@ let countCart = 10;
     </div>
     <div className="px-2">
       <Link href="/Rev/Comments" className={styles.usernameBtn}>
-        <FontAwesomeIcon icon={faStar} /> Reviews
+        <FontAwesomeIcon  /> Reviews
       </Link>
     </div>
     <Link href='/cart' className={styles.logoCar}><span className="text-white bg-danger rounded p-1">{cartItemsCount}</span><ion-icon name="cart-outline" ></ion-icon></Link>

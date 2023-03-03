@@ -7,6 +7,7 @@ const RegistroDeDominios = () => {
   // const [data, setData] = useState([]);
   // const [term, setTerm] = useState('');
   const [nomdominio, setNonDominio] = useState([]);
+const [switchState, setswitchState] = useState('')
   
   
     // useEffect(()=> {
@@ -17,8 +18,13 @@ const RegistroDeDominios = () => {
     //     }, []);
   
     const setTargetName = (searchData)=>{
-      console.log({searchData});
-    setNonDominio(searchData);
+
+      if(searchData.length>0){
+        setNonDominio(searchData);
+        setswitchState('!!!No Disponible')
+      } else {
+        setswitchState('!!!Disponible')
+      }
       // setNonDominio(searchData)
     }
 
@@ -75,7 +81,9 @@ const RegistroDeDominios = () => {
       
       <ul className=' space-y-6'>
        
-       {nomdominio.length===0? <div className='text-slate-400 text-6xl	 font-semibold	'>Disponible!!!</div>: nomdominio.map(item => (
+      <div className='text-slate-400 text-6xl	 font-semibold	'>{switchState}</div> 
+      
+      {nomdominio.map(item => (
 
         <div className="flex items-center justify-between w-full p-4 lg:rounded-full md:rounded-full hover:bg-gray-50 cursor-pointer border-2 rounded-lg">
 
