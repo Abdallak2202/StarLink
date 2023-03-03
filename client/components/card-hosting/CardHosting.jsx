@@ -14,8 +14,8 @@ const config = {
       return (
 
 
-
         <div className={s.container}>
+          
 
 <div className={s.hero}> 
 
@@ -25,9 +25,9 @@ const config = {
   <div className={s.cube}></div>
   <div className={s.cube}></div>
   <div className={s.cube}></div>
-
-
-
+<div className='underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600 italic  text-center text-4xl font-mono font-bold  bg-clip-text bg-gradient-to-r to-blue-900 from-sky-600'>
+  <h1 className={s.texto}>Simple Rápido confiable</h1>
+  </div>
 
 
         <motion.div
@@ -89,21 +89,6 @@ const config = {
     };
 
 export default CardHosting;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
