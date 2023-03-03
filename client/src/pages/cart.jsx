@@ -200,7 +200,7 @@ async function addToCart() {
                       </div>
                       {/* <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p> */}
                       <Link href='/checkout'>
-                      <div className="mt-6">
+                      <div className="mt-6 px-24">
 
                       <button
                         type="button"

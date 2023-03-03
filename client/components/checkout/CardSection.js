@@ -4,7 +4,8 @@ import { CardElement } from "@stripe/react-stripe-js";
 
 function CardSection(props) {
   return (
-    <div>
+    
+    <div >
       <div>
         <label htmlFor="card-element">Credit or debit card</label>
 
@@ -20,7 +21,7 @@ function CardSection(props) {
               </div>
               <br />
               <div className="order-button-wrapper">
-                <button onClick={props.submitOrder}>Confirm order</button>
+                <button onClick={props.submitOrder} className=' className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-20 py-3 text-base font-medium text-white shadow-lg hover:bg-indigo-800"'>Confirm order</button>
               </div>
               {props.stripeError ? (
                 <div>{props.stripeError.toString()}</div>
