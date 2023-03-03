@@ -40,7 +40,7 @@ agregarCarrito(productoSeleccionado);
   <div class=" flex items-center justify-between pb-12">
 
   <div>
-     <h2 class="text-gray-500   font-semibold text-4xl">Products Oder</h2>
+     <h2 class="text-gray-500   font-semibold text-4xl">Products Order</h2>
      <span class="text-2xl text-gray-500">All products item</span>
    </div>
    </div>
