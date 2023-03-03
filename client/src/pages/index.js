@@ -35,7 +35,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
 
-      <Spline scene="https://prod.spline.design/pE91QTxCL5UWQMbK/scene.splinecode" />
+      <Spline className={styles.slpine} scene="https://prod.spline.design/pE91QTxCL5UWQMbK/scene.splinecode" />
 
       </main>
     </>
