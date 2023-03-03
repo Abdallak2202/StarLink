@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa"; //  icono de estrella 
+import s from "components/revComments/reviews.module.css";
 
 export const CommentForm = () => {
   const [id, setId] = useState("");
@@ -45,13 +46,14 @@ export const CommentForm = () => {
   }
 
   return (
-    <form className="w-full max-w-sm mx-auto mt-8" onSubmit={handleSubmit}>
+    <div  className={s.container}>
+    <form className="w-full max-w-2xl mx-auto mt-8" onSubmit={handleSubmit}>
       <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="user-id">
+        <label className="block text-gray-100 font-bold mb-2 bg-indigo-500 text-4xl" htmlFor="user-id">
           User:
         </label>
         <input
-          className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="appearance-none border rounded w-full py-2 px-3 text-gray-900  text-4xl leading-tight focus:outline-none focus:shadow-outline"
           id="user-id"
           type="text"
           value={id}
@@ -59,12 +61,12 @@ export const CommentForm = () => {
         />
       </div>
       <br />
-      <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="service-type">
+      <div className="mb-4 ">
+        <label className="block text-gray-100 font-bold mb-2 text-4xl bg-indigo-500" htmlFor="service-type">
           Service Type:
         </label>
         <select
-          className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="appearance-none border rounded w-full text-4xl  py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline"
           id="service-type"
           value={service}
           onChange={(e) => setService(e.target.value)}
@@ -79,18 +81,18 @@ export const CommentForm = () => {
 
       <br />
       <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="stars">
+        <label className="block bg-indigo-500 text-gray-100 font-bold mb-2 text-4xl" htmlFor="stars">
           Stars:
         </label>
         <div style={{ display: 'flex', flexDirection: 'row' }} >{starIcons}</div>
       </div>
       <br />
       <div className="mb-4">
-        <label className="block text-gray-700 font-bold mb-2" htmlFor="comment">
+        <label className="block text-gray-100 bg-indigo-500 font-bold mb-2 text-4xl" htmlFor="comment">
           Comment:
         </label>
         <textarea
-          className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className="appearance-none border rounded w-full text-4xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="comment"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
@@ -98,11 +100,12 @@ export const CommentForm = () => {
       </div>
 
       <br />
-      <div className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      <div className="text-4xl bg-indigo-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 type="submit" >
       <button type="submit">Submit Review</button>
       </div>
     </form>
+    </div>
   );
 };
 export default CommentForm;
