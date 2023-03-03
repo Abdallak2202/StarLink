@@ -103,7 +103,7 @@ async function addToCart() {
           leaveTo="opacity-0"
         >
                          
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          <div className="fixed inset-0 bg-gray-700 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
         
@@ -121,7 +121,7 @@ async function addToCart() {
                 leaveTo="translate-x-full"
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                  <div className="flex h-full flex-col overflow-y-scroll bg-white  shadow-xl pt-28">
                     <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-lg font-medium text-gray-900">Shopping cart </Dialog.Title>
@@ -144,11 +144,10 @@ async function addToCart() {
 {carrito?.length === 0 ? "Carrito Vacio": (
  
                           carrito?.map((producto) => (
+                                <div className=' hover:bg-gray-100  bg-gray-400 bg-opacity-5'>
                               <li  key={producto.id} className="flex py-6">
-                                <div   className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                  <img
-                                    // src={el.imageSrc}
-                                    // alt={el.imageAlt}
+                                <div   className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-300 ml-3">
+                                  <img src='https://img.freepik.com/premium-photo/3d-render-online-payment-concept-transaction-receipt-online-payment-icon_95505-315.jpg?w=360' alt='fondo'
                                     className="h-full w-full object-cover object-center"
                                   />
                                 </div>
@@ -159,20 +158,20 @@ async function addToCart() {
                                       <h3>
                                         <a >{producto.name}</a>
                                       </h3>
-                                      <p className="ml-4">{producto.price} $</p>
+                                      <p className="ml-4 text-lg  text-green-600">{producto.price} $</p>
                                     </div>
                                     <div className=''>
-                                    <p className="mt-0.5 text-xs text-gray-500">• service: {producto.service} </p>
+                                    <p className="mt-0.5 text-lg mr-10 text-gray-500">service: {producto.service} </p>
                                     {/* <p className="mt-0.5 text-xs text-gray-500">• {producto.description} </p> */}
                                     </div>
                                   </div>
                                   <div className="flex flex-1 items-end justify-between text-sm mt-1">
                                   {/* <p className="text-xs leading-3 underline text-gray-800 cursor-pointer">Add to favorites</p> */}
 
-                                    <div className="flex">
+                                    <div className="flex ">
                                       <button
                                         type="button"
-                                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                                        className="font-medium text-indigo-600 hover:text-red-500"
                                       onClick={()=> eliminarProducto(producto.slug)}>
                                         Remove
                                       </button>
@@ -180,7 +179,7 @@ async function addToCart() {
                                   </div>
                                 </div>
                               </li>
-                              
+                              </div>
                               )))} 
                               
                               
@@ -189,23 +188,24 @@ async function addToCart() {
                       </div>
                     </div>
 
-                    <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
-                      <div className="flex justify-between text-base font-medium text-gray-900">
+                    <div className="border-t border-gray-300 py-6 px-4 sm:px-6  ">
+                      <div className="flex justify-between text-lg font-bold text-gray-700  font">
                         {total > 0 ? (
                           <>
                           
-                          <p>Total a pagar:${total}</p>
-                          <p></p>
+                          <p>Total a pagar:</p><p>${total}</p>
+                         
                           </>
-                        ):<>No hay productos</>}
+                        ):< div className='ml-28 text-zinc-500'>No hay productos</div>}
                       </div>
                       {/* <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p> */}
                       <Link href='/checkout'>
                       <div className="mt-6">
+
                       <button
                         type="button"
                           href="#"
-                          className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                          className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-20 py-3 text-base font-medium text-white shadow-lg hover:bg-indigo-800"
                           onClick={()=> addToCart()}>
                           Buy
                         </button>
@@ -213,20 +213,19 @@ async function addToCart() {
                       </div>
                       </Link>
 
-                      <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
-                        <p>
-                          or
+                      <div className="mt-6 flex justify-center text-center text-lg text-gray-800">
+                        <p>or</p>
+
                           <Link href='/'>
                           <button
                             type="button"
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
+                            className="font-medium text-indigo-500 hover:text-indigo-800 ml-2"
                             onClick={() => setOpen(false)}
                           >
                             Continue Shopping
                             <span aria-hidden="true"> &rarr;</span>
                           </button>
                           </Link>
-                        </p>
                       </div>
                     </div>
                   </div>
