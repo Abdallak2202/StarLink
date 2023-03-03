@@ -24,10 +24,10 @@ const servidoresDedicados = ({cards}) => {
       ))}
 
 {/* <-----------texto 1-----------------> */}
-<div className='w-full h-full'>
+<div className='flex  w-full h-full'>
 <div >
 
-<svg aria-hidden="true" class="w-60 h-60 px-10 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
+<svg aria-hidden="true" class="w-60 h-60  text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/></svg>
 
 <h1 class="mb-4 text-8xl font-extrabold text-center text-gray-900 dark:text-white md:text-2xl lg:text-8xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-indigo-600 from-sky-400">Administralo</span> o dejalo en manos de nuestros expertos.</h1>
 </div>
@@ -37,10 +37,7 @@ const servidoresDedicados = ({cards}) => {
 
 {/* <-----------texto 2-----------------> */}
 
-<h1 class=" mb-4 text-8xl font-extrabold text-center text-gray-900 dark:text-white md:text-2xl lg:text-8xl"></h1>
-  <h1 class="mb-4 text-8xl font-extrabold text-center  dark:text-white md:text-2xl lg:text-8xl text-gray-700 italic border-4 border-indigo-200 border-y-indigo-500 bg-gradient-to-r from-blue-200 to-indigo-200">Nuestra solución administrada incluye un equipo de expertos que se encargará de cualquier cuestión técnica o pedidos de configuración que necesites realizar.</h1>
-  <h1 class="  text-transparent bg-clip-text bg-gradient-to-r to-zinc-900 from-blue-600 underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600 mb-4 text-8xl font-extrabold text-center text-gray-900 dark:text-white md:text-2xl lg:text-8xl"> Elige la opción que se adapte a tu negocio.</h1>
-    
+<img src='https://nodored.com/images/Server.gif' alt='serviciosDedicados' />    
       </div>
       </div>
 <br/>
