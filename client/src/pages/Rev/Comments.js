@@ -8,22 +8,31 @@ const Comments = ({ reviews }) => {
   return (
     <div className="pt-40">
      {/*  <h1 className="text-center mb-4">Reviews:</h1> */}
-      <div className="flex flex-nowrap">
-        {reviews.map((review) => (
-          <div key={review.id} className="w-3/4 sm:w-1/3 md:w-1/4 lg:w-1/5 px-2 mb-4">
-            <CommentsCard
-              username={review.user?.username || 'Anonymous'}
-              service={review.service}
-              stars={review.stars}
-              comment={review.comment}
-            />
+      <div class="md:flex justify-center  w-full">
+        <div class="w-full  py-10 px-5 md:px-10">
+          <div>
+            <div class="flex -mx-3">
+              <div class="w-1/2 px-3 mb-12 mx-auto">
+                {reviews.map((review) => (
+                  <div key={review.id} className="w-full px-2 mb-4">
+                    <CommentsCard
+                      username={review.user?.username || 'Anonymous'}
+                      service={review.service}
+                      stars={review.stars}
+                      comment={review.comment}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
       <div className="mt-8">
         <CommentsForm />
       </div>
     </div>
+    </div>
+    </div>
+  
   );
 };
 
