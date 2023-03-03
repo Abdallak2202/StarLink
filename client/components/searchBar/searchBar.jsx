@@ -9,7 +9,7 @@ const SearchBar = ({ onTargetName }) => {
   const handleInputChange = ({ target }) => {
     //  setSearchTerm(event.target.value.toLowerCase().replaceAll(/^\s+/g, "").replaceAll(/\s+/g, " "))
     setSearchTerm(target.value.toLowerCase());
-    console.log({ searchTerm });
+    // console.log({ searchTerm });
   };
 
   // useEffect(() => {
@@ -19,8 +19,16 @@ const SearchBar = ({ onTargetName }) => {
   //     // console.log(searchResults)
   // }, [searchTerm]);
 
-  const handleForm = async () => {
-    // console.log('entre');
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault()
+     handleForm()
+      // Perform the search here
+    }
+  };
+
+  const handleForm = async (e) => {
+    console.log('entre');
     try {
       
       const {data} = await axios.get(
@@ -39,12 +47,12 @@ const SearchBar = ({ onTargetName }) => {
   // }, [searchResults]);
 
   return (
-    <form>
+    <form >
       <div className="flex flex-col pt-40 pb-6  m-h-screen bg-slate-100">
         <div className="bg-white items-center justify-between w-full flex rounded-full shadow-lg p-2 mb-1 sticky">
           <div>
             <Link href="/dominio/dominio-com-co">
-              <button type="submit" className=" pb-1">
+              <button type="button" className=" pb-1">
                 <div className="p-2 mr-1 rounded-full hover:bg-rose-200 cursor-pointer">
                   <svg
                     className="h-6 w-6 text-gray-500"
@@ -69,10 +77,12 @@ const SearchBar = ({ onTargetName }) => {
             placeholder="search Domain"
             value={searchTerm}
             onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
           />
 
           <Link href="/dominio/registro-de-dominios">
             <button type="button" onClick={handleForm} className=" pb-1">
+           
               <div class="bg-gray-600 p-2 hover:bg-rose-200 cursor-pointer mx-2 rounded-full">
                 <svg
                   class="w-6 h-6 text-white"
@@ -91,6 +101,7 @@ const SearchBar = ({ onTargetName }) => {
           </Link>
         </div>
       </div>
+      
       <div>
         {/* <ul>
         {searchResults.map(result => (
