@@ -46,7 +46,7 @@ const CommentsCards = ({username, service, stars,comment }) => {
                 
                   <div className="flex flex-row items-center justify-center">
       <h2 className="text-5xl">{service}</h2>
-      <h3 className="text-3xl mx-2">{allStars}</h3>
+      <h3 className=" flex justify-center text-5xl mx-6">{allStars}</h3>
     </div>
 
 
