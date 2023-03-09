@@ -14,18 +14,22 @@ export default function App({
   pageProps: { session, ...pageProps },
 }) {
   const [carrito, setCarrito] = useState([]);
-
   useEffect(() => {
-    const carritoLS = JSON.parse(localStorage.getItem("carrito"));
-    carritoLS?.length === 0 ? "" : setCarrito(carritoLS);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("carrito", JSON.stringify(carrito));
+    const carritoLS = JSON.parse(localStorage.getItem("carrito"));
+    carritoLS?.length === 0 ? [] : setCarrito(carritoLS);
   }, [carrito]);
 
+  useEffect(() => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }, []);
+
+
   const agregarCarrito = (producto) => {
-    if (carrito.some((articulo)=> articulo.slug === producto.slug)){
+    if (carrito?.some((articulo)=> articulo.slug === producto.slug)){
 alert("Estimado cliente ya usted selecciono un servicio con este plan")
     }else {
     setCarrito([...carrito, producto]);
