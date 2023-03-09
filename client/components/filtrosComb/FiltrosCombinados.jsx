@@ -21,7 +21,7 @@ const Filter = ({ onChange }) => {
     { label: '500' },
     { label: '800' },
     { label: '1500' },
-    { label: '2790' },
+    { label: '2800' },
     { label: '5500' },
     { label: '9000' }
   ];
